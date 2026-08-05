@@ -14,9 +14,10 @@ export function Section({
   as?: "section" | "div";
   id?: string;
 }) {
+  // `className` styles the full-bleed band; the inner div holds the content grid.
   return (
-    <As id={id} className={cn("mx-auto w-full max-w-6xl px-5 py-16 md:py-20", className)}>
-      {children}
+    <As id={id} className={cn("w-full", className)}>
+      <div className="mx-auto w-full max-w-6xl px-5 py-16 md:py-20">{children}</div>
     </As>
   );
 }
