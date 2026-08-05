@@ -11,6 +11,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
+import { Toaster } from "@/components/ui/sonner";
+import { ORG } from "@/data/site";
 
 function NotFoundComponent() {
   return (
@@ -77,21 +81,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "UnfoldNepal — Research on Nepal's small businesses" },
+      {
+        name: "description",
+        content:
+          "Independent research and publishing on Nepal's cottage, small and medium enterprises.",
+      },
+      { name: "author", content: "UnfoldNepal" },
+      { property: "og:site_name", content: "UnfoldNepal" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300..800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: ORG.name,
+          url: ORG.domain,
+          email: ORG.email,
+          description: ORG.tagline,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Kathmandu",
+            addressCountry: "NP",
+          },
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +149,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+      <Toaster />
     </QueryClientProvider>
   );
 }
