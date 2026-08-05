@@ -12,7 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BookRouteImport } from './routes/book'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiasporaRouteImport } from './routes/diaspora'
+import { Route as GetInvolvedRouteImport } from './routes/get-involved'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as UpdatesRouteImport } from './routes/updates'
 import { Route as ReportsIndexRouteImport } from './routes/reports.index'
 import { Route as ReportsSlugRouteImport } from './routes/reports.$slug'
 
@@ -31,9 +35,29 @@ const BookRoute = BookRouteImport.update({
   path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DiasporaRoute = DiasporaRouteImport.update({
   id: '/diaspora',
   path: '/diaspora',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetInvolvedRoute = GetInvolvedRouteImport.update({
+  id: '/get-involved',
+  path: '/get-involved',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UpdatesRoute = UpdatesRouteImport.update({
+  id: '/updates',
+  path: '/updates',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReportsIndexRoute = ReportsIndexRouteImport.update({
@@ -51,7 +75,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/updates': typeof UpdatesRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports/': typeof ReportsIndexRoute
 }
@@ -59,7 +87,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/updates': typeof UpdatesRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports': typeof ReportsIndexRoute
 }
@@ -68,22 +100,49 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/updates': typeof UpdatesRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports/': typeof ReportsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/book' | '/diaspora' | '/reports/$slug' | '/reports/'
+    | '/'
+    | '/about'
+    | '/book'
+    | '/contact'
+    | '/diaspora'
+    | '/get-involved'
+    | '/sitemap.xml'
+    | '/updates'
+    | '/reports/$slug'
+    | '/reports/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/book' | '/diaspora' | '/reports/$slug' | '/reports'
+  to:
+    | '/'
+    | '/about'
+    | '/book'
+    | '/contact'
+    | '/diaspora'
+    | '/get-involved'
+    | '/sitemap.xml'
+    | '/updates'
+    | '/reports/$slug'
+    | '/reports'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/book'
+    | '/contact'
     | '/diaspora'
+    | '/get-involved'
+    | '/sitemap.xml'
+    | '/updates'
     | '/reports/$slug'
     | '/reports/'
   fileRoutesById: FileRoutesById
@@ -92,7 +151,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BookRoute: typeof BookRoute
+  ContactRoute: typeof ContactRoute
   DiasporaRoute: typeof DiasporaRoute
+  GetInvolvedRoute: typeof GetInvolvedRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  UpdatesRoute: typeof UpdatesRoute
   ReportsSlugRoute: typeof ReportsSlugRoute
   ReportsIndexRoute: typeof ReportsIndexRoute
 }
@@ -120,11 +183,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/diaspora': {
       id: '/diaspora'
       path: '/diaspora'
       fullPath: '/diaspora'
       preLoaderRoute: typeof DiasporaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-involved': {
+      id: '/get-involved'
+      path: '/get-involved'
+      fullPath: '/get-involved'
+      preLoaderRoute: typeof GetInvolvedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/updates': {
+      id: '/updates'
+      path: '/updates'
+      fullPath: '/updates'
+      preLoaderRoute: typeof UpdatesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reports/': {
@@ -148,7 +239,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BookRoute: BookRoute,
+  ContactRoute: ContactRoute,
   DiasporaRoute: DiasporaRoute,
+  GetInvolvedRoute: GetInvolvedRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  UpdatesRoute: UpdatesRoute,
   ReportsSlugRoute: ReportsSlugRoute,
   ReportsIndexRoute: ReportsIndexRoute,
 }
