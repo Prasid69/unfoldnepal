@@ -54,7 +54,7 @@ export function StoryForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-5 sm:grid-cols-2">
       {FIELDS.map((f) => (
-        <div key={f.id} className={f.id === "story" ? "sm:col-span-2" : undefined}>
+        <div key={f.id}>
           <label htmlFor={`story-${f.id}`} className="block text-sm font-medium">
             {f.label}
           </label>

@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Section, Eyebrow, Figure, ReportCard } from "@/components/site/Primitives";
-import { REPORTS, ORG } from "@/data/site";
+import { REPORTS, ORG, type Report } from "@/data/site";
 import dairyImg from "@/assets/report-dairy.jpg";
 
 export const Route = createFileRoute("/reports/$slug")({
@@ -50,7 +50,7 @@ export const Route = createFileRoute("/reports/$slug")({
 });
 
 function ReportDetail() {
-  const { report } = Route.useLoaderData();
+  const { report } = Route.useLoaderData() as { report: Report };
   const related = REPORTS.filter((r) => report.related.includes(r.slug));
 
   return (
