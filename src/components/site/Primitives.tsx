@@ -7,13 +7,17 @@ export function Section({
   children,
   className,
   as: As = "section",
+  id,
 }: {
   children: ReactNode;
   className?: string;
   as?: "section" | "div";
+  id?: string;
 }) {
   return (
-    <As className={cn("mx-auto w-full max-w-6xl px-5 py-16 md:py-20", className)}>{children}</As>
+    <As id={id} className={cn("mx-auto w-full max-w-6xl px-5 py-16 md:py-20", className)}>
+      {children}
+    </As>
   );
 }
 

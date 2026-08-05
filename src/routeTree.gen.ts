@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as DiasporaRouteImport } from './routes/diaspora'
 import { Route as ReportsIndexRouteImport } from './routes/reports.index'
 import { Route as ReportsSlugRouteImport } from './routes/reports.$slug'
 
@@ -22,6 +24,16 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiasporaRoute = DiasporaRouteImport.update({
+  id: '/diaspora',
+  path: '/diaspora',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReportsIndexRoute = ReportsIndexRouteImport.update({
@@ -38,12 +50,16 @@ const ReportsSlugRoute = ReportsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/diaspora': typeof DiasporaRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports/': typeof ReportsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/diaspora': typeof DiasporaRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports': typeof ReportsIndexRoute
 }
@@ -51,20 +67,32 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book': typeof BookRoute
+  '/diaspora': typeof DiasporaRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports/': typeof ReportsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/reports/$slug' | '/reports/'
+  fullPaths:
+    '/' | '/about' | '/book' | '/diaspora' | '/reports/$slug' | '/reports/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/reports/$slug' | '/reports'
-  id: '__root__' | '/' | '/about' | '/reports/$slug' | '/reports/'
+  to: '/' | '/about' | '/book' | '/diaspora' | '/reports/$slug' | '/reports'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/book'
+    | '/diaspora'
+    | '/reports/$slug'
+    | '/reports/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BookRoute: typeof BookRoute
+  DiasporaRoute: typeof DiasporaRoute
   ReportsSlugRoute: typeof ReportsSlugRoute
   ReportsIndexRoute: typeof ReportsIndexRoute
 }
@@ -83,6 +111,20 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diaspora': {
+      id: '/diaspora'
+      path: '/diaspora'
+      fullPath: '/diaspora'
+      preLoaderRoute: typeof DiasporaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reports/': {
@@ -105,6 +147,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BookRoute: BookRoute,
+  DiasporaRoute: DiasporaRoute,
   ReportsSlugRoute: ReportsSlugRoute,
   ReportsIndexRoute: ReportsIndexRoute,
 }
