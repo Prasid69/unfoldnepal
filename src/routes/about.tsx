@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader, Section, Eyebrow } from "@/components/site/Primitives";
+import { BOARD, ORG } from "@/data/site";
 
 const TITLE = "About UnfoldNepal — Nepal SME research organisation";
 const DESCRIPTION =
@@ -22,21 +23,35 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const TEAM = [
-  { name: "Dr. Anjana Shrestha", role: "Executive Director", note: "Development economist; former lead researcher, enterprise surveys." },
-  { name: "Rabin Thapa", role: "Head of Field Research", note: "Fifteen years of district-level survey work across all seven provinces." },
-  { name: "Sushmita Rai", role: "Editor, Publications", note: "Former business desk editor; leads the 100 Businesses series." },
-  { name: "Prakash K.C.", role: "Data & Methods", note: "Statistician working on sampling design and firm-level panels." },
-  { name: "Dr. Meena Joshi", role: "Advisor", note: "Professor of enterprise policy; advises on research ethics." },
-  { name: "Deepak Lama", role: "Advisor, Diaspora Relations", note: "Twenty years in the UK Nepali business community." },
-];
-
 const OBJECTIVES = [
-  "Conduct market research and public opinion polling on enterprise conditions in Nepal's districts.",
-  "Publish sector reports, district profiles and the 100 Businesses book series.",
-  "Operate as a business and employer membership organisation supporting CSME owners.",
-  "Advocate for evidence-based policy on small enterprise, credit access and local employment.",
-  "Make research freely available to students, journalists and civil society in Nepal.",
+  {
+    title: "Book publishing",
+    body: "Research, write, edit and publish books on Nepal's enterprise economy — most visibly the 100 Businesses of Nepal series, which documents real, operating cottage, small and medium businesses with their costs, revenues, staffing and the practical steps a founder took to start them. Books are published in Nepali and English, in print and digital form, and priced so that students and first-time founders inside Nepal can afford them.",
+  },
+  {
+    title: "Other publishing activities",
+    body: "Produce and distribute district sector reports, data briefs, methodology notes, case studies, newsletters and online articles. Everything we publish is released with its underlying method described, and our research is free to read within Nepal so that journalists, teachers, students and civil-society organisations can reuse it without permission or payment.",
+  },
+  {
+    title: "Activities auxiliary to financial services",
+    body: "Document how small enterprises in Nepal actually access finance — cooperatives, microfinance, group lending, bank term loans, supplier credit and remittance savings. We publish comparative information on credit terms, collateral expectations and realistic repayment periods so founders and their families can judge financing options. We are a research and information body: we do not lend, broker, take deposits or give regulated financial advice.",
+  },
+  {
+    title: "Market research and public opinion polling",
+    body: "Design and run field surveys, structured interviews, firm-level panels and opinion polls across Nepal's districts and provinces. This includes cost-structure surveys, demand and price sampling, employment counts, and periodic sentiment polling among business owners and returnee entrepreneurs. Sampling design, questionnaires and limitations are published alongside every result.",
+  },
+  {
+    title: "Improving the efficiency of business operations",
+    body: "Turn findings into practical guidance that makes enterprises work better: benchmark cost and margin data by sector, operating checklists, registration and licensing walk-throughs, and comparisons of what distinguishes units that survive their third year from those that do not. Where the evidence points at policy or regulatory friction, we place it in front of the relevant authorities and chambers.",
+  },
+  {
+    title: "Education support activities",
+    body: "Support learning through open teaching material, guest lectures, workshops and internships for students of economics, management and journalism. Our datasets and case studies are made available to universities and colleges in Nepal for classroom use, and we train early-career researchers in field survey methods and research ethics.",
+  },
+  {
+    title: "Business and employers' membership organisation",
+    body: "Convene owners of cottage, small and medium enterprises and returnee entrepreneurs as a membership community — through district meetings, a directory of documented businesses, peer exchange between founders in the same sector, and collective representation of members' shared concerns to policymakers and funders.",
+  },
 ];
 
 function About() {
@@ -105,26 +120,37 @@ function About() {
       <Section>
         <Eyebrow>Objectives</Eyebrow>
         <h2 className="mt-4 text-3xl font-semibold">What we are set up to do</h2>
-        <ol className="mt-8 max-w-3xl space-y-4">
+        <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+          Our registered objectives, and what each one means in practice.
+        </p>
+        <ol className="mt-10 max-w-3xl space-y-8">
           {OBJECTIVES.map((o, i) => (
-            <li key={o} className="flex gap-4 rule-top pt-4">
-              <span className="font-serif text-primary">{String(i + 1).padStart(2, "0")}</span>
-              <span className="leading-relaxed text-muted-foreground">{o}</span>
+            <li key={o.title} className="rule-top pt-6">
+              <div className="flex gap-4">
+                <span className="font-serif text-primary">{String(i + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3 className="text-lg font-semibold">{o.title}</h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{o.body}</p>
+                </div>
+              </div>
             </li>
           ))}
         </ol>
       </Section>
 
       <Section className="border-t border-border bg-sand">
-        <Eyebrow>Team & advisors</Eyebrow>
-        <h2 className="mt-4 text-3xl font-semibold">The people doing the fieldwork</h2>
+        <Eyebrow>Governance</Eyebrow>
+        <h2 className="mt-4 text-3xl font-semibold">Board of Directors</h2>
+        <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+          The board sets the research agenda, approves publications and is accountable for the
+          organisation's non-profit-distributing status.
+        </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {TEAM.map((p) => (
+          {BOARD.map((p) => (
             <div key={p.name} className="border border-border bg-card p-6">
               <div className="flex size-12 items-center justify-center rounded-full bg-accent font-serif text-lg text-accent-foreground">
                 {p.name
                   .split(" ")
-                  .filter((w) => !w.endsWith("."))
                   .slice(0, 2)
                   .map((w) => w[0])
                   .join("")}
@@ -135,10 +161,14 @@ function About() {
             </div>
           ))}
         </div>
-        <p className="mt-6 text-xs text-muted-foreground">
-          Placeholder profiles — replace with real team members and photographs before launch.
+        <p className="mt-8 text-sm text-muted-foreground">
+          Board enquiries:{" "}
+          <a className="text-primary hover:underline" href={`mailto:${ORG.email}`}>
+            {ORG.email}
+          </a>
         </p>
       </Section>
+
     </>
   );
 }
