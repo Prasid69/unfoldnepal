@@ -11,14 +11,14 @@ export const ORG = {
 
 export const BOARD = [
   {
-    name: "Indira Dahal",
-    role: "Chairperson",
-    note: "Oversees governance, institutional partnerships and the organisation's research agenda.",
+    name: "Prasiddha Aryal",
+    role: "Chairperson & Chief Executive Officer",
+    note: "Chairs the board and leads day-to-day operations, the research agenda and the 100 Businesses book series.",
   },
   {
-    name: "Prasiddha Aryal",
+    name: "Indira Dahal",
     role: "Board Member",
-    note: "Leads publication planning for the 100 Businesses book series.",
+    note: "Oversees governance, institutional partnerships and research ethics.",
   },
   {
     name: "Pratyusha Aryal",
