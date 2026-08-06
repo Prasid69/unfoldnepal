@@ -2,12 +2,40 @@ export const ORG = {
   name: "UnfoldNepal",
   legalName: "UnfoldNepal",
   domain: "https://unfoldnepal.org.np",
-  email: "hello@unfoldnepal.org.np",
+  email: "unfoldnepal.org@gmail.com",
   phone: "+977 1 000 0000",
   address: "Kathmandu, Bagmati Province, Nepal",
   tagline:
     "Research and publishing on Nepal's cottage, small and medium enterprises.",
 };
+
+export const BOARD = [
+  {
+    name: "Indira Dahal",
+    role: "Chairperson",
+    note: "Oversees governance, institutional partnerships and the organisation's research agenda.",
+  },
+  {
+    name: "Prasiddha Aryal",
+    role: "Board Member",
+    note: "Leads publication planning for the 100 Businesses book series.",
+  },
+  {
+    name: "Pratyusha Aryal",
+    role: "Board Member",
+    note: "Focuses on diaspora engagement and outreach to Nepalis abroad.",
+  },
+  {
+    name: "Rabindra Adhikari",
+    role: "Board Member",
+    note: "Advises on field research design and district-level data collection.",
+  },
+  {
+    name: "Biraj Aryal",
+    role: "Board Member",
+    note: "Handles finance, compliance and reporting for a non-profit-distributing body.",
+  },
+];
 
 export const STATS = [
   { value: "41", label: "Districts covered" },

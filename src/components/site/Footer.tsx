@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ORG } from "@/data/site";
 import { NewsletterForm } from "./NewsletterForm";
+import logo from "@/assets/unfoldnepal-logo.png.asset.json";
 
 const COLUMNS = [
   {
@@ -35,9 +36,14 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-5 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <p className="font-serif text-lg font-semibold">
-              Unfold<span className="text-primary">Nepal</span>
-            </p>
+            <img
+              src={logo.url}
+              alt="UnfoldNepal logo"
+              className="h-9 w-auto"
+              width={280}
+              height={90}
+              loading="lazy"
+            />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {ORG.tagline} Independent, non-profit-distributing, registered in Nepal.
             </p>
