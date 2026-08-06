@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/unfoldnepal-logo.png.asset.json";
 
 const NAV = [
   { to: "/about", label: "About" },
@@ -17,13 +18,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link to="/" className="group flex items-baseline gap-0.5" onClick={() => setOpen(false)}>
-          <span className="font-serif text-xl font-semibold tracking-tight text-foreground">
-            Unfold
-          </span>
-          <span className="font-serif text-xl font-semibold tracking-tight text-primary">
-            Nepal
-          </span>
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+          <img
+            src={logo.url}
+            alt="UnfoldNepal logo"
+            className="h-8 w-auto md:h-9"
+            width={280}
+            height={90}
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
