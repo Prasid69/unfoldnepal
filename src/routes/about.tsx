@@ -96,15 +96,16 @@ function About() {
           </div>
           <div>
             <h2 className="text-2xl font-semibold">
-              Non-profit-distributing, registered in Nepal
+              Profit non-distributing, registered in Nepal
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              UnfoldNepal is registered in Nepal as a non-profit-distributing organisation. No
-              surplus is distributed to members or officers; all income from publications, grants
-              and memberships is applied to research and publishing activity. Our registered
-              activities cover business and employer membership organisation activities, market
-              research and public opinion polling, publishing, and related research and advocacy
-              work.
+              UnfoldNepal is registered in Nepal as a profit non-distributing company. No surplus
+              is distributed to members or officers; all income from publications, grants and
+              memberships is applied to research and publishing activity. Our research and
+              publishing work documents cottage, small and medium enterprises across Nepal's
+              districts. Our registered activities cover business and employer membership
+              organisation activities, market research and public opinion polling, publishing,
+              and related research and advocacy work.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               Registration and audited-account details are available on request at{" "}
@@ -143,7 +144,7 @@ function About() {
         <h2 className="mt-4 text-3xl font-semibold">Board of Directors</h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
           The board sets the research agenda, approves publications and is accountable for the
-          organisation's non-profit-distributing status.
+          company's profit non-distributing status.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {BOARD.map((p) => (
