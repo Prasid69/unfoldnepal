@@ -185,29 +185,122 @@ export const REPORTS: Report[] = [
 export const SECTORS = Array.from(new Set(REPORTS.map((r) => r.sector))).sort();
 export const PROVINCES = Array.from(new Set(REPORTS.map((r) => r.province))).sort();
 
-export const POSTS = [
+export type Post = {
+  slug: string;
+  title: string;
+  date: string;
+  isoDate: string;
+  excerpt: string;
+  tag: string;
+  author: string;
+  readingTime: string;
+  /** Alternating heading / paragraph blocks. */
+  body: { heading: string; paragraphs: string[] }[];
+  related: string[];
+};
+
+export const POSTS: Post[] = [
   {
     slug: "district-spotlight-gulmi",
     title: "District spotlight: what Gulmi's coffee boom actually pays",
     date: "12 July 2026",
+    isoDate: "2026-07-12",
     excerpt:
       "Farm-gate prices in Gulmi rose for the fourth straight season. We break down who captured the increase, and what it means for anyone planning a roastery.",
     tag: "District spotlight",
+    author: "Prasiddha Aryal",
+    readingTime: "6 min read",
+    related: ["returning-from-doha", "how-we-count-a-business"],
+    body: [
+      {
+        heading: "The headline number, and the number underneath it",
+        paragraphs: [
+          "Farm-gate cherry prices in Gulmi have risen every season since 2079. Read alone, that number suggests a district getting steadily richer from coffee. Our value chain work across five municipalities suggests something narrower: the increase is real, but it is captured unevenly, and the households doing the hardest work capture the least of it.",
+          "Growers selling into an aggregation point with a roastery contract received roughly 22 percent more per kilogram of cherry than growers selling to itinerant traders on market day. The gap is not explained by quality. It is explained by who has a buyer lined up before harvest begins.",
+        ],
+      },
+      {
+        heading: "Where the margin actually sits",
+        paragraphs: [
+          "Once cherry is pulped, dried, hulled, roasted and bagged, the retail price in Kathmandu is several times the farm-gate price. Most of that spread is not profiteering — drying loss, hulling, transport and failed batches are expensive. But the profit that remains sits overwhelmingly with whoever sells the final bag, and in Gulmi that is almost never the grower.",
+          "The roasteries we costed made their money on direct-to-consumer sales: cafés, subscription bags, gift boxes bought in Kathmandu and shipped abroad. Wholesale volume kept the machines busy; retail paid the wages.",
+        ],
+      },
+      {
+        heading: "What this means if you are planning a roastery",
+        paragraphs: [
+          "Three practical conclusions came out of the fieldwork. First, secure your sales channel before you buy equipment — a roaster without a retail route is an expensive way to store green beans. Second, certification only pays above roughly twelve hectares of aggregated supply; below that the audit cost eats the premium. Third, budget for a second drying season before you expect to break even.",
+          "None of this argues against investing in Gulmi coffee. It argues against investing in it on the assumption that a rising farm-gate price will carry a business on its own.",
+        ],
+      },
+    ],
   },
   {
     slug: "returning-from-doha",
     title: "Returning from Doha: three founders, three very different first years",
     date: "28 June 2026",
+    isoDate: "2026-06-28",
     excerpt:
       "Remittance savings, a plan and a district are not the same thing as a business. Three returnees walk through their first twelve months back.",
     tag: "Diaspora stories",
+    author: "Pratyusha Aryal",
+    readingTime: "8 min read",
+    related: ["district-spotlight-gulmi", "how-we-count-a-business"],
+    body: [
+      {
+        heading: "Same savings, different outcomes",
+        paragraphs: [
+          "The three founders in this piece left Qatar within eight months of each other, returned to three different districts, and started with broadly comparable savings — between NPR 18 and 26 lakh. A year later one business was profitable, one was surviving on a second income, and one had closed.",
+          "The difference was not effort, and it was not luck in any useful sense. It was how much of the first year was spent learning things that could have been learned before the money was committed.",
+        ],
+      },
+      {
+        heading: "The cost of learning late",
+        paragraphs: [
+          "The founder whose business closed spent four months registering, leasing and equipping a poultry unit before discovering that the nearest reliable feed supplier was a two-hour drive away. Feed logistics turned a thin margin negative. That fact was knowable in a week of asking around.",
+          "The profitable founder did the opposite: six weeks back in the district before spending anything, talking to existing operators, sitting in the local market, and revising the plan twice. The venture that eventually launched was not the one she flew home intending to start.",
+        ],
+      },
+      {
+        heading: "What we would tell someone still abroad",
+        paragraphs: [
+          "Choose the district before the sector, not the other way around. Assume registration, utilities and a workable premises take three to six months. Keep six months of household expenses entirely separate from business capital — the businesses that failed rarely failed on the idea; they failed when the household needed the working capital.",
+          "Our guide for the diaspora sets out the same sequence in more detail, with the paperwork and rough timelines attached.",
+        ],
+      },
+    ],
   },
   {
     slug: "how-we-count-a-business",
     title: "How we decide what counts as a 'successful' business",
     date: "3 June 2026",
+    isoDate: "2026-06-03",
     excerpt:
       "Our selection criteria for the 100 Businesses book: three years of operation, verified employment, and a model another founder could repeat.",
     tag: "Methodology",
+    author: "Indira Dahal",
+    readingTime: "5 min read",
+    related: ["district-spotlight-gulmi", "returning-from-doha"],
+    body: [
+      {
+        heading: "Why the definition matters",
+        paragraphs: [
+          "A book called 100 Businesses of Nepal is only useful if the reader can trust why each business is in it. Awards, revenue claims and press coverage are poor filters — they favour the visible over the durable. We set criteria first and applied them the same way in every district.",
+        ],
+      },
+      {
+        heading: "The four criteria",
+        paragraphs: [
+          "One: at least three consecutive years of operation, evidenced by registration and tax filings rather than the founder's recollection. Two: verified employment — we count people on a payroll or a documented wage arrangement, not stated headcount. Three: a repeatable model, meaning another founder in a comparable district could plausibly follow the same path. Four: consent to be examined, including permission to review ledgers where they exist.",
+        ],
+      },
+      {
+        heading: "What we deliberately exclude",
+        paragraphs: [
+          "We exclude businesses whose viability depends on a single grant, a political relationship, or a founder's unusual access to capital. They can be admirable, and they are not instructive. We also exclude firms that would not let us verify anything; an unverified profile is advertising, not research.",
+          "The result is a slower book and a shorter list than we would otherwise have. It is also the only version worth publishing.",
+        ],
+      },
+    ],
   },
 ];
