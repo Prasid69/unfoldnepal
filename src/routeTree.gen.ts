@@ -16,9 +16,9 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiasporaRouteImport } from './routes/diaspora'
 import { Route as GetInvolvedRouteImport } from './routes/get-involved'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as UpdatesRouteImport } from './routes/updates'
 import { Route as ReportsIndexRouteImport } from './routes/reports.index'
 import { Route as ReportsSlugRouteImport } from './routes/reports.$slug'
+import { Route as UpdatesIndexRouteImport } from './routes/updates.index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -55,11 +55,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const UpdatesRoute = UpdatesRouteImport.update({
-  id: '/updates',
-  path: '/updates',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ReportsIndexRoute = ReportsIndexRouteImport.update({
   id: '/reports/',
   path: '/reports/',
@@ -68,6 +63,11 @@ const ReportsIndexRoute = ReportsIndexRouteImport.update({
 const ReportsSlugRoute = ReportsSlugRouteImport.update({
   id: '/reports/$slug',
   path: '/reports/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UpdatesIndexRoute = UpdatesIndexRouteImport.update({
+  id: '/updates/',
+  path: '/updates/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -79,9 +79,9 @@ export interface FileRoutesByFullPath {
   '/diaspora': typeof DiasporaRoute
   '/get-involved': typeof GetInvolvedRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/updates': typeof UpdatesRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports/': typeof ReportsIndexRoute
+  '/updates/': typeof UpdatesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -91,9 +91,9 @@ export interface FileRoutesByTo {
   '/diaspora': typeof DiasporaRoute
   '/get-involved': typeof GetInvolvedRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/updates': typeof UpdatesRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports': typeof ReportsIndexRoute
+  '/updates': typeof UpdatesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -104,9 +104,9 @@ export interface FileRoutesById {
   '/diaspora': typeof DiasporaRoute
   '/get-involved': typeof GetInvolvedRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/updates': typeof UpdatesRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/reports/': typeof ReportsIndexRoute
+  '/updates/': typeof UpdatesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -118,9 +118,9 @@ export interface FileRouteTypes {
     | '/diaspora'
     | '/get-involved'
     | '/sitemap.xml'
-    | '/updates'
     | '/reports/$slug'
     | '/reports/'
+    | '/updates/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -130,9 +130,9 @@ export interface FileRouteTypes {
     | '/diaspora'
     | '/get-involved'
     | '/sitemap.xml'
-    | '/updates'
     | '/reports/$slug'
     | '/reports'
+    | '/updates'
   id:
     | '__root__'
     | '/'
@@ -142,9 +142,9 @@ export interface FileRouteTypes {
     | '/diaspora'
     | '/get-involved'
     | '/sitemap.xml'
-    | '/updates'
     | '/reports/$slug'
     | '/reports/'
+    | '/updates/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -155,9 +155,9 @@ export interface RootRouteChildren {
   DiasporaRoute: typeof DiasporaRoute
   GetInvolvedRoute: typeof GetInvolvedRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  UpdatesRoute: typeof UpdatesRoute
   ReportsSlugRoute: typeof ReportsSlugRoute
   ReportsIndexRoute: typeof ReportsIndexRoute
+  UpdatesIndexRoute: typeof UpdatesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -211,13 +211,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/updates': {
-      id: '/updates'
-      path: '/updates'
-      fullPath: '/updates'
-      preLoaderRoute: typeof UpdatesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/reports/': {
       id: '/reports/'
       path: '/reports'
@@ -232,6 +225,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReportsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/updates/': {
+      id: '/updates/'
+      path: '/updates'
+      fullPath: '/updates/'
+      preLoaderRoute: typeof UpdatesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -243,9 +243,9 @@ const rootRouteChildren: RootRouteChildren = {
   DiasporaRoute: DiasporaRoute,
   GetInvolvedRoute: GetInvolvedRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  UpdatesRoute: UpdatesRoute,
   ReportsSlugRoute: ReportsSlugRoute,
   ReportsIndexRoute: ReportsIndexRoute,
+  UpdatesIndexRoute: UpdatesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

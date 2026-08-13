@@ -7,7 +7,7 @@ const TITLE = "Updates — district spotlights and diaspora stories | UnfoldNepa
 const DESCRIPTION =
   "Short articles from the field: Nepal district business spotlights, diaspora entrepreneurship stories, and notes on how our SME research is done.";
 
-export const Route = createFileRoute("/updates")({
+export const Route = createFileRoute("/updates/")({
   head: () => ({
     meta: [
       { title: TITLE },
