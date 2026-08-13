@@ -4,7 +4,7 @@ import { BOARD, ORG } from "@/data/site";
 
 const TITLE = "About UnfoldNepal — Nepal SME research organisation";
 const DESCRIPTION =
-  "UnfoldNepal is a non-profit-distributing research and publishing organisation registered in Nepal, studying cottage, small and medium enterprises across the country's districts.";
+  "UnfoldNepal is a profit non-distributing company registered in Nepal. We research and publish on the country's cottage, small and medium enterprises across its districts.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
