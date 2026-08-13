@@ -19,6 +19,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ReportsIndexRouteImport } from './routes/reports.index'
 import { Route as ReportsSlugRouteImport } from './routes/reports.$slug'
 import { Route as UpdatesIndexRouteImport } from './routes/updates.index'
+import { Route as UpdatesSlugRouteImport } from './routes/updates.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -70,6 +71,11 @@ const UpdatesIndexRoute = UpdatesIndexRouteImport.update({
   path: '/updates/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UpdatesSlugRoute = UpdatesSlugRouteImport.update({
+  id: '/updates/$slug',
+  path: '/updates/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/get-involved': typeof GetInvolvedRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/reports/$slug': typeof ReportsSlugRoute
+  '/updates/$slug': typeof UpdatesSlugRoute
   '/reports/': typeof ReportsIndexRoute
   '/updates/': typeof UpdatesIndexRoute
 }
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/get-involved': typeof GetInvolvedRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/reports/$slug': typeof ReportsSlugRoute
+  '/updates/$slug': typeof UpdatesSlugRoute
   '/reports': typeof ReportsIndexRoute
   '/updates': typeof UpdatesIndexRoute
 }
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/get-involved': typeof GetInvolvedRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/reports/$slug': typeof ReportsSlugRoute
+  '/updates/$slug': typeof UpdatesSlugRoute
   '/reports/': typeof ReportsIndexRoute
   '/updates/': typeof UpdatesIndexRoute
 }
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/get-involved'
     | '/sitemap.xml'
     | '/reports/$slug'
+    | '/updates/$slug'
     | '/reports/'
     | '/updates/'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/get-involved'
     | '/sitemap.xml'
     | '/reports/$slug'
+    | '/updates/$slug'
     | '/reports'
     | '/updates'
   id:
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/get-involved'
     | '/sitemap.xml'
     | '/reports/$slug'
+    | '/updates/$slug'
     | '/reports/'
     | '/updates/'
   fileRoutesById: FileRoutesById
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   GetInvolvedRoute: typeof GetInvolvedRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ReportsSlugRoute: typeof ReportsSlugRoute
+  UpdatesSlugRoute: typeof UpdatesSlugRoute
   ReportsIndexRoute: typeof ReportsIndexRoute
   UpdatesIndexRoute: typeof UpdatesIndexRoute
 }
@@ -232,6 +245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UpdatesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/updates/$slug': {
+      id: '/updates/$slug'
+      path: '/updates/$slug'
+      fullPath: '/updates/$slug'
+      preLoaderRoute: typeof UpdatesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -244,6 +264,7 @@ const rootRouteChildren: RootRouteChildren = {
   GetInvolvedRoute: GetInvolvedRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ReportsSlugRoute: ReportsSlugRoute,
+  UpdatesSlugRoute: UpdatesSlugRoute,
   ReportsIndexRoute: ReportsIndexRoute,
   UpdatesIndexRoute: UpdatesIndexRoute,
 }
