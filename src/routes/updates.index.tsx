@@ -16,10 +16,31 @@ export const Route = createFileRoute("/updates/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/updates" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: "/updates" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "UnfoldNepal Updates",
+          description: DESCRIPTION,
+          inLanguage: "en",
+          blogPost: POSTS.map((p) => ({
+            "@type": "BlogPosting",
+            headline: p.title,
+            description: p.excerpt,
+            datePublished: p.isoDate,
+            author: { "@type": "Person", name: p.author },
+            url: `/updates/${p.slug}`,
+          })),
+        }),
+      },
+    ],
   }),
   component: Updates,
 });
@@ -40,11 +61,23 @@ function Updates() {
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="text-primary">{p.tag}</span>
                 <span aria-hidden>·</span>
-                <span>{p.date}</span>
+                <time dateTime={p.isoDate}>{p.date}</time>
+                <span aria-hidden>·</span>
+                <span>{p.readingTime}</span>
               </div>
-              <h2 className="mt-3 text-xl leading-snug font-semibold">{p.title}</h2>
+              <h2 className="mt-3 text-xl leading-snug font-semibold">
+                <Link to="/updates/$slug" params={{ slug: p.slug }} className="hover:text-primary">
+                  {p.title}
+                </Link>
+              </h2>
               <p className="mt-3 leading-relaxed text-muted-foreground">{p.excerpt}</p>
-              <p className="mt-4 text-sm text-muted-foreground italic">Full article coming soon</p>
+              <Link
+                to="/updates/$slug"
+                params={{ slug: p.slug }}
+                className="mt-4 inline-block text-sm font-medium text-primary hover:underline"
+              >
+                Read the article →
+              </Link>
             </li>
           ))}
         </ul>
