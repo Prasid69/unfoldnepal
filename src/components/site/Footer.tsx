@@ -39,7 +39,7 @@ export function Footer() {
             <img
               src={logo.url}
               alt="UnfoldNepal logo"
-              className="h-9 w-auto"
+              className="h-9 w-auto dark:invert dark:hue-rotate-180"
               width={280}
               height={90}
               loading="lazy"

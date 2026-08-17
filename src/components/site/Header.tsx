@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/unfoldnepal-logo.png.asset.json";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV = [
   { to: "/about", label: "About" },
@@ -22,7 +23,7 @@ export function Header() {
           <img
             src={logo.url}
             alt="UnfoldNepal logo"
-            className="h-8 w-auto md:h-9"
+            className="h-8 w-auto md:h-9 dark:invert dark:hue-rotate-180"
             width={280}
             height={90}
           />
@@ -46,17 +47,20 @@ export function Header() {
           >
             Support the research
           </Link>
+          <ThemeToggle />
         </nav>
 
-        <button
-          type="button"
-          className="lg:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (

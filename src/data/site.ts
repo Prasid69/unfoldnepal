@@ -304,3 +304,71 @@ export const POSTS: Post[] = [
     ],
   },
 ];
+export type Testimonial = {
+  id: string;
+  name: string;
+  role: string;
+  location: string;
+  quote: string;
+  /** Paste an embed URL later, e.g. https://www.youtube.com/embed/XXXX */
+  videoUrl?: string;
+  /** Optional poster image URL shown before the video is added */
+  posterUrl?: string;
+};
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: "bimala-gurung",
+    name: "Bimala Gurung",
+    role: "Founder, Annapurna Dairy",
+    location: "Kaski · returned from Japan",
+    quote:
+      "This research is the document I needed five years ago, before I spent my savings guessing.",
+    videoUrl: "",
+  },
+  {
+    id: "sagar-thapa",
+    name: "Sagar Thapa",
+    role: "Owner, Gulmi Coffee Collective",
+    location: "Gulmi · returned from Qatar",
+    quote:
+      "We used the district study to price our first export lot. It changed the whole plan.",
+    videoUrl: "",
+  },
+  {
+    id: "rita-shrestha",
+    name: "Rita Shrestha",
+    role: "Programme lead, District Chamber Network",
+    location: "Lalitpur",
+    quote:
+      "Reliable enterprise data at district level simply did not exist before this work.",
+    videoUrl: "",
+  },
+];
+
+export const DONATION_CURRENCIES = [
+  { code: "NPR", symbol: "Rs", label: "Nepali rupees (NPR)" },
+  { code: "USD", symbol: "$", label: "US dollars (USD)" },
+] as const;
+
+export type CurrencyCode = (typeof DONATION_CURRENCIES)[number]["code"];
+
+export const DONATION_TIERS: {
+  amounts: Record<CurrencyCode, number>;
+  label: string;
+}[] = [
+  { amounts: { NPR: 5000, USD: 40 }, label: "One day of field interviews" },
+  { amounts: { NPR: 50000, USD: 380 }, label: "One business profile, start to publication" },
+  { amounts: { NPR: 400000, USD: 3000 }, label: "One full district sector study" },
+];
+
+export const DONATION_METHODS: Record<CurrencyCode, { title: string; detail: string }[]> = {
+  NPR: [
+    { title: "Bank transfer (NPR)", detail: "Nepali bank account details are shared on request — write to us and we will send them the same day." },
+    { title: "eSewa / Khalti / ConnectIPS", detail: "Digital wallet transfers within Nepal, with a receipt issued for every contribution." },
+  ],
+  USD: [
+    { title: "International wire (USD)", detail: "SWIFT details for our foreign-currency account are shared on request for diaspora and institutional donors." },
+    { title: "Card or online transfer", detail: "We can issue a secure payment link in USD, plus an acknowledgement letter for your records." },
+  ],
+};

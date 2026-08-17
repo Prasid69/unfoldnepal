@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader, Section, Eyebrow } from "@/components/site/Primitives";
 import { ContactForm } from "@/components/site/ContactForm";
+import { DonateOptions } from "@/components/site/DonateOptions";
 import { ORG } from "@/data/site";
 
 const TITLE = "Support Nepal SME research — donate, partner, volunteer | UnfoldNepal";
@@ -35,26 +36,7 @@ function GetInvolved() {
 
       <Section id="donate">
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="border border-primary bg-card p-8">
-            <Eyebrow>Donate</Eyebrow>
-            <h2 className="mt-3 text-2xl font-semibold">Fund a district study</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Contributions go directly to field costs: researcher time, travel, translation and
-              printing. Funders are acknowledged in the resulting report unless they prefer
-              otherwise.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-              <li>NPR 5,000 — one day of field interviews</li>
-              <li>NPR 50,000 — one business profile, start to publication</li>
-              <li>NPR 400,000 — one full district sector study</li>
-            </ul>
-            <a
-              href="#contact-form"
-              className="mt-8 inline-block rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              Arrange a contribution
-            </a>
-          </div>
+          <DonateOptions />
 
           <div className="grid gap-6">
             {[
