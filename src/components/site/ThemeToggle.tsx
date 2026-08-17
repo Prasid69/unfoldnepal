@@ -8,7 +8,7 @@ function apply(theme: Theme) {
   document.documentElement.style.colorScheme = theme;
 }
 
-export function ThemeToggle({ className }: { className?: string }) {
+export function ThemeToggle({ className = "" }: { className?: string }) {
   const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
@@ -35,7 +35,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
       className={
         "inline-flex size-9 items-center justify-center rounded-sm border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary " +
-        (className ?? "")
+        className
       }
     >
       {mounted && theme === "dark" ? (

@@ -2,7 +2,7 @@ import { Play } from "lucide-react";
 import { Section, Eyebrow } from "@/components/site/Primitives";
 import { TESTIMONIALS } from "@/data/site";
 
-export function TestimonialVideos({ className }: { className?: string }) {
+export function TestimonialVideos({ className = "" }: { className?: string }) {
   return (
     <Section id="testimonials" className={className}>
       <div className="max-w-2xl">
