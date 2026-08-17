@@ -23,7 +23,7 @@ export function Header() {
           <img
             src={logo.url}
             alt="UnfoldNepal logo"
-            className="h-8 w-auto md:h-9"
+            className="h-8 w-auto md:h-9 dark:invert dark:hue-rotate-180"
             width={280}
             height={90}
           />
