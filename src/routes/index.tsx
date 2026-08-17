@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow, Figure, ReportCard } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
+import { TestimonialVideos } from "@/components/site/TestimonialVideos";
 import { REPORTS, STATS } from "@/data/site";
 import heroImg from "@/assets/hero-artisan.jpg";
 import bookImg from "@/assets/book-cover.jpg";
@@ -181,6 +182,8 @@ function Index() {
           ))}
         </div>
       </Section>
+
+      <TestimonialVideos className="border-t border-border" />
 
       <Section className="border-y border-border bg-sand">
         <figure className="mx-auto max-w-3xl text-center">
