@@ -19,7 +19,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link to="/" className="-ml-6 flex items-center md:-ml-8" onClick={() => setOpen(false)}>
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
           <img
             src={logo.url}
             alt="UnfoldNepal logo"
