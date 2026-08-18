@@ -362,6 +362,15 @@ export const DONATION_TIERS: {
   { amounts: { NPR: 400000, USD: 3000 }, label: "One full district sector study" },
 ];
 
+export const DONATION_MONTHLY_TIERS: {
+  amounts: Record<CurrencyCode, number>;
+  label: string;
+}[] = [
+  { amounts: { NPR: 1000, USD: 8 }, label: "Keeps one reader's copy in print each month" },
+  { amounts: { NPR: 5000, USD: 40 }, label: "A day of field interviews, every month" },
+  { amounts: { NPR: 15000, USD: 120 }, label: "Sustains a researcher's monthly stipend" },
+];
+
 export const DONATION_METHODS: Record<CurrencyCode, { title: string; detail: string }[]> = {
   NPR: [
     { title: "Bank transfer (NPR)", detail: "Nepali bank account details are shared on request — write to us and we will send them the same day." },
