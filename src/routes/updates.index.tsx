@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader, Section } from "@/components/site/Primitives";
+import { TestimonialVideos } from "@/components/site/TestimonialVideos";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { POSTS } from "@/data/site";
 
