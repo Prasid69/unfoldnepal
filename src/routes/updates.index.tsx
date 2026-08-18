@@ -91,6 +91,8 @@ function Updates() {
         </p>
       </Section>
 
+      <TestimonialVideos className="bg-card" />
+
       <Section className="border-t border-border bg-sand">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <h2 className="text-3xl font-semibold">Get updates by email</h2>
