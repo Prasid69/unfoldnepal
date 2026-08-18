@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader, Section } from "@/components/site/Primitives";
+import { TestimonialVideos } from "@/components/site/TestimonialVideos";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { POSTS } from "@/data/site";
 
@@ -89,6 +90,8 @@ function Updates() {
           .
         </p>
       </Section>
+
+      <TestimonialVideos className="bg-card" />
 
       <Section className="border-t border-border bg-sand">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
