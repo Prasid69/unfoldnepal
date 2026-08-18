@@ -4,6 +4,7 @@ import {
   DONATION_CURRENCIES,
   DONATION_METHODS,
   DONATION_TIERS,
+  DONATION_MONTHLY_TIERS,
   type CurrencyCode,
 } from "@/data/site";
 
@@ -15,6 +16,8 @@ function format(code: CurrencyCode, amount: number) {
 export function DonateOptions() {
   const [currency, setCurrency] = useState<CurrencyCode>("NPR");
   const [selected, setSelected] = useState<number>(1);
+  const [frequency, setFrequency] = useState<"once" | "monthly">("once");
+  const tiers = frequency === "monthly" ? DONATION_MONTHLY_TIERS : DONATION_TIERS;
 
   return (
     <div className="border border-primary bg-card p-8">
@@ -27,8 +30,37 @@ export function DonateOptions() {
 
       <div
         role="group"
+        aria-label="Choose how often to give"
+        className="mt-6 flex flex-wrap gap-2"
+      >
+        {([
+          { value: "once", label: "One-time gift" },
+          { value: "monthly", label: "Monthly giving" },
+        ] as const).map((f) => (
+          <button
+            key={f.value}
+            type="button"
+            onClick={() => {
+              setFrequency(f.value);
+              setSelected(1);
+            }}
+            aria-pressed={frequency === f.value}
+            className={
+              "rounded-sm border px-4 py-2 text-sm font-medium transition-colors " +
+              (frequency === f.value
+                ? "border-primary bg-accent/40 text-foreground"
+                : "border-border text-muted-foreground hover:border-primary/50")
+            }
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
+      <div
+        role="group"
         aria-label="Choose a currency"
-        className="mt-6 inline-flex rounded-sm border border-border p-1"
+        className="mt-4 inline-flex rounded-sm border border-border p-1"
       >
         {DONATION_CURRENCIES.map((c) => (
           <button
@@ -49,7 +81,7 @@ export function DonateOptions() {
       </div>
 
       <ul className="mt-6 space-y-2">
-        {DONATION_TIERS.map((tier, i) => (
+        {tiers.map((tier, i) => (
           <li key={tier.label}>
             <button
               type="button"
@@ -64,6 +96,9 @@ export function DonateOptions() {
             >
               <span className="font-serif text-lg font-semibold">
                 {format(currency, tier.amounts[currency])}
+                {frequency === "monthly" && (
+                  <span className="ml-1 text-sm font-normal text-muted-foreground">/month</span>
+                )}
               </span>
               <span className="text-sm text-muted-foreground">{tier.label}</span>
             </button>
@@ -72,6 +107,12 @@ export function DonateOptions() {
       </ul>
 
       <div className="mt-6 space-y-4 border-t border-border pt-6">
+        {frequency === "monthly" && (
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Monthly gifts are set up as a standing instruction with your bank or wallet — we send a
+            short confirmation and a receipt each month, and you can pause or stop any time.
+          </p>
+        )}
         {DONATION_METHODS[currency].map((m) => (
           <div key={m.title}>
             <h3 className="text-sm font-semibold">{m.title}</h3>
@@ -84,7 +125,9 @@ export function DonateOptions() {
         href="#contact-form"
         className="mt-8 inline-block rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
       >
-        Arrange a contribution in {currency}
+        {frequency === "monthly"
+          ? `Set up a monthly gift in ${currency}`
+          : `Arrange a contribution in ${currency}`}
       </a>
     </div>
   );
