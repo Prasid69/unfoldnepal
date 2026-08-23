@@ -165,7 +165,7 @@ function Contact() {
         <div className="mt-14 border border-border bg-card p-8">
           <Eyebrow>Registration</Eyebrow>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            UnfoldNepal is a profit non-distributing company registered in Nepal. We research and
+            UnfoldNepal is a not-for-profit organization registered in Nepal. We research and
             publish on the country's cottage, small and medium enterprises. Registration details
             and audited accounts are available on request. Read more about our governance and
             board on the{" "}
