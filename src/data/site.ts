@@ -9,31 +9,52 @@ export const ORG = {
     "Research and publishing on Nepal's cottage, small and medium enterprises.",
 };
 
-export const BOARD = [
+export type BoardMember = {
+  name: string;
+  role: string;
+  /** One-line summary shown in card grids. */
+  note: string;
+  /** Short professional biography for the board page. */
+  bio: string;
+  /** Relevant experience / areas of expertise. */
+  expertise: string[];
+};
+
+export const BOARD: BoardMember[] = [
   {
     name: "Prasiddha Aryal",
     role: "Chairperson & Chief Executive Officer",
     note: "Chairs the board and leads day-to-day operations, the research agenda and the 100 Businesses book series.",
+    bio: "Prasiddha founded UnfoldNepal in 2022 after years of watching capable Nepalis abroad struggle to find credible, district-level information about starting a business back home. As Chairperson and CEO he sets the organisation's research agenda, leads the 100 Businesses of Nepal book series, and represents the organisation to funders, partners and policymakers. He divides his time between fieldwork in the districts and the editing desk.",
+    expertise: ["Research strategy", "Book publishing", "Institutional partnerships", "Diaspora engagement"],
   },
   {
     name: "Indira Dahal",
     role: "Board Member",
     note: "Oversees governance, institutional partnerships and research ethics.",
+    bio: "Indira oversees UnfoldNepal's governance framework, research ethics and institutional partnerships. She reviews the methodology behind every publication — sampling design, consent and verification standards — and chairs the internal review each report passes before release. She also leads relationships with the universities and civil-society organisations that reuse our data in teaching and further research.",
+    expertise: ["Governance & ethics", "Research methodology", "Academic partnerships"],
   },
   {
     name: "Pratyusha Aryal",
     role: "Board Member",
     note: "Focuses on diaspora engagement and outreach to Nepalis abroad.",
+    bio: "Pratyusha leads UnfoldNepal's work with Nepali communities abroad — the audience most of our research is written for. She coordinates diaspora chapters and city sessions, gathers the questions prospective returnees actually ask, and feeds them back into the research agenda so that fieldwork answers real decisions rather than abstract ones.",
+    expertise: ["Diaspora outreach", "Community organising", "Communications"],
   },
   {
     name: "Rabindra Adhikari",
     role: "Board Member",
     note: "Advises on field research design and district-level data collection.",
+    bio: "Rabindra advises on field research design and district-level data collection. He trains and supervises the early-career researchers who run our district surveys, reviews every questionnaire before deployment, and audits a sample of interviews in each study so that every published number can be traced back to a notebook, a ledger or a recording.",
+    expertise: ["Field survey design", "Data quality assurance", "Researcher training"],
   },
   {
     name: "Biraj Aryal",
     role: "Board Member",
     note: "Handles finance, compliance and reporting for a not-for-profit organization.",
+    bio: "Biraj is responsible for UnfoldNepal's finance, compliance and statutory reporting. He manages budgeting for fieldwork and print runs, maintains the financial controls appropriate to a not-for-profit organization, and prepares the accounts shared with members, auditors and the registering authority each year.",
+    expertise: ["Finance & compliance", "Audit & reporting", "Operations"],
   },
 ];
 

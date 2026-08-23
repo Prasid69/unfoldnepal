@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useLocation } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { PageHeader, Section, Eyebrow } from "@/components/site/Primitives";
 import { BOARD, ORG } from "@/data/site";
 
@@ -82,6 +83,13 @@ const PRIORITIES = [
 ];
 
 function About() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(hash);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [hash]);
+
   return (
     <>
       <PageHeader
@@ -91,7 +99,7 @@ function About() {
       />
 
       {/* ============ Sub-heading: About Unfold Nepal ============ */}
-      <Section>
+      <Section id="about-unfold-nepal" className="scroll-mt-16">
         <div className="max-w-2xl">
           <Eyebrow>Who we are</Eyebrow>
           <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
@@ -107,7 +115,7 @@ function About() {
         </div>
 
         {/* Mission & vision */}
-        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div id="mission-vision" className="mt-16 scroll-mt-24 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <Eyebrow>Mission & vision</Eyebrow>
           </div>
@@ -126,7 +134,7 @@ function About() {
         </div>
 
         {/* History */}
-        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div id="history" className="mt-16 scroll-mt-24 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <Eyebrow>History</Eyebrow>
           </div>
@@ -157,7 +165,7 @@ function About() {
         </div>
 
         {/* Legal status */}
-        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div id="legal-status" className="mt-16 scroll-mt-24 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <Eyebrow>Legal status</Eyebrow>
           </div>
@@ -185,7 +193,7 @@ function About() {
         </div>
 
         {/* Objectives */}
-        <div className="mt-16">
+        <div id="objectives" className="mt-16 scroll-mt-24">
           <Eyebrow>Objectives</Eyebrow>
           <h3 className="mt-4 text-3xl font-semibold">What we are set up to do</h3>
           <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
@@ -208,7 +216,7 @@ function About() {
       </Section>
 
       {/* ============ Sub-heading: Team ============ */}
-      <Section className="border-y border-border bg-card">
+      <Section id="team" className="scroll-mt-16 border-y border-border bg-card">
         <div className="max-w-2xl">
           <Eyebrow>Team</Eyebrow>
           <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Team</h2>
@@ -246,6 +254,12 @@ function About() {
             {ORG.email}
           </a>
         </p>
+        <Link
+          to="/board"
+          className="mt-8 inline-block rounded-sm border border-foreground/25 px-6 py-3 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+        >
+          Meet the Board of Directors →
+        </Link>
       </Section>
 
       {/* ============ Current priorities ============ */}
