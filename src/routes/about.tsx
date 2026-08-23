@@ -4,7 +4,7 @@ import { BOARD, ORG } from "@/data/site";
 
 const TITLE = "About UnfoldNepal — Nepal SME research organisation";
 const DESCRIPTION =
-  "UnfoldNepal is a profit non-distributing company registered in Nepal. We research and publish on the country's cottage, small and medium enterprises across its districts.";
+  "UnfoldNepal is a not-for-profit organization registered in Nepal. We research and publish on the country's cottage, small and medium enterprises across its districts.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -54,6 +54,33 @@ const OBJECTIVES = [
   },
 ];
 
+const PRIORITIES = [
+  {
+    title: "Finishing the 100 Businesses book",
+    body: "Thirty-two of one hundred profiles are complete. The next funding priority is the fieldwork, fact-checking and translation needed to take that number to fifty within the year — covering underserved districts in Karnali and Sudurpashchim where almost no enterprise documentation exists.",
+  },
+  {
+    title: "Keeping research free to read in Nepal",
+    body: "Every report stays free to download and reuse within Nepal. Grants and membership income cover the print runs, hosting and translation that make that possible, so cost is never the reason a founder in a district does not read our work.",
+  },
+  {
+    title: "Field stipends for early-career researchers",
+    body: "We fund short district placements for economics, management and journalism students — a per diem, travel and supervision for four to eight weeks of structured fieldwork. The work feeds the reports; the placement feeds the next generation of researchers.",
+  },
+  {
+    title: "Translation and editing volunteers",
+    body: "We translate between Nepali and English continuously, and accuracy matters more than speed. Volunteers with strong written Nepali or English — editors, translators, proofreaders — keep the publications usable for both audiences.",
+  },
+  {
+    title: "Diaspora chapter coordinators",
+    body: "Nepali communities abroad are where returnee decisions get made. Volunteer coordinators help us run small sessions in their city, connect prospective founders to the right district report, and feed back what questions their community is actually asking.",
+  },
+  {
+    title: "Data and mapping volunteers",
+    body: "Some of our survey data is suitable for open release. Volunteers with data, GIS or spreadsheet skills help us clean, document and publish datasets so that universities, journalists and other researchers can reuse them under an open licence.",
+  },
+];
+
 function About() {
   return (
     <>
@@ -63,8 +90,24 @@ function About() {
         intro="We study the businesses that already work in Nepal — small, unglamorous, profitable — and publish what we learn so that others can repeat it."
       />
 
+      {/* ============ Sub-heading: About Unfold Nepal ============ */}
       <Section>
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div className="max-w-2xl">
+          <Eyebrow>Who we are</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+            About Unfold Nepal
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+            UnfoldNepal is a not-for-profit organization registered in Nepal. We
+            research and publish on the country's cottage, small and medium
+            enterprises — documenting what already works, district by district,
+            so that Nepalis at home and abroad can build on evidence rather than
+            guesswork.
+          </p>
+        </div>
+
+        {/* Mission & vision */}
+        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <Eyebrow>Mission & vision</Eyebrow>
           </div>
@@ -79,28 +122,52 @@ function About() {
               talent and capital flow back into home districts, and where the resulting enterprises
               create dignified local employment rather than another wave of departure.
             </p>
+          </div>
+        </div>
+
+        {/* History */}
+        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+          <div>
+            <Eyebrow>History</Eyebrow>
+          </div>
+          <div className="space-y-6 text-lg leading-relaxed">
+            <p>
+              UnfoldNepal began in 2022 with a frustration that many Nepalis abroad will recognise.
+              A would-be founder in Sydney could find national GDP figures for Nepal, donor
+              reports on the economy, and headlines about remittances — but nothing that answered
+              the question actually in front of him: what does a printing press in Butwal cost to
+              run, and does it make money?
+            </p>
+            <p>
+              The gap was not data. It was documentation. Nobody had walked into the workshops,
+              asked the owner what they paid for, written down the numbers, and published them in a
+              form another founder could use. So a small group of Nepali professionals, some
+              returned from abroad and some who had never left, started doing exactly that — a
+              questionnaire, a district, a notebook.
+            </p>
             <p className="text-muted-foreground">
-              We began in 2022 with a simple frustration: a would-be founder in Sydney could find
-              national GDP figures for Nepal but nothing about what a printing press in Butwal costs
-              to run. The gap was not data, it was documentation. So we started walking into
-              workshops with a questionnaire.
+              The first interviews became the first report. The reports drew readers across the
+              diaspora who asked for more. By 2023 the work had a name, a registered
+              not-for-profit structure, and a board. Today UnfoldNepal is a research and publishing
+              organisation: field surveys across Nepal's districts, sector reports, and a flagship
+              book profiling one hundred businesses that already work — built so that the next
+              founder does not have to start from a blank page.
             </p>
           </div>
         </div>
-      </Section>
 
-      <Section className="border-y border-border bg-card">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        {/* Legal status */}
+        <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <Eyebrow>Legal status</Eyebrow>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold">
-              Profit non-distributing, registered in Nepal
-            </h2>
+            <h3 className="text-2xl font-semibold">
+              A not-for-profit organization, registered in Nepal
+            </h3>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              UnfoldNepal is registered in Nepal as a profit non-distributing company. No surplus
-              is distributed to members or officers; all income from publications, grants and
+              UnfoldNepal is registered in Nepal as a not-for-profit organization. No surplus is
+              distributed to members or officers; all income from publications, grants and
               memberships is applied to research and publishing activity. Our research and
               publishing work documents cottage, small and medium enterprises across Nepal's
               districts. Our registered activities cover business and employer membership
@@ -116,39 +183,50 @@ function About() {
             </p>
           </div>
         </div>
-      </Section>
 
-      <Section>
-        <Eyebrow>Objectives</Eyebrow>
-        <h2 className="mt-4 text-3xl font-semibold">What we are set up to do</h2>
-        <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-          Our registered objectives, and what each one means in practice.
-        </p>
-        <ol className="mt-10 max-w-3xl space-y-8">
-          {OBJECTIVES.map((o, i) => (
-            <li key={o.title} className="rule-top pt-6">
-              <div className="flex gap-4">
-                <span className="font-serif text-primary">{String(i + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3 className="text-lg font-semibold">{o.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted-foreground">{o.body}</p>
+        {/* Objectives */}
+        <div className="mt-16">
+          <Eyebrow>Objectives</Eyebrow>
+          <h3 className="mt-4 text-3xl font-semibold">What we are set up to do</h3>
+          <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+            Our registered objectives, and what each one means in practice.
+          </p>
+          <ol className="mt-10 max-w-3xl space-y-8">
+            {OBJECTIVES.map((o, i) => (
+              <li key={o.title} className="rule-top pt-6">
+                <div className="flex gap-4">
+                  <span className="font-serif text-primary">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h4 className="text-lg font-semibold">{o.title}</h4>
+                    <p className="mt-2 leading-relaxed text-muted-foreground">{o.body}</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ol>
+              </li>
+            ))}
+          </ol>
+        </div>
       </Section>
 
-      <Section className="border-t border-border bg-sand">
-        <Eyebrow>Governance</Eyebrow>
-        <h2 className="mt-4 text-3xl font-semibold">Board of Directors</h2>
+      {/* ============ Sub-heading: Team ============ */}
+      <Section className="border-y border-border bg-card">
+        <div className="max-w-2xl">
+          <Eyebrow>Team</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Team</h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+            UnfoldNepal is run by a small staff and a board of directors who set
+            the research agenda, approve publications, and are accountable for
+            the organization's not-for-profit status.
+          </p>
+        </div>
+
+        <h3 className="mt-16 text-2xl font-semibold">Board of Directors</h3>
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
           The board sets the research agenda, approves publications and is accountable for the
-          company's profit non-distributing status.
+          organization's not-for-profit status.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {BOARD.map((p) => (
-            <div key={p.name} className="border border-border bg-card p-6">
+            <div key={p.name} className="border border-border bg-background p-6">
               <div className="flex size-12 items-center justify-center rounded-full bg-accent font-serif text-lg text-accent-foreground">
                 {p.name
                   .split(" ")
@@ -156,7 +234,7 @@ function About() {
                   .map((w) => w[0])
                   .join("")}
               </div>
-              <h3 className="mt-4 text-lg font-semibold">{p.name}</h3>
+              <h4 className="mt-4 text-lg font-semibold">{p.name}</h4>
               <p className="text-sm text-primary">{p.role}</p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.note}</p>
             </div>
@@ -168,6 +246,44 @@ function About() {
             {ORG.email}
           </a>
         </p>
+      </Section>
+
+      {/* ============ Current priorities ============ */}
+      <Section>
+        <div className="max-w-2xl">
+          <Eyebrow>Current priorities</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+            Where funding and volunteers matter most right now
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+            As a not-for-profit, every rupee and every hour of skilled time goes
+            straight into fieldwork, publishing and keeping the research free to
+            read. These are the priorities where support moves the work forward
+            fastest this year.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {PRIORITIES.map((p) => (
+            <div key={p.title} className="rule-top pt-6">
+              <h3 className="text-lg font-semibold">{p.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 flex flex-wrap gap-3">
+          <Link
+            to="/get-involved"
+            className="rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Support the research
+          </Link>
+          <Link
+            to="/contact"
+            className="rounded-sm border border-foreground/25 px-6 py-3 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+          >
+            Volunteer with us
+          </Link>
+        </div>
       </Section>
 
     </>
