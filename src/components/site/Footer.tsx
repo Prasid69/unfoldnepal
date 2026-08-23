@@ -45,7 +45,7 @@ export function Footer() {
               loading="lazy"
             />
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              {ORG.tagline} Independent, profit non-distributing, registered in Nepal.
+              {ORG.tagline} Independent, not-for-profit, registered in Nepal.
             </p>
             <div className="mt-6">
               <NewsletterForm compact />
@@ -84,7 +84,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>
-            © {new Date().getFullYear()} {ORG.legalName}. A profit non-distributing company
+            © {new Date().getFullYear()} {ORG.legalName}. A not-for-profit organization
             registered in Nepal. We research and publish on the country's small enterprises.
           </p>
           <p>

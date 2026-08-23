@@ -33,7 +33,7 @@ export const BOARD = [
   {
     name: "Biraj Aryal",
     role: "Board Member",
-    note: "Handles finance, compliance and reporting for a profit non-distributing company.",
+    note: "Handles finance, compliance and reporting for a not-for-profit organization.",
   },
 ];
 
