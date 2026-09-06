@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow, Figure, ReportCard } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
-import { TestimonialVideos } from "@/components/site/TestimonialVideos";
 import { REPORTS, STATS } from "@/data/site";
 import heroImg from "@/assets/hero-entrepreneur.jpg";
-import bookImg from "@/assets/book-cover.jpg";
+import bookImg from "@/assets/book-cover-nepal.jpg";
+import { CountUpStat } from "@/components/site/CountUpStat";
 
 const TITLE = "UnfoldNepal — Nepal SME research and the 100 Businesses book";
 const DESCRIPTION =
@@ -55,12 +55,11 @@ function Index() {
           <div>
             <Eyebrow>Research · Publishing · Nepal</Eyebrow>
             <h1 className="mt-5 text-4xl leading-[1.05] font-semibold md:text-5xl lg:text-6xl">
-              Nepal's best business ideas already exist. We document them, district by district.
+              Building Nepal's entrepreneurial future, district by district.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              UnfoldNepal researches cottage, small and medium enterprises across Nepal and
-              publishes what we find — so Nepalis at home and abroad can build on evidence rather
-              than guesswork.
+              We grow enterprise in Nepal and connect the global Nepali diaspora to it — with
+              research, published evidence and the people already doing the work.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
@@ -92,7 +91,9 @@ function Index() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-border px-0 lg:grid-cols-4">
           {STATS.map((s) => (
             <div key={s.label} className="bg-background px-5 py-10 text-center">
-              <p className="font-serif text-4xl font-semibold text-primary">{s.value}</p>
+              <p className="font-serif text-4xl font-semibold text-primary">
+                <CountUpStat value={s.value} />
+              </p>
               <p className="mt-2 text-xs tracking-wide text-muted-foreground uppercase">
                 {s.label}
               </p>
@@ -181,43 +182,6 @@ function Index() {
             <ReportCard key={r.slug} report={r} />
           ))}
         </div>
-      </Section>
-
-      <TestimonialVideos className="border-t border-border" />
-
-      <Section className="border-y border-border bg-sand">
-        <figure className="mx-auto max-w-3xl text-center">
-          <blockquote className="font-serif text-2xl leading-relaxed md:text-3xl">
-            “I spent eleven years in Osaka saving to open something back home, and no one could tell
-            me what a dairy unit in Kaski actually costs. This research is the document I needed
-            five years ago.”
-          </blockquote>
-          <figcaption className="mt-6 text-sm text-muted-foreground">
-            Bimala Gurung · founder, Annapurna Dairy · returned from Japan, 2023
-          </figcaption>
-        </figure>
-      </Section>
-
-      <Section>
-        <p className="text-center text-xs tracking-[0.16em] text-muted-foreground uppercase">
-          Partners and supporters
-        </p>
-        <ul className="mt-8 grid grid-cols-2 items-center gap-6 md:grid-cols-5">
-          {[
-            "District Chamber Network",
-            "Himalaya Foundation",
-            "Diaspora Council NP",
-            "Institute of Policy Studies",
-            "Open Data Nepal",
-          ].map((name) => (
-            <li
-              key={name}
-              className="flex h-20 items-center justify-center border border-border px-3 text-center font-serif text-sm text-muted-foreground"
-            >
-              {name}
-            </li>
-          ))}
-        </ul>
       </Section>
 
       <Section className="border-t border-border bg-card">
