@@ -114,7 +114,7 @@ function BookPage() {
         <Eyebrow>Coverage</Eyebrow>
         <h2 className="mt-4 text-3xl font-semibold">Districts profiled so far</h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Thirty-two of Nepal's seventy-seven districts are documented. Districts still open for
+          Ten of Nepal's seventy-seven districts are documented. Districts still open for
           nomination are the ones we most want to hear about.
         </p>
         <ul className="mt-8 flex flex-wrap gap-2">
