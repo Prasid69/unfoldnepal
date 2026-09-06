@@ -49,10 +49,10 @@ function BookPage() {
             </p>
             <div className="mt-8">
               <p className="font-serif text-3xl">
-                <span className="text-primary">32</span> of 100 profiled
+                <CountUpStat value="10" className="text-primary" /> of 100 profiled
               </p>
               <div className="mt-3 h-2 w-full max-w-md overflow-hidden rounded-full bg-secondary">
-                <div className="h-full w-[32%] bg-primary" />
+                <div className="h-full w-[10%] bg-primary" />
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
                 Placeholder progress — update as profiles are completed.
