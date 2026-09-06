@@ -143,10 +143,10 @@ function Index() {
               and whether the model can be repeated somewhere else.
             </p>
             <p className="mt-6 font-serif text-2xl">
-              <span className="text-primary">32</span> of 100 profiled
+              <CountUpStat value="10" className="text-primary" /> of 100 profiled
             </p>
             <div className="mt-3 h-1.5 w-full max-w-sm overflow-hidden rounded-full bg-secondary">
-              <div className="h-full w-[32%] bg-primary" />
+              <div className="h-full w-[10%] bg-primary" />
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
