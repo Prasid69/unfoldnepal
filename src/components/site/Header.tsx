@@ -41,7 +41,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-10 lg:flex" aria-label="Primary">
           {/* About — hover dropdown */}
           <div className="group relative">
             <Link
