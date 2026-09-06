@@ -3,7 +3,7 @@ import { Section, Eyebrow, Figure, ReportCard } from "@/components/site/Primitiv
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { TestimonialVideos } from "@/components/site/TestimonialVideos";
 import { REPORTS, STATS } from "@/data/site";
-import heroImg from "@/assets/hero-artisan.jpg";
+import heroImg from "@/assets/hero-entrepreneur.jpg";
 import bookImg from "@/assets/book-cover.jpg";
 
 const TITLE = "UnfoldNepal — Nepal SME research and the 100 Businesses book";
@@ -51,10 +51,10 @@ function Index() {
   return (
     <>
       <section className="border-b border-border bg-sand">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:py-24 lg:grid-cols-[1.05fr_1fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
           <div>
             <Eyebrow>Research · Publishing · Nepal</Eyebrow>
-            <h1 className="mt-5 text-4xl leading-[1.05] font-semibold md:text-6xl">
+            <h1 className="mt-5 text-4xl leading-[1.05] font-semibold md:text-5xl lg:text-6xl">
               Nepal's best business ideas already exist. We document them, district by district.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
@@ -79,7 +79,7 @@ function Index() {
           </div>
           <Figure
             src={heroImg}
-            alt="A Nepali weaver working at a wooden handloom in her small handicraft workshop"
+            alt="A confident Nepali woman entrepreneur standing at the entrance of her textile workshop in Kathmandu"
             caption="Photo: Sunkoshi Handlooms, Lalitpur District"
             width={1600}
             height={1104}

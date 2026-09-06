@@ -30,7 +30,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:px-10">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
           <img
             src={logo.url}
@@ -41,7 +41,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-10 lg:flex" aria-label="Primary">
           {/* About — hover dropdown */}
           <div className="group relative">
             <Link
