@@ -29,9 +29,7 @@ export const Route = createFileRoute("/book")({
 
 const DISTRICTS = [
   "Lalitpur", "Bhaktapur", "Kaski", "Syangja", "Gulmi", "Palpa", "Rupandehi", "Dhanusha",
-  "Siraha", "Morang", "Jhapa", "Ilam", "Chitwan", "Makwanpur", "Dang", "Banke", "Surkhet",
-  "Jumla", "Doti", "Kailali", "Bardiya", "Nuwakot", "Dolakha", "Sindhupalchok", "Tanahun",
-  "Baglung", "Parbat", "Myagdi", "Okhaldhunga", "Bhojpur", "Khotang", "Udayapur",
+  "Siraha", "Morang",
 ];
 
 function BookPage() {
