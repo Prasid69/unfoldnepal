@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow, Figure } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { StoryForm } from "@/components/site/StoryForm";
+import { CountUpStat } from "@/components/site/CountUpStat";
 import bookImg from "@/assets/book-cover.jpg";
 import coffeeImg from "@/assets/profile-coffee.jpg";
 
