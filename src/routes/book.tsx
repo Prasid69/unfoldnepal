@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow, Figure } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { StoryForm } from "@/components/site/StoryForm";
+import { CountUpStat } from "@/components/site/CountUpStat";
 import bookImg from "@/assets/book-cover.jpg";
 import coffeeImg from "@/assets/profile-coffee.jpg";
 
@@ -28,9 +29,7 @@ export const Route = createFileRoute("/book")({
 
 const DISTRICTS = [
   "Lalitpur", "Bhaktapur", "Kaski", "Syangja", "Gulmi", "Palpa", "Rupandehi", "Dhanusha",
-  "Siraha", "Morang", "Jhapa", "Ilam", "Chitwan", "Makwanpur", "Dang", "Banke", "Surkhet",
-  "Jumla", "Doti", "Kailali", "Bardiya", "Nuwakot", "Dolakha", "Sindhupalchok", "Tanahun",
-  "Baglung", "Parbat", "Myagdi", "Okhaldhunga", "Bhojpur", "Khotang", "Udayapur",
+  "Siraha", "Morang",
 ];
 
 function BookPage() {
@@ -50,10 +49,10 @@ function BookPage() {
             </p>
             <div className="mt-8">
               <p className="font-serif text-3xl">
-                <span className="text-primary">32</span> of 100 profiled
+                <CountUpStat value="10" className="text-primary" /> of 100 profiled
               </p>
               <div className="mt-3 h-2 w-full max-w-md overflow-hidden rounded-full bg-secondary">
-                <div className="h-full w-[32%] bg-primary" />
+                <div className="h-full w-[10%] bg-primary" />
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
                 Placeholder progress — update as profiles are completed.
@@ -115,7 +114,7 @@ function BookPage() {
         <Eyebrow>Coverage</Eyebrow>
         <h2 className="mt-4 text-3xl font-semibold">Districts profiled so far</h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Thirty-two of Nepal's seventy-seven districts are documented. Districts still open for
+          Ten of Nepal's seventy-seven districts are documented. Districts still open for
           nomination are the ones we most want to hear about.
         </p>
         <ul className="mt-8 flex flex-wrap gap-2">
