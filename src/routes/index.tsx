@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow, Figure, ReportCard } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { REPORTS, STATS } from "@/data/site";
-import heroImg from "@/assets/hero-entrepreneur.jpg";
 import bookImg from "@/assets/book-cover-nepal.jpg";
 import { CountUpStat } from "@/components/site/CountUpStat";
 
@@ -21,6 +20,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:card", content: "summary" },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -51,17 +51,19 @@ function Index() {
   return (
     <>
       <section className="border-b border-border bg-sand">
-        <div className="mx-auto grid w-full max-w-[1600px] items-center gap-10 px-5 py-14 sm:px-8 md:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-14 lg:px-12">
-          <div>
-            <Eyebrow>Research · Publishing · Nepal</Eyebrow>
-            <h1 className="mt-5 text-4xl leading-[1.05] font-semibold md:text-5xl lg:text-6xl">
+        <div className="mx-auto flex min-h-[32rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:min-h-[38rem] md:py-24 lg:px-12">
+          <div className="max-w-5xl">
+            <div className="hero-enter hero-enter-1">
+              <Eyebrow>Research · Publishing · Nepal</Eyebrow>
+            </div>
+            <h1 className="hero-enter hero-enter-2 mt-5 text-4xl leading-[1.05] font-semibold md:text-6xl lg:text-7xl">
               Building Nepal's entrepreneurial future, district by district.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="hero-enter hero-enter-3 mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
               We grow enterprise in Nepal and connect the global Nepali diaspora to it — with
               research, published evidence and the people already doing the work.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="hero-enter hero-enter-4 mt-10 flex flex-wrap gap-3">
               <Link
                 to="/reports"
                 className="rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
@@ -76,14 +78,6 @@ function Index() {
               </Link>
             </div>
           </div>
-          <Figure
-            src={heroImg}
-            alt="A confident Nepali woman entrepreneur standing at the entrance of her textile workshop in Kathmandu"
-            caption="Photo: Sunkoshi Handlooms, Lalitpur District"
-            width={1600}
-            height={1104}
-            priority
-          />
         </div>
       </section>
 

@@ -190,3 +190,43 @@
 @utility rule-top {
   border-top: 1px solid var(--color-border);
 }
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility hero-enter {
+  animation: hero-enter 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: opacity, transform;
+}
+
+@utility hero-enter-1 {
+  animation-delay: 80ms;
+}
+
+@utility hero-enter-2 {
+  animation-delay: 160ms;
+}
+
+@utility hero-enter-3 {
+  animation-delay: 260ms;
+}
+
+@utility hero-enter-4 {
+  animation-delay: 360ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
