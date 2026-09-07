@@ -51,7 +51,7 @@ function Index() {
   return (
     <>
       <section className="border-b border-border bg-sand">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 md:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
+        <div className="mx-auto grid w-full max-w-[1600px] items-center gap-10 px-5 py-14 sm:px-8 md:py-20 lg:grid-cols-[1fr_1.15fr] lg:gap-14 lg:px-12">
           <div>
             <Eyebrow>Research · Publishing · Nepal</Eyebrow>
             <h1 className="mt-5 text-4xl leading-[1.05] font-semibold md:text-5xl lg:text-6xl">
@@ -88,7 +88,7 @@ function Index() {
       </section>
 
       <section aria-label="Impact in numbers" className="border-b border-border">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px bg-border px-0 lg:grid-cols-4">
+        <div className="mx-auto grid w-full max-w-[1600px] grid-cols-2 gap-px bg-border px-0 lg:grid-cols-4">
           {STATS.map((s) => (
             <div key={s.label} className="bg-background px-5 py-10 text-center">
               <p className="font-serif text-4xl font-semibold text-primary">

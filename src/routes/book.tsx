@@ -36,7 +36,7 @@ function BookPage() {
   return (
     <>
       <section className="border-b border-border bg-sand">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:py-24 lg:grid-cols-[1.1fr_1fr]">
+        <div className="mx-auto grid w-full max-w-[1600px] items-center gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:px-12">
           <div>
             <Eyebrow>Flagship publication</Eyebrow>
             <h1 className="mt-5 text-4xl leading-[1.05] font-semibold md:text-6xl">

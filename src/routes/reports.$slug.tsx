@@ -56,7 +56,7 @@ function ReportDetail() {
   return (
     <article>
       <header className="border-b border-border bg-sand">
-        <div className="mx-auto max-w-6xl px-5 py-14 md:py-20">
+        <div className="mx-auto w-full max-w-[1600px] px-5 py-14 sm:px-8 md:py-20 lg:px-12">
           <Link to="/reports" className="text-sm text-primary hover:underline">
             ← All reports
           </Link>
