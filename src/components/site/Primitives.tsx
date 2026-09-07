@@ -17,7 +17,7 @@ export function Section({
   // `className` styles the full-bleed band; the inner div holds the content grid.
   return (
     <As id={id} className={cn("w-full", className)}>
-      <div className="mx-auto w-full max-w-6xl px-5 py-16 md:py-20">{children}</div>
+      <div className="mx-auto w-full max-w-[1600px] px-5 py-16 sm:px-8 md:py-20 lg:px-12">{children}</div>
     </As>
   );
 }
@@ -37,7 +37,7 @@ export function PageHeader({
 }) {
   return (
     <header className="border-b border-border bg-sand">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+      <div className="mx-auto w-full max-w-[1600px] px-5 py-16 sm:px-8 md:py-24 lg:px-12">
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-4 max-w-3xl text-4xl leading-[1.1] font-semibold md:text-5xl">{title}</h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{intro}</p>
