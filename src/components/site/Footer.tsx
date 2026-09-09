@@ -59,23 +59,15 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    {link.to === "/sitemap.xml" ? (
-                      <a
-                        href="/sitemap.xml"
-                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        to={link.to}
-                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                      >
-                        {link.label}
-                      </Link>
-                    )}
+                    <Link
+                      to={link.to}
+                      className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
+
               </ul>
             </div>
           ))}
