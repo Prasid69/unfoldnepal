@@ -27,58 +27,46 @@ export const Route = createFileRoute("/about")({
 const OBJECTIVES = [
   {
     title: "Book publishing",
-    body: "Research, write, edit and publish books on Nepal's enterprise economy — most visibly the 100 Businesses of Nepal series, which documents real, operating cottage, small and medium businesses with their costs, revenues, staffing and the practical steps a founder took to start them. Books are published in Nepali and English, in print and digital form, and priced so that students and first-time founders inside Nepal can afford them.",
+    body: "Publish books on Nepal's enterprise economy — led by the 100 Businesses of Nepal series — in Nepali and English, priced for students and first-time founders.",
   },
   {
-    title: "Other publishing activities",
-    body: "Produce and distribute district sector reports, data briefs, methodology notes, case studies, newsletters and online articles. Everything we publish is released with its underlying method described, and our research is free to read within Nepal so that journalists, teachers, students and civil-society organisations can reuse it without permission or payment.",
+    title: "Reports and articles",
+    body: "Produce district sector reports, data briefs and case studies, free to read in Nepal, always with the method described.",
   },
   {
-    title: "Activities auxiliary to financial services",
-    body: "Document how small enterprises in Nepal actually access finance — cooperatives, microfinance, group lending, bank term loans, supplier credit and remittance savings. We publish comparative information on credit terms, collateral expectations and realistic repayment periods so founders and their families can judge financing options. We are a research and information body: we do not lend, broker, take deposits or give regulated financial advice.",
+    title: "Access to finance",
+    body: "Document how small enterprises actually borrow — cooperatives, microfinance, bank loans, supplier credit. We inform; we do not lend or advise.",
   },
   {
-    title: "Market research and public opinion polling",
-    body: "Design and run field surveys, structured interviews, firm-level panels and opinion polls across Nepal's districts and provinces. This includes cost-structure surveys, demand and price sampling, employment counts, and periodic sentiment polling among business owners and returnee entrepreneurs. Sampling design, questionnaires and limitations are published alongside every result.",
+    title: "Field research and polling",
+    body: "Run surveys, interviews and sentiment polls with business owners and returnee entrepreneurs across Nepal's districts.",
   },
   {
-    title: "Improving the efficiency of business operations",
-    body: "Turn findings into practical guidance that makes enterprises work better: benchmark cost and margin data by sector, operating checklists, registration and licensing walk-throughs, and comparisons of what distinguishes units that survive their third year from those that do not. Where the evidence points at policy or regulatory friction, we place it in front of the relevant authorities and chambers.",
+    title: "Better business operations",
+    body: "Turn findings into benchmarks, checklists and registration walk-throughs that help enterprises survive past year three.",
   },
   {
-    title: "Education support activities",
-    body: "Support learning through open teaching material, guest lectures, workshops and internships for students of economics, management and journalism. Our datasets and case studies are made available to universities and colleges in Nepal for classroom use, and we train early-career researchers in field survey methods and research ethics.",
+    title: "Education support",
+    body: "Share datasets and case studies with universities, and train early-career researchers in field methods and ethics.",
   },
   {
-    title: "Business and employers' membership organisation",
-    body: "Convene owners of cottage, small and medium enterprises and returnee entrepreneurs as a membership community — through district meetings, a directory of documented businesses, peer exchange between founders in the same sector, and collective representation of members' shared concerns to policymakers and funders.",
+    title: "Membership community",
+    body: "Convene owners of small enterprises and returnee entrepreneurs for peer exchange and shared representation.",
   },
 ];
 
 const PRIORITIES = [
   {
     title: "Finishing the 100 Businesses book",
-    body: "Thirty-two of one hundred profiles are complete. The next funding priority is the fieldwork, fact-checking and translation needed to take that number to fifty within the year — covering underserved districts in Karnali and Sudurpashchim where almost no enterprise documentation exists.",
+    body: "Ten of one hundred profiles are complete. Funding the next round of fieldwork, fact-checking and translation is our first priority.",
   },
   {
-    title: "Keeping research free to read in Nepal",
-    body: "Every report stays free to download and reuse within Nepal. Grants and membership income cover the print runs, hosting and translation that make that possible, so cost is never the reason a founder in a district does not read our work.",
+    title: "Keeping research free in Nepal",
+    body: "Grants and memberships cover printing, hosting and translation so cost is never the reason a founder cannot read our work.",
   },
   {
-    title: "Field stipends for early-career researchers",
-    body: "We fund short district placements for economics, management and journalism students — a per diem, travel and supervision for four to eight weeks of structured fieldwork. The work feeds the reports; the placement feeds the next generation of researchers.",
-  },
-  {
-    title: "Translation and editing volunteers",
-    body: "We translate between Nepali and English continuously, and accuracy matters more than speed. Volunteers with strong written Nepali or English — editors, translators, proofreaders — keep the publications usable for both audiences.",
-  },
-  {
-    title: "Diaspora chapter coordinators",
-    body: "Nepali communities abroad are where returnee decisions get made. Volunteer coordinators help us run small sessions in their city, connect prospective founders to the right district report, and feed back what questions their community is actually asking.",
-  },
-  {
-    title: "Data and mapping volunteers",
-    body: "Some of our survey data is suitable for open release. Volunteers with data, GIS or spreadsheet skills help us clean, document and publish datasets so that universities, journalists and other researchers can reuse them under an open licence.",
+    title: "People we need",
+    body: "Field researchers on short district placements, Nepali–English translators and editors, and diaspora chapter coordinators.",
   },
 ];
 
@@ -98,74 +86,53 @@ function About() {
         intro="We study the businesses that already work in Nepal — small, unglamorous, profitable — and publish what we learn so that others can repeat it."
       />
 
-      {/* ============ Sub-heading: About Unfold Nepal ============ */}
       <Section id="about-unfold-nepal" className="scroll-mt-16">
         <div className="max-w-2xl">
           <Eyebrow>Who we are</Eyebrow>
-          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-            About Unfold Nepal
-          </h2>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">About Unfold Nepal</h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            UnfoldNepal is a not-for-profit organization registered in Nepal. We
-            research and publish on the country's cottage, small and medium
-            enterprises — documenting what already works, district by district,
-            so that Nepalis at home and abroad can build on evidence rather than
-            guesswork.
+            UnfoldNepal is a not-for-profit organization registered in Nepal. We research and
+            publish on the country's cottage, small and medium enterprises, district by district,
+            so Nepalis at home and abroad can build on evidence rather than guesswork.
           </p>
         </div>
 
-        {/* Mission & vision */}
-        <div id="mission-vision" className="mt-16 scroll-mt-24 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div id="mission-vision" className="mt-16 grid scroll-mt-24 gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
-            <Eyebrow>Mission & vision</Eyebrow>
+            <Eyebrow>Mission &amp; vision</Eyebrow>
           </div>
-          <div className="space-y-6 text-lg leading-relaxed">
+          <div className="space-y-5 text-lg leading-relaxed">
             <p>
-              <strong className="font-semibold">Our mission</strong> is to help Nepalis — especially
-              those living abroad — discover real, replicable business ideas rooted in Nepal's own
-              districts, and to make returning and investing a decision backed by evidence.
+              <strong className="font-semibold">Mission:</strong> help Nepalis, especially those
+              abroad, find real and repeatable business ideas rooted in Nepal's own districts.
             </p>
             <p>
-              <strong className="font-semibold">Our vision</strong> is a Nepal where global Nepali
-              talent and capital flow back into home districts, and where the resulting enterprises
-              create dignified local employment rather than another wave of departure.
+              <strong className="font-semibold">Vision:</strong> a Nepal where global Nepali talent
+              and capital flow back into home districts and create dignified local jobs.
             </p>
           </div>
         </div>
 
-        {/* History */}
-        <div id="history" className="mt-16 scroll-mt-24 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div id="history" className="mt-16 grid scroll-mt-24 gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <Eyebrow>History</Eyebrow>
           </div>
-          <div className="space-y-6 text-lg leading-relaxed">
+          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
-              UnfoldNepal began in 2022 with a frustration that many Nepalis abroad will recognise.
-              A would-be founder in Sydney could find national GDP figures for Nepal, donor
-              reports on the economy, and headlines about remittances — but nothing that answered
-              the question actually in front of him: what does a printing press in Butwal cost to
-              run, and does it make money?
+              UnfoldNepal began in 2022. Nepalis abroad could find national statistics and
+              headlines, but nothing that answered the practical question: what does a small
+              business in a given district cost to run, and does it make money?
             </p>
             <p>
-              The gap was not data. It was documentation. Nobody had walked into the workshops,
-              asked the owner what they paid for, written down the numbers, and published them in a
-              form another founder could use. So a small group of Nepali professionals, some
-              returned from abroad and some who had never left, started doing exactly that — a
-              questionnaire, a district, a notebook.
-            </p>
-            <p className="text-muted-foreground">
-              The first interviews became the first report. The reports drew readers across the
-              diaspora who asked for more. By 2023 the work had a name, a registered
-              not-for-profit structure, and a board. Today UnfoldNepal is a research and publishing
-              organisation: field surveys across Nepal's districts, sector reports, and a flagship
-              book profiling one hundred businesses that already work — built so that the next
-              founder does not have to start from a blank page.
+              A small group of Nepali professionals started walking into workshops and writing the
+              numbers down. By 2023 the work had a name, a registered not-for-profit structure and
+              a board — and today it is a research and publishing organisation with a flagship book
+              in progress.
             </p>
           </div>
         </div>
 
-        {/* Legal status */}
-        <div id="legal-status" className="mt-16 scroll-mt-24 grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+        <div id="legal-status" className="mt-16 grid scroll-mt-24 gap-12 lg:grid-cols-[1fr_1.4fr]">
           <div>
             <Eyebrow>Legal status</Eyebrow>
           </div>
@@ -174,16 +141,9 @@ function About() {
               A not-for-profit organization, registered in Nepal
             </h3>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              UnfoldNepal is registered in Nepal as a not-for-profit organization. No surplus is
-              distributed to members or officers; all income from publications, grants and
-              memberships is applied to research and publishing activity. Our research and
-              publishing work documents cottage, small and medium enterprises across Nepal's
-              districts. Our registered activities cover business and employer membership
-              organisation activities, market research and public opinion polling, publishing,
-              and related research and advocacy work.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Registration and audited-account details are available on request at{" "}
+              No surplus is distributed to members or officers — all income from publications,
+              grants and memberships goes back into research and publishing. Registration and
+              audited-account details are available on request at{" "}
               <Link to="/contact" className="text-primary hover:underline">
                 our contact page
               </Link>
@@ -192,47 +152,33 @@ function About() {
           </div>
         </div>
 
-        {/* Objectives */}
         <div id="objectives" className="mt-16 scroll-mt-24">
           <Eyebrow>Objectives</Eyebrow>
           <h3 className="mt-4 text-3xl font-semibold">What we are set up to do</h3>
-          <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-            Our registered objectives, and what each one means in practice.
-          </p>
-          <ol className="mt-10 max-w-3xl space-y-8">
+          <ol className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {OBJECTIVES.map((o, i) => (
               <li key={o.title} className="rule-top pt-6">
-                <div className="flex gap-4">
-                  <span className="font-serif text-primary">{String(i + 1).padStart(2, "0")}</span>
-                  <div>
-                    <h4 className="text-lg font-semibold">{o.title}</h4>
-                    <p className="mt-2 leading-relaxed text-muted-foreground">{o.body}</p>
-                  </div>
-                </div>
+                <span className="font-serif text-primary">{String(i + 1).padStart(2, "0")}</span>
+                <h4 className="mt-2 text-lg font-semibold">{o.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{o.body}</p>
               </li>
             ))}
           </ol>
         </div>
       </Section>
 
-      {/* ============ Sub-heading: Team ============ */}
       <Section id="team" className="scroll-mt-16 border-y border-border bg-card">
         <div className="max-w-2xl">
           <Eyebrow>Team</Eyebrow>
-          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Team</h2>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Governance</h2>
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            UnfoldNepal is run by a small staff and a board of directors who set
-            the research agenda, approve publications, and are accountable for
-            the organization's not-for-profit status.
+            A small staff and a board of directors set the research agenda, approve publications
+            and are accountable for the organization's not-for-profit status.
           </p>
         </div>
 
-        <h3 className="mt-16 text-2xl font-semibold">Board of Directors</h3>
-        <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-          The board sets the research agenda, approves publications and is accountable for the
-          organization's not-for-profit status.
-        </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <h3 className="mt-14 text-2xl font-semibold">Board of Directors</h3>
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {BOARD.map((p) => (
             <div key={p.name} className="border border-border bg-background p-6">
               <div className="flex size-12 items-center justify-center rounded-full bg-accent font-serif text-lg text-accent-foreground">
@@ -248,35 +194,30 @@ function About() {
             </div>
           ))}
         </div>
-        <p className="mt-8 text-sm text-muted-foreground">
-          Board enquiries:{" "}
-          <a className="text-primary hover:underline" href={`mailto:${ORG.email}`}>
-            {ORG.email}
-          </a>
-        </p>
-        <Link
-          to="/board"
-          className="mt-8 inline-block rounded-sm border border-foreground/25 px-6 py-3 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
-        >
-          Meet the Board of Directors →
-        </Link>
+        <div className="mt-8 flex flex-wrap items-center gap-6">
+          <Link
+            to="/board"
+            className="rounded-sm border border-foreground/25 px-6 py-3 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+          >
+            Meet the Board of Directors →
+          </Link>
+          <p className="text-sm text-muted-foreground">
+            Board enquiries:{" "}
+            <a className="text-primary hover:underline" href={`mailto:${ORG.email}`}>
+              {ORG.email}
+            </a>
+          </p>
+        </div>
       </Section>
 
-      {/* ============ Current priorities ============ */}
       <Section>
         <div className="max-w-2xl">
           <Eyebrow>Current priorities</Eyebrow>
           <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-            Where funding and volunteers matter most right now
+            Where funding and volunteers matter most
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-            As a not-for-profit, every rupee and every hour of skilled time goes
-            straight into fieldwork, publishing and keeping the research free to
-            read. These are the priorities where support moves the work forward
-            fastest this year.
-          </p>
         </div>
-        <div className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-10 md:grid-cols-3">
           {PRIORITIES.map((p) => (
             <div key={p.title} className="rule-top pt-6">
               <h3 className="text-lg font-semibold">{p.title}</h3>
@@ -286,7 +227,8 @@ function About() {
         </div>
         <div className="mt-12 flex flex-wrap gap-3">
           <Link
-            to="/get-involved"
+            to="/contact"
+            hash="donate"
             className="rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
             Support the research
@@ -299,7 +241,6 @@ function About() {
           </Link>
         </div>
       </Section>
-
     </>
   );
 }

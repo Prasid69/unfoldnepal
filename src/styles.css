@@ -230,3 +230,22 @@
     transform: none;
   }
 }
+
+/* Hero image banner: overlay + light text, independent of light/dark theme */
+@utility hero-overlay {
+  background:
+    linear-gradient(
+      to right,
+      oklch(0.18 0.02 60 / 0.86) 0%,
+      oklch(0.18 0.02 60 / 0.72) 45%,
+      oklch(0.18 0.02 60 / 0.45) 100%
+    );
+}
+
+@utility hero-text {
+  color: oklch(0.98 0.01 85);
+}
+
+@utility hero-text-muted {
+  color: oklch(0.88 0.02 85);
+}

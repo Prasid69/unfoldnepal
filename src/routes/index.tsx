@@ -3,6 +3,8 @@ import { Section, Eyebrow, Figure, ReportCard } from "@/components/site/Primitiv
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { REPORTS, STATS } from "@/data/site";
 import bookImg from "@/assets/book-cover-nepal.jpg";
+import heroImg from "@/assets/hero-himalaya.jpg";
+
 import { CountUpStat } from "@/components/site/CountUpStat";
 
 const TITLE = "UnfoldNepal — Nepal SME research and the 100 Businesses book";
@@ -50,29 +52,39 @@ function Index() {
 
   return (
     <>
-      <section className="border-b border-border bg-sand">
+      <section className="relative isolate border-b border-border">
+        <img
+          src={heroImg}
+          alt="Terraced hillside village below the snow-capped Himalaya at sunrise, Nepal"
+          width={1920}
+          height={1088}
+          fetchPriority="high"
+          className="absolute inset-0 -z-20 size-full object-cover"
+        />
+        <div className="hero-overlay absolute inset-0 -z-10" aria-hidden />
         <div className="mx-auto flex min-h-[32rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:min-h-[38rem] md:py-24 lg:px-12">
           <div className="max-w-5xl">
             <div className="hero-enter hero-enter-1">
-              <Eyebrow>Research · Publishing · Nepal</Eyebrow>
+              <p className="eyebrow hero-text-muted">Research · Publishing · Nepal</p>
             </div>
-            <h1 className="hero-enter hero-enter-2 mt-5 text-4xl leading-[1.05] font-semibold md:text-6xl lg:text-7xl">
+            <h1 className="hero-enter hero-enter-2 hero-text mt-5 text-4xl leading-[1.05] font-semibold md:text-6xl lg:text-7xl">
               Building Nepal's entrepreneurial future, district by district.
             </h1>
-            <p className="hero-enter hero-enter-3 mt-7 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            <p className="hero-enter hero-enter-3 hero-text-muted mt-7 max-w-3xl text-lg leading-relaxed md:text-xl">
               We grow enterprise in Nepal and connect the global Nepali diaspora to it — with
               research, published evidence and the people already doing the work.
             </p>
             <div className="hero-enter hero-enter-4 mt-10 flex flex-wrap gap-3">
               <Link
-                to="/reports"
+                to="/updates"
                 className="rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
               >
-                Read our latest report
+                Updates
               </Link>
               <Link
-                to="/get-involved"
-                className="rounded-sm border border-foreground/25 px-6 py-3 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+                to="/contact"
+                hash="donate"
+                className="hero-text rounded-sm border border-current/50 px-6 py-3 text-sm font-medium transition-opacity hover:opacity-80"
               >
                 Support the research
               </Link>
@@ -80,6 +92,7 @@ function Index() {
           </div>
         </div>
       </section>
+
 
       <section aria-label="Impact in numbers" className="border-b border-border">
         <div className="mx-auto grid w-full max-w-[1600px] grid-cols-2 gap-px bg-border px-0 lg:grid-cols-4">

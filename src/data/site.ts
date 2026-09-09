@@ -59,11 +59,12 @@ export const BOARD: BoardMember[] = [
 ];
 
 export const STATS = [
-  { value: "41", label: "Districts covered" },
-  { value: "1,280", label: "Businesses surveyed" },
-  { value: "12", label: "Reports published" },
-  { value: "32", label: "Profiles in the book" },
+  { value: "4", label: "Districts covered" },
+  { value: "20", label: "Businesses surveyed" },
+  { value: "4", label: "Reports published" },
+  { value: "10", label: "Profiles in the book" },
 ];
+
 
 export type Report = {
   slug: string;

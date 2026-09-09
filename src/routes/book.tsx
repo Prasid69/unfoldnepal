@@ -3,7 +3,7 @@ import { Section, Eyebrow, Figure } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { StoryForm } from "@/components/site/StoryForm";
 import { CountUpStat } from "@/components/site/CountUpStat";
-import bookImg from "@/assets/book-cover.jpg";
+import bookImg from "@/assets/book-cover-nepal.jpg";
 import coffeeImg from "@/assets/profile-coffee.jpg";
 
 const TITLE = "100 Businesses of Nepal — the book project | UnfoldNepal";

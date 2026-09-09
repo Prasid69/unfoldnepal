@@ -15,8 +15,6 @@ import { Route as BoardRouteImport } from './routes/board'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiasporaRouteImport } from './routes/diaspora'
-import { Route as GetInvolvedRouteImport } from './routes/get-involved'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ReportsIndexRouteImport } from './routes/reports.index'
 import { Route as ReportsSlugRouteImport } from './routes/reports.$slug'
 import { Route as UpdatesIndexRouteImport } from './routes/updates.index'
@@ -52,16 +50,6 @@ const DiasporaRoute = DiasporaRouteImport.update({
   path: '/diaspora',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GetInvolvedRoute = GetInvolvedRouteImport.update({
-  id: '/get-involved',
-  path: '/get-involved',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ReportsIndexRoute = ReportsIndexRouteImport.update({
   id: '/reports/',
   path: '/reports/',
@@ -90,8 +78,6 @@ export interface FileRoutesByFullPath {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
-  '/get-involved': typeof GetInvolvedRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/updates/$slug': typeof UpdatesSlugRoute
   '/reports/': typeof ReportsIndexRoute
@@ -104,8 +90,6 @@ export interface FileRoutesByTo {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
-  '/get-involved': typeof GetInvolvedRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/updates/$slug': typeof UpdatesSlugRoute
   '/reports': typeof ReportsIndexRoute
@@ -119,8 +103,6 @@ export interface FileRoutesById {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
-  '/get-involved': typeof GetInvolvedRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/updates/$slug': typeof UpdatesSlugRoute
   '/reports/': typeof ReportsIndexRoute
@@ -135,8 +117,6 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/diaspora'
-    | '/get-involved'
-    | '/sitemap.xml'
     | '/reports/$slug'
     | '/updates/$slug'
     | '/reports/'
@@ -149,8 +129,6 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/diaspora'
-    | '/get-involved'
-    | '/sitemap.xml'
     | '/reports/$slug'
     | '/updates/$slug'
     | '/reports'
@@ -163,8 +141,6 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/diaspora'
-    | '/get-involved'
-    | '/sitemap.xml'
     | '/reports/$slug'
     | '/updates/$slug'
     | '/reports/'
@@ -178,8 +154,6 @@ export interface RootRouteChildren {
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   DiasporaRoute: typeof DiasporaRoute
-  GetInvolvedRoute: typeof GetInvolvedRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ReportsSlugRoute: typeof ReportsSlugRoute
   UpdatesSlugRoute: typeof UpdatesSlugRoute
   ReportsIndexRoute: typeof ReportsIndexRoute
@@ -230,20 +204,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiasporaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/get-involved': {
-      id: '/get-involved'
-      path: '/get-involved'
-      fullPath: '/get-involved'
-      preLoaderRoute: typeof GetInvolvedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/reports/': {
       id: '/reports/'
       path: '/reports'
@@ -282,8 +242,6 @@ const rootRouteChildren: RootRouteChildren = {
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   DiasporaRoute: DiasporaRoute,
-  GetInvolvedRoute: GetInvolvedRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ReportsSlugRoute: ReportsSlugRoute,
   UpdatesSlugRoute: UpdatesSlugRoute,
   ReportsIndexRoute: ReportsIndexRoute,
