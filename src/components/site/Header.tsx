@@ -1,28 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/unfoldnepal-logo.png.asset.json";
-import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
-const ABOUT_LINKS = [
-  { hash: "about-unfold-nepal", label: "About Unfold Nepal" },
-  { hash: "mission-vision", label: "Mission & Vision" },
-  { hash: "history", label: "History" },
-  { hash: "legal-status", label: "Legal Status" },
-  { hash: "objectives", label: "Objectives" },
-] as const;
-
 const NAV = [
+  { to: "/about", label: "About" },
   { to: "/reports", label: "Research" },
   { to: "/book", label: "100 Businesses" },
   { to: "/diaspora", label: "For the Diaspora" },
   { to: "/updates", label: "Updates" },
-  { to: "/get-involved", label: "Get Involved" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
-const dropdownItemClass =
-  "block rounded-sm px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground";
 
 export function Header() {
   const [open, setOpen] = useState(false);
