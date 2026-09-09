@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHeader, Section, Eyebrow, ReportCard } from "@/components/site/Primitives";
+import { PageHeader, Section, Eyebrow } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
-import { REPORTS } from "@/data/site";
 
 const TITLE = "Start a business in Nepal — a guide for the Nepali diaspora | UnfoldNepal";
 const DESCRIPTION =
@@ -102,12 +101,6 @@ const FAQS = [
 ];
 
 function Diaspora() {
-  const picks = REPORTS.filter((r) =>
-    ["himalayan-coffee-value-chain", "dairy-processing-gandaki", "handicraft-sector-bagmati"].includes(
-      r.slug,
-    ),
-  );
-
   return (
     <>
       <PageHeader
@@ -128,23 +121,6 @@ function Diaspora() {
             </li>
           ))}
         </ol>
-      </Section>
-
-      <Section className="border-y border-border bg-card">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <Eyebrow>Start here</Eyebrow>
-            <h2 className="mt-4 text-3xl font-semibold">Reports most useful from abroad</h2>
-          </div>
-          <Link to="/reports" className="text-sm font-medium text-primary hover:underline">
-            All reports →
-          </Link>
-        </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {picks.map((r) => (
-            <ReportCard key={r.slug} report={r} />
-          ))}
-        </div>
       </Section>
 
       <Section>
