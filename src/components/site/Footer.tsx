@@ -8,7 +8,6 @@ const COLUMNS = [
     heading: "Research",
     links: [
       { to: "/reports", label: "All reports" },
-      { to: "/reports", label: "Methodology" },
       { to: "/book", label: "100 Businesses book" },
     ],
   },
@@ -16,8 +15,8 @@ const COLUMNS = [
     heading: "Organisation",
     links: [
       { to: "/about", label: "About us" },
+      { to: "/board", label: "Board of Directors" },
       { to: "/updates", label: "Updates" },
-      { to: "/get-involved", label: "Get involved" },
     ],
   },
   {
@@ -25,10 +24,10 @@ const COLUMNS = [
     links: [
       { to: "/diaspora", label: "For the diaspora" },
       { to: "/contact", label: "Contact" },
-      { to: "/sitemap.xml", label: "Sitemap" },
     ],
   },
 ] as const;
+
 
 export function Footer() {
   return (
