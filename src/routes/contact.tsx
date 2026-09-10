@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader, Section, Eyebrow } from "@/components/site/Primitives";
+import { DonateOptions } from "@/components/site/DonateOptions";
+
 import { ContactForm } from "@/components/site/ContactForm";
 import { ORG } from "@/data/site";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
@@ -176,6 +178,23 @@ function Contact() {
           </p>
         </div>
       </Section>
+
+      <Section id="donate" className="scroll-mt-16 border-t border-border bg-sand">
+        <div className="max-w-2xl">
+          <Eyebrow>Support the research</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+            Fieldwork costs money. Evidence is worth it.
+          </h2>
+          <p className="mt-5 leading-relaxed text-muted-foreground">
+            A single district study takes two researchers six weeks. Everything we publish is free
+            to read in Nepal, funded by people and institutions who think it should exist.
+          </p>
+        </div>
+        <div className="mt-10">
+          <DonateOptions />
+        </div>
+      </Section>
+
     </>
   );
 }
