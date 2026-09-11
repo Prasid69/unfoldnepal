@@ -6,9 +6,9 @@ import { ContactForm } from "@/components/site/ContactForm";
 import { ORG } from "@/data/site";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 
-const TITLE = "Contact UnfoldNepal — research, media and partnership enquiries";
+const TITLE = "Contact UnfoldNepal | Returnee business support";
 const DESCRIPTION =
-  "Get in touch with UnfoldNepal about research reports, media enquiries, partnerships or the 100 Businesses book project. Based in Kathmandu, Nepal.";
+  "Contact UnfoldNepal about returnee entrepreneurship, mentorship, partnerships, research or the 100 Businesses book project.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -81,20 +81,20 @@ const CHANNELS = [
 
 const ROUTES = [
   {
-    title: "Research & data requests",
-    body: "Ask for a report, an underlying dataset, or a citation. Tell us the district or sector you need and how you intend to use it.",
+    title: "Returnee business enquiries",
+    body: "Tell us about the experience you are bringing home, the idea you are exploring and the kind of guidance you need.",
   },
   {
-    title: "Media & press",
+    title: "Media and press",
     body: "Interviews, comment on enterprise policy, or figures for a story. Include your deadline in the first line.",
   },
   {
-    title: "Partnerships & funding",
+    title: "Partnerships and funding",
     body: "Co-designed studies, dataset licensing and multi-year research partnerships with chambers, universities and funders.",
   },
   {
     title: "Nominate a business",
-    body: "Know a small business worth documenting? Send the name, district and why it works — or use the nomination form on the book page.",
+     body: "Know a small business worth documenting? Send the name, district and why it works, or use the nomination form on the book page.",
   },
 ];
 
@@ -104,7 +104,7 @@ function Contact() {
       <PageHeader
         eyebrow="Contact"
         title="Write to us"
-        intro="Research requests, press enquiries, partnership proposals or a business you think we should document — all of it reaches the same small team."
+         intro="Returnee business enquiries, mentorship, partnerships, research requests or a business worth documenting all reach the same small team."
       />
 
       <Section>

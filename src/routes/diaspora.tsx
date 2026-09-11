@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHeader, Section, Eyebrow } from "@/components/site/Primitives";
+import { Section, Eyebrow } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
+import diasporaHero from "@/assets/diaspora-returnee-entrepreneur.jpg";
 
-const TITLE = "Start a business in Nepal — a guide for the Nepali diaspora | UnfoldNepal";
+const TITLE = "Start a business in Nepal | UnfoldNepal diaspora guide";
 const DESCRIPTION =
-  "Thinking of returning to Nepal to start a business? District-level research on costs, sectors and employment for Nepalis in the US, UK, Gulf, Australia, Japan and Korea.";
+  "Training, mentorship, guidance and practical support for Nepalis who want to bring their overseas skills and experience home to build a business.";
 
 export const Route = createFileRoute("/diaspora")({
   head: () => ({
@@ -60,31 +61,31 @@ export const Route = createFileRoute("/diaspora")({
 
 const STEPS = [
   {
-    title: "Start with a district, not an idea",
-    body: "Viability in Nepal is local. The same venture succeeds in Rupandehi and fails in Jumla because of road access, market days and labour supply. Pick the district you can realistically live in, then read what already works there.",
+    title: "Shape the idea",
+    body: "Start with the skills, experience and networks you already have. We help you connect them to a real need and a realistic opportunity in Nepal.",
   },
   {
-    title: "Read the cost lines, not the headlines",
-    body: "Each of our reports reconstructs start-up capital, monthly costs and time to breakeven. Compare them against your actual savings, and add twelve to eighteen months of living costs on top.",
+    title: "Understand the market",
+    body: "Research the customers, costs, competition and local conditions before committing your savings. A good idea becomes stronger when it is tested against evidence.",
   },
   {
-    title: "Find the businesses already doing it",
-    body: "The 100 Businesses book profiles founders who have crossed year three. Several returned from abroad themselves. Their mistakes cost less to read about than to repeat.",
+    title: "Build with guidance",
+    body: "Training, mentorship and practical support can help you choose the right structure, plan the first steps and avoid preventable mistakes.",
   },
   {
-    title: "Test before you resign",
-    body: "The founders who survive almost always spent a season in-country first — sourcing, hiring, or trading on a small scale — before moving capital and family.",
+    title: "Start carefully and grow",
+    body: "Test on a manageable scale, learn from customers and improve before expanding. Sustainable businesses are built through steady decisions, not one large leap.",
   },
 ];
 
 const FAQS = [
   {
     q: "How much capital do I need to start a small business in Nepal?",
-    a: "It depends entirely on sector and district. Our reports document median start-up capital by sector — roughly NPR 9 lakh for a six-loom handicraft workshop, considerably more for a dairy unit with cold chain. Budget separately for eighteen months of household costs.",
+    a: "It depends on the sector, location and scale. Begin with a careful estimate of equipment, registration, working capital and household costs, then test the idea before making a large commitment.",
   },
   {
     q: "Can non-resident Nepalis invest in a business in Nepal?",
-    a: "Yes, through recognised NRN and foreign investment channels. Requirements differ depending on your citizenship status and the sector, and rules change — confirm the current position with the Department of Industry or a Nepal-based lawyer before transferring funds.",
+    a: "Yes, through recognised NRN and foreign investment channels. Requirements differ by citizenship status and sector, and rules change. Confirm the current position with the Department of Industry or a Nepal-based lawyer before transferring funds.",
   },
   {
     q: "Which sectors are most viable outside Kathmandu?",
@@ -103,15 +104,33 @@ const FAQS = [
 function Diaspora() {
   return (
     <>
-      <PageHeader
-        eyebrow="For the diaspora"
-        title="Thinking of starting a business back home?"
-        intro="You have the savings and the intent. What is usually missing is district-level evidence: what a venture costs, what it earns, and who is already running one. That is exactly what we publish."
-      />
+      <header className="relative isolate min-h-[32rem] border-b border-border">
+        <img
+          src={diasporaHero}
+          alt="A Nepali returnee entrepreneur working with a local team in a food processing business"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          className="absolute inset-0 -z-20 size-full object-cover"
+        />
+        <div className="hero-overlay absolute inset-0 -z-10" aria-hidden />
+        <div className="mx-auto flex min-h-[32rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:py-24 lg:px-12">
+          <div className="max-w-3xl">
+            <p className="eyebrow hero-text-muted">For the diaspora</p>
+            <h1 className="hero-text mt-4 text-4xl leading-[1.1] font-semibold md:text-6xl">
+              Bring your experience home and build what comes next
+            </h1>
+            <p className="hero-text-muted mt-6 max-w-2xl text-lg leading-relaxed">
+              UnfoldNepal helps foreign returnees turn skills, ideas and networks gained abroad into
+              viable businesses that can grow in Nepal and create meaningful work.
+            </p>
+          </div>
+        </div>
+      </header>
 
       <Section>
-        <Eyebrow>How to use our research</Eyebrow>
-        <h2 className="mt-4 max-w-2xl text-3xl font-semibold">A four-step way in</h2>
+        <Eyebrow>From experience to enterprise</Eyebrow>
+        <h2 className="mt-4 max-w-2xl text-3xl font-semibold">A practical path home</h2>
         <ol className="mt-10 grid gap-8 md:grid-cols-2">
           {STEPS.map((s, i) => (
             <li key={s.title} className="rule-top pt-6">
@@ -145,7 +164,7 @@ function Diaspora() {
           <div>
             <h2 className="text-3xl font-semibold">One email a month, from the field</h2>
             <p className="mt-4 text-muted-foreground">
-              District spotlights, new reports and returnee stories — written for Nepalis abroad.
+               Business guidance, new research and returnee stories, written for Nepalis abroad.
               Or{" "}
               <Link to="/contact" className="text-primary hover:underline">
                 write to us directly

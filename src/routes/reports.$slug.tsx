@@ -12,7 +12,7 @@ export const Route = createFileRoute("/reports/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Report not found — UnfoldNepal" }, { name: "robots", content: "noindex" }],
+         meta: [{ title: "Report not found | UnfoldNepal" }, { name: "robots", content: "noindex" }],
       };
     }
     const { report } = loaderData;
@@ -87,7 +87,7 @@ function ReportDetail() {
               </a>
             ) : (
               <span className="inline-block rounded-sm border border-border bg-card px-6 py-3 text-sm text-muted-foreground">
-                Coming soon — subscribe below to be notified
+                 Coming soon. Subscribe below to be notified
               </span>
             )}
           </div>
@@ -102,7 +102,7 @@ function ReportDetail() {
               {report.findings.map((f) => (
                 <li key={f} className="rule-top flex gap-4 pt-5">
                   <span aria-hidden className="text-primary">
-                    —
+                     •
                   </span>
                   <span className="leading-relaxed text-muted-foreground">{f}</span>
                 </li>

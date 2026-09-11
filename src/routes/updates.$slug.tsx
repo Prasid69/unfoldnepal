@@ -12,7 +12,7 @@ export const Route = createFileRoute("/updates/$slug")({
   head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Article not found — UnfoldNepal" }, { name: "robots", content: "noindex" }],
+         meta: [{ title: "Article not found | UnfoldNepal" }, { name: "robots", content: "noindex" }],
       };
     }
     const { post } = loaderData;

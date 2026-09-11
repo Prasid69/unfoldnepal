@@ -4,9 +4,8 @@ import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { StoryForm } from "@/components/site/StoryForm";
 import { CountUpStat } from "@/components/site/CountUpStat";
 import bookImg from "@/assets/book-cover-nepal.jpg";
-import coffeeImg from "@/assets/profile-coffee.jpg";
 
-const TITLE = "100 Businesses of Nepal — the book project | UnfoldNepal";
+const TITLE = "100 Businesses of Nepal | UnfoldNepal";
 const DESCRIPTION =
   "A book series profiling 100 successful businesses across Nepal's districts: capital required, employment created and lessons any founder can repeat.";
 
@@ -28,8 +27,12 @@ export const Route = createFileRoute("/book")({
 });
 
 const DISTRICTS = [
-  "Lalitpur", "Bhaktapur", "Kaski", "Syangja", "Gulmi", "Palpa", "Rupandehi", "Dhanusha",
-  "Siraha", "Morang",
+  "Kathmandu",
+  "Lalitpur",
+  "Bhaktapur",
+  "Kavrepalanchok",
+  "Nuwakot",
+  "Dhading",
 ];
 
 function BookPage() {
@@ -38,12 +41,12 @@ function BookPage() {
       <section className="border-b border-border bg-sand">
         <div className="mx-auto grid w-full max-w-[1600px] items-center gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:px-12">
           <div>
-            <Eyebrow>Flagship publication</Eyebrow>
+            <Eyebrow>Core publication</Eyebrow>
             <h1 className="mt-5 text-4xl leading-[1.05] font-semibold md:text-6xl">
               100 Businesses of Nepal
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              One hundred enterprises, one hundred districts' worth of evidence. Each profile
+               One hundred enterprises and practical lessons from across Nepal. Each profile
               documents what the founder started with, what it cost, who they employ now, and
               whether someone else could build the same thing somewhere else in Nepal.
             </p>
@@ -55,7 +58,7 @@ function BookPage() {
                 <div className="h-full w-[10%] bg-primary" />
               </div>
               <p className="mt-2 text-xs text-muted-foreground">
-                Placeholder progress — update as profiles are completed.
+               Progress will be updated as profiles are completed.
               </p>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -76,7 +79,7 @@ function BookPage() {
           <Figure
             src={bookImg}
             alt="Hardcover edition of 100 Businesses of Nepal in terracotta and charcoal"
-            caption="Cover design in development — first edition planned for 2027"
+            caption="Cover design in development"
             width={1200}
             height={1200}
           />
@@ -114,8 +117,8 @@ function BookPage() {
         <Eyebrow>Coverage</Eyebrow>
         <h2 className="mt-4 text-3xl font-semibold">Districts profiled so far</h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
-          Ten of Nepal's seventy-seven districts are documented. Districts still open for
-          nomination are the ones we most want to hear about.
+           The first phase focuses on six districts close to Kathmandu, allowing the team to build
+           and refine a strong research process before expanding further.
         </p>
         <ul className="mt-8 flex flex-wrap gap-2">
           {DISTRICTS.map((d) => (
@@ -130,63 +133,6 @@ function BookPage() {
             </li>
           ))}
         </ul>
-      </Section>
-
-      <Section>
-        <Eyebrow>Sample profile</Eyebrow>
-        <h2 className="mt-4 text-3xl font-semibold">Profile 07 — Himalaya Coffee Roasters</h2>
-        <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_1.2fr]">
-          <Figure
-            src={coffeeImg}
-            alt="Founder standing with folded arms outside his small coffee roastery in Gulmi, Nepal"
-            caption="Photo: Himalaya Coffee Roasters, Gulmi District"
-            width={1200}
-            height={912}
-          />
-          <div className="space-y-5 leading-relaxed text-muted-foreground">
-            <p>
-              Suman Pun spent seven years as a barista in Seoul. He returned to Gulmi in 2018 with
-              NPR 22 lakh in savings and one conviction: the coffee grown twenty minutes from his
-              village was being sold as raw cherry for a fraction of what it was worth roasted.
-            </p>
-            <p>
-              He bought a 5 kg roaster, rented a stone building on the road to Tamghas, and spent
-              the first year losing money on inconsistent roasts. The turn came when he stopped
-              selling wholesale and started shipping direct to Kathmandu cafés.
-            </p>
-            <dl className="grid grid-cols-2 gap-px border border-border bg-border text-sm">
-              {[
-                ["Start-up capital", "NPR 22 lakh"],
-                ["Breakeven", "Month 19"],
-                ["Employees today", "9 (6 women)"],
-                ["Farmers supplied by", "140 households"],
-              ].map(([k, v]) => (
-                <div key={k} className="bg-card p-4">
-                  <dt className="text-xs tracking-wide uppercase">{k}</dt>
-                  <dd className="mt-1 font-serif text-lg text-foreground">{v}</dd>
-                </div>
-              ))}
-            </dl>
-            <div>
-              <h3 className="text-lg font-semibold text-foreground">Key lessons</h3>
-              <ul className="mt-3 space-y-2">
-                <li>Wholesale buyers will not pay for quality you cannot certify. Sell direct first.</li>
-                <li>Budget eighteen months of living costs; the roaster was never the expensive part.</li>
-                <li>Paying above farm-gate secured supply when three competitors arrived in 2023.</li>
-              </ul>
-            </div>
-            <p className="text-sm">
-              Related research:{" "}
-              <Link
-                to="/reports/$slug"
-                params={{ slug: "himalayan-coffee-value-chain" }}
-                className="text-primary hover:underline"
-              >
-                Himalayan Coffee: Value Chain and Returnee Entrepreneurship
-              </Link>
-            </p>
-          </div>
-        </div>
       </Section>
 
       <Section id="nominate" className="border-y border-border bg-sand">

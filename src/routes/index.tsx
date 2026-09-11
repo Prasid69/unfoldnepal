@@ -7,9 +7,9 @@ import heroImg from "@/assets/hero-himalaya.jpg";
 
 import { CountUpStat } from "@/components/site/CountUpStat";
 
-const TITLE = "UnfoldNepal — Nepal SME research and the 100 Businesses book";
+const TITLE = "UnfoldNepal | Returnee entrepreneurship in Nepal";
 const DESCRIPTION =
-  "Independent research on Nepal's cottage, small and medium enterprises, published for the Nepali diaspora, funders and policymakers planning to build in Nepal.";
+  "UnfoldNepal helps foreign returnees turn skills, experience and ideas gained abroad into sustainable businesses and meaningful employment in Nepal.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -31,18 +31,18 @@ export const Route = createFileRoute("/")({
 
 const PILLARS = [
   {
-    title: "Research",
-    body: "District-level fieldwork on cottage, small and medium enterprises: cost structures, market access, employment and what actually makes a firm survive its third year.",
+    title: "Prepare",
+    body: "Entrepreneurship training and awareness initiatives help returnees understand the path from an early idea to a viable business.",
     link: { to: "/reports", label: "Browse the reports" },
   },
   {
-    title: "Publish",
-    body: "Sector reports and a flagship book series profiling 100 businesses running successfully across Nepal's districts — written to be used, not shelved.",
+    title: "Learn from evidence",
+    body: "Research, case studies and the 100 Businesses book turn local experience into useful lessons for people preparing to build in Nepal.",
     link: { to: "/book", label: "The 100 Businesses book" },
   },
   {
-    title: "Connect the diaspora",
-    body: "Translating that evidence for Nepalis abroad who are weighing a return: what a venture costs, where it works, and who is already doing it.",
+    title: "Build with support",
+    body: "Mentorship, guidance and strategic support help returnees test decisions, solve problems and grow with greater confidence.",
     link: { to: "/diaspora", label: "If you're abroad" },
   },
 ] as const;
@@ -65,14 +65,14 @@ function Index() {
         <div className="mx-auto flex min-h-[32rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:min-h-[38rem] md:py-24 lg:px-12">
           <div className="max-w-5xl">
             <div className="hero-enter hero-enter-1">
-              <p className="eyebrow hero-text-muted">Research · Publishing · Nepal</p>
+               <p className="eyebrow hero-text-muted">Returnees · Enterprise · Nepal</p>
             </div>
             <h1 className="hero-enter hero-enter-2 hero-text mt-5 text-4xl leading-[1.05] font-semibold md:text-6xl lg:text-7xl">
-              Building Nepal's entrepreneurial future, district by district.
+               Bring your experience home. Build Nepal's future.
             </h1>
             <p className="hero-enter hero-enter-3 hero-text-muted mt-7 max-w-3xl text-lg leading-relaxed md:text-xl">
-              We grow enterprise in Nepal and connect the global Nepali diaspora to it — with
-              research, published evidence and the people already doing the work.
+               We help foreign returnees turn skills, experience and ideas gained abroad into
+               sustainable businesses and meaningful employment in Nepal.
             </p>
             <div className="hero-enter hero-enter-4 mt-10 flex flex-wrap gap-3">
               <Link
@@ -112,7 +112,7 @@ function Index() {
       <Section>
         <Eyebrow>What we do</Eyebrow>
         <h2 className="mt-4 max-w-2xl text-3xl font-semibold md:text-4xl">
-          Three pillars, one purpose: usable evidence about enterprise in Nepal.
+           Practical support for the journey from an idea to a sustainable business.
         </h2>
         <div className="mt-12 grid gap-10 md:grid-cols-3">
           {PILLARS.map((p) => (
@@ -135,18 +135,18 @@ function Index() {
           <Figure
             src={bookImg}
             alt="Hardcover edition of the 100 Businesses of Nepal book standing on a cream surface"
-            caption="The 100 Businesses of Nepal — first edition, in production"
+             caption="The 100 Businesses of Nepal, first edition in production"
             width={1200}
             height={1200}
           />
           <div>
-            <Eyebrow>Flagship project</Eyebrow>
+             <Eyebrow>Core publication</Eyebrow>
             <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
               100 Businesses of Nepal
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
               A book series profiling one hundred businesses running successfully across Nepal's
-              districts — the capital they needed, the mistakes they made, the people they employ,
+               districts. It records the capital they needed, the mistakes they made, the people they employ,
               and whether the model can be repeated somewhere else.
             </p>
             <p className="mt-6 font-serif text-2xl">
@@ -196,7 +196,7 @@ function Index() {
           <div>
             <h2 className="text-3xl font-semibold">Stay with the research</h2>
             <p className="mt-4 text-muted-foreground">
-              New reports, district spotlights and book progress — about once a month.
+               New reports, returnee stories and book progress, about once a month.
             </p>
           </div>
           <NewsletterForm />
