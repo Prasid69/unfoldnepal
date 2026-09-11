@@ -80,15 +80,6 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                to="/board"
-                onClick={() => setOpen(false)}
-                className="block py-2 text-sm text-foreground"
-              >
-                Board of Directors
-              </Link>
-            </li>
             <li className="pt-2">
               <Link
                 to="/contact"

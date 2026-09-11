@@ -6,7 +6,7 @@ export const ORG = {
   phone: "+977 1 000 0000",
   address: "Kathmandu, Bagmati Province, Nepal",
   tagline:
-    "Research and publishing on Nepal's cottage, small and medium enterprises.",
+    "Helping foreign returnees turn skills, experience and ideas into sustainable businesses in Nepal.",
 };
 
 export type BoardMember = {
@@ -24,22 +24,22 @@ export const BOARD: BoardMember[] = [
   {
     name: "Prasiddha Aryal",
     role: "Chairperson & Chief Executive Officer",
-    note: "Chairs the board and leads day-to-day operations, the research agenda and the 100 Businesses book series.",
-    bio: "Prasiddha founded UnfoldNepal in 2022 after years of watching capable Nepalis abroad struggle to find credible, district-level information about starting a business back home. As Chairperson and CEO he sets the organisation's research agenda, leads the 100 Businesses of Nepal book series, and represents the organisation to funders, partners and policymakers. He divides his time between fieldwork in the districts and the editing desk.",
+    note: "Chairs the board and leads the company's work with returnees, entrepreneurs and partners.",
+    bio: "Prasiddha leads UnfoldNepal's work to help foreign returnees turn their experience into sustainable businesses in Nepal.",
     expertise: ["Research strategy", "Book publishing", "Institutional partnerships", "Diaspora engagement"],
   },
   {
     name: "Indira Dahal",
     role: "Board Member",
     note: "Oversees governance, institutional partnerships and research ethics.",
-    bio: "Indira oversees UnfoldNepal's governance framework, research ethics and institutional partnerships. She reviews the methodology behind every publication — sampling design, consent and verification standards — and chairs the internal review each report passes before release. She also leads relationships with the universities and civil-society organisations that reuse our data in teaching and further research.",
+    bio: "Indira oversees UnfoldNepal's governance framework, research ethics and institutional partnerships. She helps ensure that every programme and publication is useful, responsible and accountable.",
     expertise: ["Governance & ethics", "Research methodology", "Academic partnerships"],
   },
   {
     name: "Pratyusha Aryal",
     role: "Board Member",
     note: "Focuses on diaspora engagement and outreach to Nepalis abroad.",
-    bio: "Pratyusha leads UnfoldNepal's work with Nepali communities abroad — the audience most of our research is written for. She coordinates diaspora chapters and city sessions, gathers the questions prospective returnees actually ask, and feeds them back into the research agenda so that fieldwork answers real decisions rather than abstract ones.",
+    bio: "Pratyusha leads UnfoldNepal's work with Nepali communities abroad. She listens to the questions prospective returnees ask and helps shape support around their real decisions.",
     expertise: ["Diaspora outreach", "Community organising", "Communications"],
   },
   {

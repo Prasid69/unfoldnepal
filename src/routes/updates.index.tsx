@@ -4,7 +4,7 @@ import { PageHeader, Section } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { POSTS } from "@/data/site";
 
-const TITLE = "Updates — district spotlights and diaspora stories | UnfoldNepal";
+const TITLE = "Updates | Returnee and business stories from UnfoldNepal";
 const DESCRIPTION =
   "Short articles from the field: Nepal district business spotlights, diaspora entrepreneurship stories, and notes on how our SME research is done.";
 

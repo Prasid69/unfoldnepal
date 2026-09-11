@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
-import { PageHeader, Section, Eyebrow, ReportCard } from "@/components/site/Primitives";
-import { REPORTS, SECTORS, PROVINCES } from "@/data/site";
-import { cn } from "@/lib/utils";
+import { Section, Eyebrow, ReportCard } from "@/components/site/Primitives";
+import { REPORTS } from "@/data/site";
+import researchHero from "@/assets/research-returnee-workshop.jpg";
 
-const TITLE = "Nepal SME research reports — sectors and districts | UnfoldNepal";
+const TITLE = "Business research for returnees in Nepal | UnfoldNepal";
 const DESCRIPTION =
-  "Sector and district research on Nepal's cottage and small industries: handicraft, agro-processing, tourism and retail. Free summaries, downloadable reports.";
+  "Practical research on Nepal's small businesses, local markets and returnee entrepreneurship, created to support better business decisions.";
 
 export const Route = createFileRoute("/reports/")({
   head: () => ({
@@ -25,90 +24,43 @@ export const Route = createFileRoute("/reports/")({
   component: ReportsIndex,
 });
 
-function Filter({
-  label,
-  active,
-  onClick,
-}: {
-  label: string;
-  active: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={active}
-      className={cn(
-        "rounded-sm border px-3 py-1.5 text-sm transition-colors",
-        active
-          ? "border-primary bg-primary text-primary-foreground"
-          : "border-border text-muted-foreground hover:border-primary hover:text-primary",
-      )}
-    >
-      {label}
-    </button>
-  );
-}
-
 function ReportsIndex() {
-  const [sector, setSector] = useState("All");
-  const [province, setProvince] = useState("All");
-
-  const filtered = useMemo(
-    () =>
-      REPORTS.filter(
-        (r) =>
-          (sector === "All" || r.sector === sector) &&
-          (province === "All" || r.province === province),
-      ),
-    [sector, province],
-  );
+  const featuredReports = REPORTS.slice(0, 3);
 
   return (
     <>
-      <PageHeader
-        eyebrow="Research"
-        title="Reports on Nepal's cottage, small and medium enterprises"
-        intro="Every report is built from district fieldwork: interviews with owner-operators, cost reconstruction and price sampling. Summaries are always free."
-      />
-
-      <Section>
-        <div className="flex flex-col gap-5">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-2 text-xs tracking-[0.16em] text-muted-foreground uppercase">
-              Sector
-            </span>
-            <Filter label="All" active={sector === "All"} onClick={() => setSector("All")} />
-            {SECTORS.map((s) => (
-              <Filter key={s} label={s} active={sector === s} onClick={() => setSector(s)} />
-            ))}
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-2 text-xs tracking-[0.16em] text-muted-foreground uppercase">
-              Province
-            </span>
-            <Filter label="All" active={province === "All"} onClick={() => setProvince("All")} />
-            {PROVINCES.map((p) => (
-              <Filter key={p} label={p} active={province === p} onClick={() => setProvince(p)} />
-            ))}
+      <header className="relative isolate min-h-[30rem] border-b border-border">
+        <img
+          src={researchHero}
+          alt="A researcher speaking with a returnee entrepreneur in a Nepalese woodcraft workshop"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          className="absolute inset-0 -z-20 size-full object-cover"
+        />
+        <div className="hero-overlay absolute inset-0 -z-10" aria-hidden />
+        <div className="mx-auto flex min-h-[30rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:py-24 lg:px-12">
+          <div className="max-w-3xl">
+            <p className="eyebrow hero-text-muted">Research</p>
+            <h1 className="hero-text mt-4 text-4xl leading-[1.1] font-semibold md:text-6xl">
+              Evidence for building a business in Nepal
+            </h1>
+            <p className="hero-text-muted mt-6 max-w-2xl text-lg leading-relaxed">
+              Our research helps returnees understand local markets, learn from working businesses
+              and make stronger decisions before investing their time and savings.
+            </p>
           </div>
         </div>
+      </header>
 
-        <p className="mt-8 text-sm text-muted-foreground" aria-live="polite">
-          Showing {filtered.length} of {REPORTS.length} reports
-        </p>
-
-        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((r) => (
+      <Section>
+        <Eyebrow>Selected reports</Eyebrow>
+        <h2 className="mt-4 max-w-2xl text-3xl font-semibold">Research built around real decisions</h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredReports.map((r) => (
             <ReportCard key={r.slug} report={r} />
           ))}
         </div>
-        {filtered.length === 0 && (
-          <p className="mt-10 text-muted-foreground">
-            No reports match that combination yet. Try a different sector or province.
-          </p>
-        )}
       </Section>
 
       <Section className="border-t border-border bg-card">
