@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiasporaRouteImport } from './routes/diaspora'
+import { Route as SupportRouteImport } from './routes/support'
 import { Route as ReportsIndexRouteImport } from './routes/reports.index'
 import { Route as ReportsSlugRouteImport } from './routes/reports.$slug'
 import { Route as UpdatesIndexRouteImport } from './routes/updates.index'
@@ -44,6 +45,11 @@ const DiasporaRoute = DiasporaRouteImport.update({
   path: '/diaspora',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReportsIndexRoute = ReportsIndexRouteImport.update({
   id: '/reports/',
   path: '/reports/',
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
+  '/support': typeof SupportRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/updates/$slug': typeof UpdatesSlugRoute
   '/reports/': typeof ReportsIndexRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
+  '/support': typeof SupportRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/updates/$slug': typeof UpdatesSlugRoute
   '/reports': typeof ReportsIndexRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
+  '/support': typeof SupportRoute
   '/reports/$slug': typeof ReportsSlugRoute
   '/updates/$slug': typeof UpdatesSlugRoute
   '/reports/': typeof ReportsIndexRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/diaspora'
+    | '/support'
     | '/reports/$slug'
     | '/updates/$slug'
     | '/reports/'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/diaspora'
+    | '/support'
     | '/reports/$slug'
     | '/updates/$slug'
     | '/reports'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/book'
     | '/contact'
     | '/diaspora'
+    | '/support'
     | '/reports/$slug'
     | '/updates/$slug'
     | '/reports/'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   DiasporaRoute: typeof DiasporaRoute
+  SupportRoute: typeof SupportRoute
   ReportsSlugRoute: typeof ReportsSlugRoute
   UpdatesSlugRoute: typeof UpdatesSlugRoute
   ReportsIndexRoute: typeof ReportsIndexRoute
@@ -184,6 +197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DiasporaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reports/': {
       id: '/reports/'
       path: '/reports'
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   DiasporaRoute: DiasporaRoute,
+  SupportRoute: SupportRoute,
   ReportsSlugRoute: ReportsSlugRoute,
   UpdatesSlugRoute: UpdatesSlugRoute,
   ReportsIndexRoute: ReportsIndexRoute,
