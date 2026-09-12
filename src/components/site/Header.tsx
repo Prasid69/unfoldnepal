@@ -10,7 +10,6 @@ const NAV = [
   { to: "/book", label: "100 Businesses" },
   { to: "/diaspora", label: "For the Diaspora" },
   { to: "/updates", label: "Updates" },
-  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Header() {
