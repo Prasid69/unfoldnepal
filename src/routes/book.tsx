@@ -79,7 +79,7 @@ function BookPage() {
           <Figure
             src={bookImg}
             alt="Hardcover edition of 100 Businesses of Nepal in terracotta and charcoal"
-            caption="Cover design in development"
+            caption="Cover design in development."
             width={1200}
             height={1200}
           />

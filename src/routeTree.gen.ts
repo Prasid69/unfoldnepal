@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as BoardRouteImport } from './routes/board'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DiasporaRouteImport } from './routes/diaspora'
@@ -28,11 +27,6 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BoardRoute = BoardRouteImport.update({
-  id: '/board',
-  path: '/board',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookRoute = BookRouteImport.update({
@@ -74,7 +68,6 @@ const UpdatesSlugRoute = UpdatesSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/board': typeof BoardRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
@@ -86,7 +79,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/board': typeof BoardRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
@@ -99,7 +91,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/board': typeof BoardRoute
   '/book': typeof BookRoute
   '/contact': typeof ContactRoute
   '/diaspora': typeof DiasporaRoute
@@ -113,7 +104,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/board'
     | '/book'
     | '/contact'
     | '/diaspora'
@@ -125,7 +115,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
-    | '/board'
     | '/book'
     | '/contact'
     | '/diaspora'
@@ -137,7 +126,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
-    | '/board'
     | '/book'
     | '/contact'
     | '/diaspora'
@@ -150,7 +138,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BoardRoute: typeof BoardRoute
   BookRoute: typeof BookRoute
   ContactRoute: typeof ContactRoute
   DiasporaRoute: typeof DiasporaRoute
@@ -174,13 +161,6 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/board': {
-      id: '/board'
-      path: '/board'
-      fullPath: '/board'
-      preLoaderRoute: typeof BoardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book': {
@@ -238,7 +218,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BoardRoute: BoardRoute,
   BookRoute: BookRoute,
   ContactRoute: ContactRoute,
   DiasporaRoute: DiasporaRoute,
