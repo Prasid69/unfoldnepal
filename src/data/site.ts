@@ -119,7 +119,7 @@ export const REPORTS: Report[] = [
       "Returnee-founded units were twice as likely to invest in packaging and branding.",
     ],
     method:
-      "Field visits to 46 processing units, 9 cooperative interviews and district livestock office data for 2079–2081.",
+      "Field visits to 46 processing units, 9 cooperative interviews and district livestock office data for 2079-2081.",
     related: ["handicraft-sector-bagmati", "himalayan-coffee-value-chain"],
   },
   {
@@ -244,14 +244,14 @@ export const POSTS: Post[] = [
       {
         heading: "Where the margin actually sits",
         paragraphs: [
-          "Once cherry is pulped, dried, hulled, roasted and bagged, the retail price in Kathmandu is several times the farm-gate price. Most of that spread is not profiteering — drying loss, hulling, transport and failed batches are expensive. But the profit that remains sits overwhelmingly with whoever sells the final bag, and in Gulmi that is almost never the grower.",
+          "Once cherry is pulped, dried, hulled, roasted and bagged, the retail price in Kathmandu is several times the farm-gate price. Most of that spread is not profiteering. drying loss, hulling, transport and failed batches are expensive. But the profit that remains sits overwhelmingly with whoever sells the final bag, and in Gulmi that is almost never the grower.",
           "The roasteries we costed made their money on direct-to-consumer sales: cafés, subscription bags, gift boxes bought in Kathmandu and shipped abroad. Wholesale volume kept the machines busy; retail paid the wages.",
         ],
       },
       {
         heading: "What this means if you are planning a roastery",
         paragraphs: [
-          "Three practical conclusions came out of the fieldwork. First, secure your sales channel before you buy equipment — a roaster without a retail route is an expensive way to store green beans. Second, certification only pays above roughly twelve hectares of aggregated supply; below that the audit cost eats the premium. Third, budget for a second drying season before you expect to break even.",
+          "Three practical conclusions came out of the fieldwork. First, secure your sales channel before you buy equipment. a roaster without a retail route is an expensive way to store green beans. Second, certification only pays above roughly twelve hectares of aggregated supply; below that the audit cost eats the premium. Third, budget for a second drying season before you expect to break even.",
           "None of this argues against investing in Gulmi coffee. It argues against investing in it on the assumption that a rising farm-gate price will carry a business on its own.",
         ],
       },
@@ -272,7 +272,7 @@ export const POSTS: Post[] = [
       {
         heading: "Same savings, different outcomes",
         paragraphs: [
-          "The three founders in this piece left Qatar within eight months of each other, returned to three different districts, and started with broadly comparable savings — between NPR 18 and 26 lakh. A year later one business was profitable, one was surviving on a second income, and one had closed.",
+          "The three founders in this piece left Qatar within eight months of each other, returned to three different districts, and started with broadly comparable savings. between NPR 18 and 26 lakh. A year later one business was profitable, one was surviving on a second income, and one had closed.",
           "The difference was not effort, and it was not luck in any useful sense. It was how much of the first year was spent learning things that could have been learned before the money was committed.",
         ],
       },
@@ -286,7 +286,7 @@ export const POSTS: Post[] = [
       {
         heading: "What we would tell someone still abroad",
         paragraphs: [
-          "Choose the district before the sector, not the other way around. Assume registration, utilities and a workable premises take three to six months. Keep six months of household expenses entirely separate from business capital — the businesses that failed rarely failed on the idea; they failed when the household needed the working capital.",
+          "Choose the district before the sector, not the other way around. Assume registration, utilities and a workable premises take three to six months. Keep six months of household expenses entirely separate from business capital. the businesses that failed rarely failed on the idea; they failed when the household needed the working capital.",
           "Our guide for the diaspora sets out the same sequence in more detail, with the paperwork and rough timelines attached.",
         ],
       },
@@ -307,13 +307,13 @@ export const POSTS: Post[] = [
       {
         heading: "Why the definition matters",
         paragraphs: [
-          "A book called 100 Businesses of Nepal is only useful if the reader can trust why each business is in it. Awards, revenue claims and press coverage are poor filters — they favour the visible over the durable. We set criteria first and applied them the same way in every district.",
+          "A book called 100 Businesses of Nepal is only useful if the reader can trust why each business is in it. Awards, revenue claims and press coverage are poor filters. they favour the visible over the durable. We set criteria first and applied them the same way in every district.",
         ],
       },
       {
         heading: "The four criteria",
         paragraphs: [
-          "One: at least three consecutive years of operation, evidenced by registration and tax filings rather than the founder's recollection. Two: verified employment — we count people on a payroll or a documented wage arrangement, not stated headcount. Three: a repeatable model, meaning another founder in a comparable district could plausibly follow the same path. Four: consent to be examined, including permission to review ledgers where they exist.",
+          "One: at least three consecutive years of operation, evidenced by registration and tax filings rather than the founder's recollection. Two: verified employment. we count people on a payroll or a documented wage arrangement, not stated headcount. Three: a repeatable model, meaning another founder in a comparable district could plausibly follow the same path. Four: consent to be examined, including permission to review ledgers where they exist.",
         ],
       },
       {
@@ -395,7 +395,7 @@ export const DONATION_MONTHLY_TIERS: {
 
 export const DONATION_METHODS: Record<CurrencyCode, { title: string; detail: string }[]> = {
   NPR: [
-    { title: "Bank transfer (NPR)", detail: "Nepali bank account details are shared on request — write to us and we will send them the same day." },
+    { title: "Bank transfer (NPR)", detail: "Nepali bank account details are shared on request. write to us and we will send them the same day." },
     { title: "eSewa / Khalti / ConnectIPS", detail: "Digital wallet transfers within Nepal, with a receipt issued for every contribution." },
   ],
   USD: [

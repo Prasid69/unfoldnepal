@@ -109,7 +109,7 @@ export function DonateOptions() {
       <div className="mt-6 space-y-4 border-t border-border pt-6">
         {frequency === "monthly" && (
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Monthly gifts are set up as a standing instruction with your bank or wallet — we send a
+            Monthly gifts are set up as a standing instruction with your bank or wallet. we send a
             short confirmation and a receipt each month, and you can pause or stop any time.
           </p>
         )}
