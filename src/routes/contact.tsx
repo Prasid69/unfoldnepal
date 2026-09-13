@@ -178,30 +178,6 @@ function Contact() {
         </div>
       </Section>
 
-      <Section id="donate" className="scroll-mt-16 border-t border-border bg-sand">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <div className="max-w-xl">
-            <Eyebrow>Support the research</Eyebrow>
-            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-              Scan to support our work
-            </h2>
-            <p className="mt-5 leading-relaxed text-muted-foreground">
-              Every contribution funds fieldwork, research and publishing that stays free to read in
-              Nepal. Scan the QR code with your mobile wallet or banking app to give.
-            </p>
-          </div>
-          {/* Paste your QR code image here when ready. */}
-          <div className="mx-auto flex aspect-square w-full max-w-sm flex-col items-center justify-center gap-3 rounded-sm border-2 border-dashed border-primary/50 bg-card p-6 text-center">
-            <span className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-              QR code
-            </span>
-            <span className="text-sm text-muted-foreground">
-              QR code appears here
-            </span>
-          </div>
-        </div>
-      </Section>
-
     </>
   );
 }

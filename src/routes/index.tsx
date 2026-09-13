@@ -82,8 +82,7 @@ function Index() {
                 Updates
               </Link>
               <Link
-                to="/contact"
-                hash="donate"
+                to="/support"
                 className="hero-text rounded-sm border border-current/50 px-6 py-3 text-sm font-medium transition-opacity hover:opacity-80"
               >
                 Support the research
