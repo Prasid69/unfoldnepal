@@ -40,8 +40,7 @@ export function Header() {
             </Link>
           ))}
           <Link
-            to="/contact"
-            hash="donate"
+            to="/support"
             className="rounded-sm bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
             Support the research
@@ -81,8 +80,7 @@ export function Header() {
             ))}
             <li className="pt-2">
               <Link
-                to="/contact"
-                hash="donate"
+                to="/support"
                 onClick={() => setOpen(false)}
                 className="block rounded-sm bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground"
               >
