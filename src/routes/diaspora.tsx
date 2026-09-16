@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Section, Eyebrow } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
-import diasporaHero from "@/assets/diaspora-returnee-entrepreneur.jpg";
+import diasporaHero from "@/assets/hero-diaspora-bridge.jpg";
 
 const TITLE = "Start a business in Nepal | UnfoldNepal diaspora guide";
 const DESCRIPTION =
@@ -107,20 +107,20 @@ function Diaspora() {
       <header className="relative isolate min-h-[32rem] border-b border-border">
         <img
           src={diasporaHero}
-          alt="A Nepali returnee entrepreneur working with a local team in a food processing business"
+          alt="Rustic suspension bridge over a turquoise river in rural Nepal surrounded by pine forests and terraced hillsides"
           width={1920}
           height={1080}
           fetchPriority="high"
           className="absolute inset-0 -z-20 size-full object-cover"
         />
         <div className="hero-overlay absolute inset-0 -z-10" aria-hidden />
-        <div className="mx-auto flex min-h-[32rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:py-24 lg:px-12">
+        <div className="mx-auto flex min-h-[32rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:min-h-[38rem] md:py-24 lg:px-12">
           <div className="max-w-3xl">
-            <p className="eyebrow hero-text-muted">For the diaspora</p>
-            <h1 className="hero-text mt-4 text-4xl leading-[1.1] font-semibold md:text-6xl">
+            <p className="eyebrow hero-enter hero-enter-1 hero-text-muted">For the diaspora</p>
+            <h1 className="hero-enter hero-enter-2 hero-text mt-4 text-4xl leading-[1.1] font-semibold md:text-5xl lg:text-6xl">
               Bring your experience home and build what comes next
             </h1>
-            <p className="hero-text-muted mt-6 max-w-2xl text-lg leading-relaxed">
+            <p className="hero-enter hero-enter-3 hero-text-muted mt-6 max-w-2xl text-lg leading-relaxed">
               UnfoldNepal helps foreign returnees turn skills, ideas and networks gained abroad into
               viable businesses that can grow in Nepal and create meaningful work.
             </p>

@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Section, Eyebrow, ReportCard } from "@/components/site/Primitives";
-import { REPORTS } from "@/data/site";
-import researchHero from "@/assets/research-returnee-workshop.jpg";
+import { Section, Eyebrow } from "@/components/site/Primitives";
+import researchHero from "@/assets/hero-research-looms.jpg";
 
 const TITLE = "Business research for returnees in Nepal | UnfoldNepal";
 const DESCRIPTION =
@@ -25,43 +24,31 @@ export const Route = createFileRoute("/reports/")({
 });
 
 function ReportsIndex() {
-  const featuredReports = REPORTS.slice(0, 3);
-
   return (
     <>
       <header className="relative isolate min-h-[30rem] border-b border-border">
         <img
           src={researchHero}
-          alt="A researcher speaking with a returnee entrepreneur in a Nepalese woodcraft workshop"
+          alt="Traditional Nepalese handicraft looms with colorful threads in a rustic wooden workshop, warm afternoon light"
           width={1920}
           height={1080}
           fetchPriority="high"
           className="absolute inset-0 -z-20 size-full object-cover"
         />
         <div className="hero-overlay absolute inset-0 -z-10" aria-hidden />
-        <div className="mx-auto flex min-h-[30rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:py-24 lg:px-12">
+        <div className="mx-auto flex min-h-[30rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:min-h-[38rem] md:py-24 lg:px-12">
           <div className="max-w-3xl">
-            <p className="eyebrow hero-text-muted">Research</p>
-            <h1 className="hero-text mt-4 text-4xl leading-[1.1] font-semibold md:text-6xl">
+            <p className="eyebrow hero-enter hero-enter-1 hero-text-muted">Research</p>
+            <h1 className="hero-enter hero-enter-2 hero-text mt-4 text-4xl leading-[1.1] font-semibold md:text-6xl">
               Evidence for building a business in Nepal
             </h1>
-            <p className="hero-text-muted mt-6 max-w-2xl text-lg leading-relaxed">
+            <p className="hero-enter hero-enter-3 hero-text-muted mt-6 max-w-2xl text-lg leading-relaxed">
               Our research helps returnees understand local markets, learn from working businesses
               and make stronger decisions before investing their time and savings.
             </p>
           </div>
         </div>
       </header>
-
-      <Section>
-        <Eyebrow>Selected reports</Eyebrow>
-        <h2 className="mt-4 max-w-2xl text-3xl font-semibold">Research built around real decisions</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredReports.map((r) => (
-            <ReportCard key={r.slug} report={r} />
-          ))}
-        </div>
-      </Section>
 
       <Section className="border-t border-border bg-card">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">

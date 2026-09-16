@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { ORG } from "@/data/site";
 import { NewsletterForm } from "./NewsletterForm";
-import logo from "@/assets/unfoldnepal-logo.png.asset.json";
+import logo from "@/assets/unfoldnepal-logo.png";
 
 const COLUMNS = [
   {
     heading: "Research",
     links: [
       { to: "/reports", label: "All reports" },
-      { to: "/book", label: "100 Businesses book" },
+      { to: "/book", label: "The Book Project" },
     ],
   },
   {
@@ -34,14 +34,16 @@ export function Footer() {
       <div className="mx-auto w-full max-w-[1600px] px-5 py-16 sm:px-8 lg:px-12">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <img
-              src={logo.url}
-              alt="UnfoldNepal logo"
-              className="h-9 w-auto dark:invert dark:hue-rotate-180"
-              width={280}
-              height={90}
-              loading="lazy"
-            />
+            <Link to="/" className="inline-block">
+              <img
+                src={logo}
+                alt="UnfoldNepal logo"
+                className="h-8 w-auto md:h-9 dark:invert dark:hue-rotate-180 transition-opacity hover:opacity-90"
+                width={280}
+                height={90}
+                loading="lazy"
+              />
+            </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
                {ORG.tagline} Independent, not-for-profit and registered in Nepal.
             </p>

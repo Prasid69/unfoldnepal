@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHeader, Section, Eyebrow } from "@/components/site/Primitives";
+import { HeroPageHeader, Section, Eyebrow } from "@/components/site/Primitives";
 import { BOARD } from "@/data/site";
+import heroAbout from "@/assets/hero-about-valley.jpg";
 
 const TITLE = "About UnfoldNepal | Returnee entrepreneurship in Nepal";
 const DESCRIPTION =
@@ -49,10 +50,12 @@ const OBJECTIVES = [
 function About() {
   return (
     <>
-      <PageHeader
+      <HeroPageHeader
         eyebrow="About us"
         title="Helping experience gained abroad create opportunity at home"
         intro="UnfoldNepal helps foreign returnees turn their skills, experience and ideas into viable businesses in Nepal."
+        heroImg={heroAbout}
+        heroAlt="Aerial view of terraced rice paddies in Nepal's Kathmandu Valley with snow-capped peaks in the background"
       />
 
       <Section id="about-unfold-nepal" className="scroll-mt-16">

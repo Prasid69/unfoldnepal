@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/unfoldnepal-logo.png.asset.json";
+import logo from "@/assets/unfoldnepal-logo.png";
 import { ThemeToggle } from "./ThemeToggle";
 
 const NAV = [
   { to: "/about", label: "About" },
   { to: "/reports", label: "Research" },
-  { to: "/book", label: "100 Businesses" },
+  { to: "/book", label: "The Book Project" },
   { to: "/diaspora", label: "For the Diaspora" },
   { to: "/updates", label: "Updates" },
 ] as const;
@@ -20,9 +20,9 @@ export function Header() {
       <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
           <img
-            src={logo.url}
+            src={logo}
             alt="UnfoldNepal logo"
-            className="h-8 w-auto md:h-9 dark:invert dark:hue-rotate-180"
+            className="h-9 w-auto md:h-10 dark:invert dark:hue-rotate-180"
             width={280}
             height={90}
           />

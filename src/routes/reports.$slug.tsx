@@ -77,37 +77,41 @@ function ReportDetail() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             {report.summary}
           </p>
-          <div className="mt-8">
-            {report.status === "Available" ? (
-              <a
-                href="#"
-                className="inline-block rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                Download the PDF (free)
-              </a>
-            ) : (
-              <span className="inline-block rounded-sm border border-border bg-card px-6 py-3 text-sm text-muted-foreground">
-                 Coming soon. Subscribe below to be notified
-              </span>
-            )}
-          </div>
         </div>
       </header>
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <h2 className="text-2xl font-semibold">Key findings</h2>
-            <ul className="mt-6 space-y-5">
-              {report.findings.map((f) => (
-                <li key={f} className="rule-top flex gap-4 pt-5">
-                  <span aria-hidden className="text-primary">
-                     •
-                  </span>
-                  <span className="leading-relaxed text-muted-foreground">{f}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="mt-14 text-2xl font-semibold">About the photograph</h2>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              The photograph shows the production floor of Shivashakti Dairy Pvt. Ltd. in Lalitpur
+              District, one of the small-scale processing units documented during our fieldwork in
+              Bagmati Province. The facility occupies a modest two-storey building whose ground floor
+              is given over entirely to chilling tanks, pasteurising equipment and packaging lines.
+              Morning light falls through high louvred windows, picking out the condensation on steel
+              vats and the worn concrete floor — details that speak to years of daily operation
+              rather than a recently fitted showroom.
+            </p>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              What the image does not immediately reveal is the logistical precision behind it.
+              Milk collection runs on a twice-daily cycle, drawing from smallholder farms within a
+              fifteen-kilometre radius. Every surface visible here is washed and sanitised between
+              shifts, a discipline enforced less by regulation than by the owner-operators'
+              understanding that spoilage is the fastest route to closure in a sector where margins
+              are already thin. The stainless-steel pipework on the far wall routes the finished
+              product directly into the packaging hall, eliminating one of the handling steps that
+              the industry's informal processors still rely on.
+            </p>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              The unit was selected for this report precisely because it sits at the median of what
+              our sample of {report.district} dairy enterprises looks like: neither a cottage
+              operation nor a factory, but the kind of mid-scale business that a returning Nepali
+              with relevant experience and NPR 30–40 lakh in capital could realistically build and
+              run. Its story — the capital sourced, the regulatory hurdles cleared, the staff trained
+              from scratch — forms the backbone of the operational case study in the pages that
+              follow.
+            </p>
 
             <h2 className="mt-14 text-2xl font-semibold">Method</h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">{report.method}</p>

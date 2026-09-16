@@ -1,11 +1,13 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Section, Eyebrow } from "@/components/site/Primitives";
-import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { POSTS, ORG, type Post } from "@/data/site";
 
 export const Route = createFileRoute("/updates/$slug")({
   loader: ({ params }) => {
-    const post = POSTS.find((p) => p.slug === params.slug);
+    let post = POSTS.find((p) => p.slug === params.slug);
+    if (!post && params.slug === "how-we-count-a-business") {
+      post = POSTS.find((p) => p.slug === "building-it-step-by-step");
+    }
     if (!post) throw notFound();
     return { post };
   },
@@ -65,7 +67,7 @@ function UpdateDetail() {
             ← All updates
           </Link>
           <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-            <span className="text-primary">{post.tag}</span>
+            <span className="text-primary font-medium">{post.tag}</span>
             <span aria-hidden>·</span>
             <time dateTime={post.isoDate}>{post.date}</time>
             <span aria-hidden>·</span>
@@ -77,48 +79,95 @@ function UpdateDetail() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             {post.excerpt}
           </p>
-          <p className="mt-6 text-sm text-muted-foreground">By {post.author}</p>
+          <p className="mt-6 text-sm text-muted-foreground">
+            By <span className="text-foreground font-medium">{post.author}</span>
+            {post.location ? ` · ${post.location}` : ""}
+          </p>
         </div>
       </header>
 
       <Section>
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
-          <div className="max-w-2xl">
-            {post.body.map((block) => (
-              <div key={block.heading} className="mb-12 last:mb-0">
-                <h2 className="text-2xl font-semibold">{block.heading}</h2>
-                {block.paragraphs.map((p) => (
-                  <p key={p.slice(0, 40)} className="mt-4 leading-relaxed text-muted-foreground">
+        <div className="mx-auto max-w-3xl">
+          {post.body.map((block, idx) => (
+            <div key={block.heading || `block-${idx}`} className="mb-10 last:mb-0">
+              {block.heading && (
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
+                  {block.heading}
+                </h2>
+              )}
+
+              {block.paragraphs &&
+                block.paragraphs.map((p, pIdx) => (
+                  <p key={pIdx} className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground">
                     {p}
                   </p>
                 ))}
-              </div>
-            ))}
 
-            <p className="rule-top pt-6 text-sm text-muted-foreground">
-              Written by {post.author} for UnfoldNepal. For the underlying studies, see the{" "}
-              <Link to="/reports" className="text-primary hover:underline">
-                research library
-              </Link>{" "}
-              or the{" "}
-              <Link to="/book" className="text-primary hover:underline">
-                100 Businesses book project
-              </Link>
-              .
-            </p>
-          </div>
+              {block.features && (
+                <div className="my-8 grid gap-4 sm:grid-cols-2">
+                  {block.features.map((feat) => (
+                    <div
+                      key={feat.title}
+                      className="rounded-lg border border-border bg-card p-5 transition-shadow hover:shadow-xs"
+                    >
+                      <h3 className="font-semibold text-foreground flex items-center gap-2">
+                        <span className="inline-block w-2 h-2 rounded-full bg-primary" />
+                        {feat.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {feat.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
 
-          <aside>
-            <div className="border border-border bg-card p-6">
-              <h2 className="text-lg font-semibold">Get updates by email</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                District spotlights and new reports, a few times a month.
-              </p>
-              <div className="mt-5">
-                <NewsletterForm />
-              </div>
+              {block.image && (
+                <figure className="my-10 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+                  <img
+                    src={block.image.src}
+                    alt={block.image.alt}
+                    className="w-full h-auto max-h-[580px] object-cover"
+                    loading="lazy"
+                  />
+                  {block.image.caption && (
+                    <figcaption className="border-t border-border/60 bg-sand/50 px-5 py-3 text-center text-sm italic text-muted-foreground">
+                      {block.image.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
+
+              {block.quote && (
+                <blockquote className="my-8 border-l-4 border-primary bg-sand/60 px-6 py-4 rounded-r-lg">
+                  <p className="text-lg md:text-xl font-medium italic text-foreground leading-snug">
+                    "{block.quote.text}"
+                  </p>
+                  {block.quote.caption && (
+                    <cite className="mt-2 block not-italic text-xs md:text-sm text-muted-foreground font-medium">
+                      — {block.quote.caption}
+                    </cite>
+                  )}
+                </blockquote>
+              )}
+
+              {block.cta && (
+                <div className="my-10 rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
+                  <p className="text-base sm:text-lg font-medium text-foreground">
+                    {block.cta.text}
+                  </p>
+                  <div className="mt-4">
+                    <Link
+                      to={block.cta.linkTo}
+                      className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 shadow-sm"
+                    >
+                      {block.cta.linkText} →
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
-          </aside>
+          ))}
         </div>
       </Section>
 

@@ -3,7 +3,7 @@ export const ORG = {
   legalName: "UnfoldNepal",
   domain: "https://unfoldnepal.org.np",
   email: "unfoldnepal.org@gmail.com",
-  phone: "+977 1 000 0000",
+  phone: "+977 9849288608",
   address: "Kathmandu, Bagmati Province, Nepal",
   tagline:
     "Helping foreign returnees turn skills, experience and ideas into sustainable businesses in Nepal.",
@@ -207,6 +207,29 @@ export const REPORTS: Report[] = [
 export const SECTORS = Array.from(new Set(REPORTS.map((r) => r.sector))).sort();
 export const PROVINCES = Array.from(new Set(REPORTS.map((r) => r.province))).sort();
 
+export type PostBodyBlock = {
+  heading?: string;
+  paragraphs?: string[];
+  image?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
+  quote?: {
+    text: string;
+    caption?: string;
+  };
+  features?: {
+    title: string;
+    description: string;
+  }[];
+  cta?: {
+    text: string;
+    linkText: string;
+    linkTo: string;
+  };
+};
+
 export type Post = {
   slug: string;
   title: string;
@@ -215,45 +238,101 @@ export type Post = {
   excerpt: string;
   tag: string;
   author: string;
+  location?: string;
   readingTime: string;
-  /** Alternating heading / paragraph blocks. */
-  body: { heading: string; paragraphs: string[] }[];
+  body: PostBodyBlock[];
   related: string[];
 };
 
 export const POSTS: Post[] = [
   {
-    slug: "district-spotlight-gulmi",
-    title: "District spotlight: what Gulmi's coffee boom actually pays",
-    date: "12 July 2026",
-    isoDate: "2026-07-12",
+    slug: "building-it-step-by-step",
+    title: "Building it step by step",
+    date: "15 September 2026",
+    isoDate: "2026-09-15",
     excerpt:
-      "Farm-gate prices in Gulmi rose for the fourth straight season. We break down who captured the increase, and what it means for anyone planning a roastery.",
-    tag: "District spotlight",
-    author: "Prasiddha Aryal",
-    readingTime: "6 min read",
-    related: ["returning-from-doha", "how-we-count-a-business"],
+      "A conversation with the Rt. Hon. Speaker of the House of Representatives about returnee entrepreneurship, and the advice that is now shaping how we plan the years ahead.",
+    tag: "Ecosystem & Policy",
+    author: "Unfold Nepal",
+    location: "Kathmandu",
+    readingTime: "5 min read",
+    related: ["returning-from-doha", "district-spotlight-gulmi"],
     body: [
       {
-        heading: "The headline number, and the number underneath it",
         paragraphs: [
-          "Farm-gate cherry prices in Gulmi have risen every season since 2079. Read alone, that number suggests a district getting steadily richer from coffee. Our value chain work across five municipalities suggests something narrower: the increase is real, but it is captured unevenly, and the households doing the hardest work capture the least of it.",
-          "Growers selling into an aggregation point with a roastery contract received roughly 22 percent more per kilogram of cherry than growers selling to itinerant traders on market day. The gap is not explained by quality. It is explained by who has a buyer lined up before harvest begins.",
+          "Every year, thousands of Nepalis come home. They return with savings, yes, but also with something harder to measure: technical skills, workplace discipline, an understanding of how systems run elsewhere, and networks built over years abroad. Most of that value quietly disperses. Some returnees restart the migration cycle within months. Others open a business without support and close it within the first year.",
+          "That gap is why Unfold Nepal exists, and it was the substance of our recent meeting with the Rt. Hon. Dol Prasad Aryal, Speaker of the House of Representatives. We shared who we are, what we are building, and where we believe returnee entrepreneurship can take the country over the next decade.",
         ],
       },
       {
-        heading: "Where the margin actually sits",
+        heading: "What we shared",
         paragraphs: [
-          "Once cherry is pulped, dried, hulled, roasted and bagged, the retail price in Kathmandu is several times the farm-gate price. Most of that spread is not profiteering. drying loss, hulling, transport and failed batches are expensive. But the profit that remains sits overwhelmingly with whoever sells the final bag, and in Gulmi that is almost never the grower.",
-          "The roasteries we costed made their money on direct-to-consumer sales: cafés, subscription bags, gift boxes bought in Kathmandu and shipped abroad. Wholesale volume kept the machines busy; retail paid the wages.",
+          "Unfold Nepal is a non-profit working to strengthen Nepal's entrepreneurial ecosystem by helping foreign returnees turn their skills, experience, and ideas into viable businesses at home. We also encourage the wider diaspora to see Nepal as a place to build, not only a place to send money to.",
+          "The support we offer follows the actual journey from an idea to a sustainable business:",
+        ],
+        features: [
+          {
+            title: "Training",
+            description:
+              "Entrepreneurship fundamentals adapted for people starting after years away from the local market.",
+          },
+          {
+            title: "Awareness",
+            description:
+              "Reaching returnees and departing migrants early, before the window to reinvest closes.",
+          },
+          {
+            title: "Mentorship",
+            description:
+              "Pairing founders with people who have already navigated registration, financing, and hiring in Nepal.",
+          },
+          {
+            title: "Strategic support",
+            description:
+              "Guidance on the unglamorous parts: market validation, compliance, and access to capital.",
+          },
         ],
       },
       {
-        heading: "What this means if you are planning a roastery",
         paragraphs: [
-          "Three practical conclusions came out of the fieldwork. First, secure your sales channel before you buy equipment. a roaster without a retail route is an expensive way to store green beans. Second, certification only pays above roughly twelve hectares of aggregated supply; below that the audit cost eats the premium. Third, budget for a second drying season before you expect to break even.",
-          "None of this argues against investing in Gulmi coffee. It argues against investing in it on the assumption that a rising farm-gate price will carry a business on its own.",
+          "Our position is simple. Migration should not be read only through the lens of departure. It should also be read through what comes back: knowledge, skills, networks, and experience. When those return and find somewhere useful to land, they create businesses, and businesses create jobs for people who might otherwise have to leave.",
         ],
+      },
+      {
+        image: {
+          src: "/speaker-meeting.jpg",
+          alt: "Unfold Nepal meeting with Rt. Hon. Speaker of the House of Representatives Dol Prasad Aryal",
+          caption: "Unfold Nepal met the Rt. Hon. Speaker to share its work on returnee entrepreneurship.",
+        },
+      },
+      {
+        heading: "The advice we took away",
+        paragraphs: [
+          "The Speaker listened, and his response was direct. Building an ecosystem is broad, long-term work. Rather than trying to achieve everything at once, he advised us to break the work down step by step and formulate clear strategies for the years ahead, one stage at a time.",
+        ],
+        quote: {
+          text: "Break the work down. Set clear strategies for each stage rather than attempting the whole ecosystem at once.",
+          caption: "Advice shared by the Rt. Hon. Speaker during the meeting",
+        },
+      },
+      {
+        paragraphs: [
+          "It is guidance that carries particular weight coming from him. Before taking the chair, he served twice as Nepal's Minister of Labour, Employment and Social Security, the ministry closest to the realities of foreign employment. He has also lived and worked abroad himself. The journey our beneficiaries take is not an abstraction to him.",
+          "We have taken the advice seriously. Ambition is easy to state and difficult to sequence, and a non-profit that tries to do everything in its first years usually ends up doing very little well. What follows for us is a phased roadmap: defined milestones, a realistic scope for each year, and honest measurement of whether the businesses we support are still standing twelve and twenty-four months later.",
+        ],
+      },
+      {
+        heading: "Where this goes next",
+        paragraphs: [
+          "Conversations at this level matter because returnee entrepreneurship sits across several agendas at once: labour, employment, industry, and finance. Being heard by the House is a step towards the policy attention this group of founders needs, and towards a wider recognition that a returnee with a business plan is an economic asset, not a statistic in a departure record.",
+          "We are grateful to the Rt. Hon. Speaker for his time and his counsel. The work now is to turn it into a plan, and the plan into businesses that hold.",
+          "Nepal holds boundless potential for entrepreneurship. Our work is to help unfold it.",
+        ],
+        cta: {
+          text: "Are you a returnee with a business idea, or part of the diaspora looking to build in Nepal?",
+          linkText: "Get in touch with Unfold Nepal to find out how we can support you",
+          linkTo: "/contact",
+        },
       },
     ],
   },
@@ -267,7 +346,7 @@ export const POSTS: Post[] = [
     tag: "Diaspora stories",
     author: "Pratyusha Aryal",
     readingTime: "8 min read",
-    related: ["district-spotlight-gulmi", "how-we-count-a-business"],
+    related: ["building-it-step-by-step", "district-spotlight-gulmi"],
     body: [
       {
         heading: "Same savings, different outcomes",
@@ -293,34 +372,36 @@ export const POSTS: Post[] = [
     ],
   },
   {
-    slug: "how-we-count-a-business",
-    title: "How we decide what counts as a 'successful' business",
-    date: "3 June 2026",
-    isoDate: "2026-06-03",
+    slug: "district-spotlight-gulmi",
+    title: "District spotlight: what Gulmi's coffee boom actually pays",
+    date: "12 July 2026",
+    isoDate: "2026-07-12",
     excerpt:
-      "Our selection criteria for the 100 Businesses book: three years of operation, verified employment, and a model another founder could repeat.",
-    tag: "Methodology",
-    author: "Indira Dahal",
-    readingTime: "5 min read",
-    related: ["district-spotlight-gulmi", "returning-from-doha"],
+      "Farm-gate prices in Gulmi rose for the fourth straight season. We break down who captured the increase, and what it means for anyone planning a roastery.",
+    tag: "District spotlight",
+    author: "Prasiddha Aryal",
+    readingTime: "6 min read",
+    related: ["building-it-step-by-step", "returning-from-doha"],
     body: [
       {
-        heading: "Why the definition matters",
+        heading: "The headline number, and the number underneath it",
         paragraphs: [
-          "A book called 100 Businesses of Nepal is only useful if the reader can trust why each business is in it. Awards, revenue claims and press coverage are poor filters. they favour the visible over the durable. We set criteria first and applied them the same way in every district.",
+          "Farm-gate cherry prices in Gulmi have risen every season since 2079. Read alone, that number suggests a district getting steadily richer from coffee. Our value chain work across five municipalities suggests something narrower: the increase is real, but it is captured unevenly, and the households doing the hardest work capture the least of it.",
+          "Growers selling into an aggregation point with a roastery contract received roughly 22 percent more per kilogram of cherry than growers selling to itinerant traders on market day. The gap is not explained by quality. It is explained by who has a buyer lined up before harvest begins.",
         ],
       },
       {
-        heading: "The four criteria",
+        heading: "Where the margin actually sits",
         paragraphs: [
-          "One: at least three consecutive years of operation, evidenced by registration and tax filings rather than the founder's recollection. Two: verified employment. we count people on a payroll or a documented wage arrangement, not stated headcount. Three: a repeatable model, meaning another founder in a comparable district could plausibly follow the same path. Four: consent to be examined, including permission to review ledgers where they exist.",
+          "Once cherry is pulped, dried, hulled, roasted and bagged, the retail price in Kathmandu is several times the farm-gate price. Most of that spread is not profiteering. drying loss, hulling, transport and failed batches are expensive. But the profit that remains sits overwhelmingly with whoever sells the final bag, and in Gulmi that is almost never the grower.",
+          "The roasteries we costed made their money on direct-to-consumer sales: cafés, subscription bags, gift boxes bought in Kathmandu and shipped abroad. Wholesale volume kept the machines busy; retail paid the wages.",
         ],
       },
       {
-        heading: "What we deliberately exclude",
+        heading: "What this means if you are planning a roastery",
         paragraphs: [
-          "We exclude businesses whose viability depends on a single grant, a political relationship, or a founder's unusual access to capital. They can be admirable, and they are not instructive. We also exclude firms that would not let us verify anything; an unverified profile is advertising, not research.",
-          "The result is a slower book and a shorter list than we would otherwise have. It is also the only version worth publishing.",
+          "Three practical conclusions came out of the fieldwork. First, secure your sales channel before you buy equipment. a roaster without a retail route is an expensive way to store green beans. Second, certification only pays above roughly twelve hectares of aggregated supply; below that the audit cost eats the premium. Third, budget for a second drying season before you expect to break even.",
+          "None of this argues against investing in Gulmi coffee. It argues against investing in it on the assumption that a rising farm-gate price will carry a business on its own.",
         ],
       },
     ],

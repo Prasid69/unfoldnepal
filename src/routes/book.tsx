@@ -5,9 +5,9 @@ import { StoryForm } from "@/components/site/StoryForm";
 import { CountUpStat } from "@/components/site/CountUpStat";
 import bookImg from "@/assets/book-cover-nepal.jpg";
 
-const TITLE = "100 Businesses of Nepal | UnfoldNepal";
+const TITLE = "The Book Project: 100 Businesses of Nepal | UnfoldNepal";
 const DESCRIPTION =
-  "A book series profiling 100 successful businesses across Nepal's districts: capital required, employment created and lessons any founder can repeat.";
+  "The Book Project: A book series profiling 100 successful businesses across Nepal's districts: capital required, employment created and lessons any founder can repeat.";
 
 export const Route = createFileRoute("/book")({
   head: () => ({
@@ -39,9 +39,9 @@ function BookPage() {
   return (
     <>
       <section className="border-b border-border bg-sand">
-        <div className="mx-auto grid w-full max-w-[1600px] items-center gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:px-12">
+        <div className="fade-in-section mx-auto grid w-full max-w-[1600px] items-center gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:px-12">
           <div>
-            <Eyebrow>Core publication</Eyebrow>
+            <Eyebrow>The Book Project</Eyebrow>
             <h1 className="mt-5 text-4xl leading-[1.05] font-semibold md:text-6xl">
               100 Businesses of Nepal
             </h1>

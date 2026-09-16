@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -38,7 +39,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -155,6 +156,38 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  // Scroll-fade: observe .fade-in-section elements and add .is-visible
+  useEffect(() => {
+    function initObserver() {
+      const els = document.querySelectorAll<HTMLElement>(".fade-in-section");
+      if (!els.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      els.forEach((el) => observer.observe(el));
+      return observer;
+    }
+
+    // Run after paint so elements are in the DOM
+    const raf = requestAnimationFrame(() => {
+      const obs = initObserver();
+      return () => obs?.disconnect();
+    });
+
+    return () => cancelAnimationFrame(raf);
+  }, [router.state.location.pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>

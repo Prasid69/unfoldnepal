@@ -17,7 +17,7 @@ export function Section({
   // `className` styles the full-bleed band; the inner div holds the content grid.
   return (
     <As id={id} className={cn("w-full", className)}>
-      <div className="mx-auto w-full max-w-[1600px] px-5 py-16 sm:px-8 md:py-20 lg:px-12">{children}</div>
+      <div className="fade-in-section mx-auto w-full max-w-[1600px] px-5 py-16 sm:px-8 md:py-20 lg:px-12">{children}</div>
     </As>
   );
 }
@@ -41,6 +41,43 @@ export function PageHeader({
         <Eyebrow>{eyebrow}</Eyebrow>
         <h1 className="mt-4 max-w-3xl text-4xl leading-[1.1] font-semibold md:text-5xl">{title}</h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{intro}</p>
+      </div>
+    </header>
+  );
+}
+
+export function HeroPageHeader({
+  eyebrow,
+  title,
+  intro,
+  heroImg,
+  heroAlt,
+}: {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  heroImg: string;
+  heroAlt: string;
+}) {
+  return (
+    <header className="relative isolate min-h-[32rem] border-b border-border">
+      <img
+        src={heroImg}
+        alt={heroAlt}
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        className="absolute inset-0 -z-20 size-full object-cover"
+      />
+      <div className="hero-overlay absolute inset-0 -z-10" aria-hidden />
+      <div className="mx-auto flex min-h-[32rem] w-full max-w-[1600px] items-center px-5 py-16 sm:px-8 md:min-h-[38rem] md:py-24 lg:px-12">
+        <div className="max-w-3xl">
+          <p className="eyebrow hero-enter hero-enter-1 hero-text-muted">{eyebrow}</p>
+          <h1 className="hero-enter hero-enter-2 hero-text mt-4 text-4xl leading-[1.1] font-semibold md:text-5xl lg:text-6xl">
+            {title}
+          </h1>
+          <p className="hero-enter hero-enter-3 hero-text-muted mt-6 max-w-2xl text-lg leading-relaxed">{intro}</p>
+        </div>
       </div>
     </header>
   );

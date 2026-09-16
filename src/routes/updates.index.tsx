@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHeader, Section } from "@/components/site/Primitives";
-
+import { HeroPageHeader, Section } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { POSTS } from "@/data/site";
+import heroUpdates from "@/assets/hero-updates-journal.jpg";
 
 const TITLE = "Updates | Returnee and business stories from UnfoldNepal";
 const DESCRIPTION =
@@ -49,10 +49,12 @@ export const Route = createFileRoute("/updates/")({
 function Updates() {
   return (
     <>
-      <PageHeader
+      <HeroPageHeader
         eyebrow="Updates"
         title="Notes from the districts"
         intro="Shorter than a report, longer than a post. District spotlights, returnee stories and working notes on method."
+        heroImg={heroUpdates}
+        heroAlt="Field journal open on a wooden desk with a topographic map of Nepal, pressed wildflowers and a cup of chai"
       />
 
       <Section>
@@ -82,13 +84,6 @@ function Updates() {
             </li>
           ))}
         </ul>
-        <p className="mt-12 text-sm text-muted-foreground">
-          Looking for the full studies instead?{" "}
-          <Link to="/reports" className="text-primary hover:underline">
-            Browse the research reports
-          </Link>
-          .
-        </p>
       </Section>
 
       

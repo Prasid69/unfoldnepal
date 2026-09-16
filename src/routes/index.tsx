@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Section, Eyebrow, Figure, ReportCard } from "@/components/site/Primitives";
+import { Section, Eyebrow, Figure } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
-import { REPORTS, STATS } from "@/data/site";
+import { POSTS, STATS } from "@/data/site";
 import bookImg from "@/assets/book-cover-nepal.jpg";
 import heroImg from "@/assets/hero-himalaya.jpg";
 
@@ -33,12 +33,12 @@ const PILLARS = [
   {
     title: "Prepare",
     body: "Entrepreneurship training and awareness initiatives help returnees understand the path from an early idea to a viable business.",
-    link: { to: "/reports", label: "Browse the reports" },
+    link: { to: "/updates", label: "Browse the articles" },
   },
   {
     title: "Learn from evidence",
     body: "Research, case studies and the 100 Businesses book turn local experience into useful lessons for people preparing to build in Nepal.",
-    link: { to: "/book", label: "The 100 Businesses book" },
+    link: { to: "/book", label: "The Book Project" },
   },
   {
     title: "Build with support",
@@ -48,7 +48,7 @@ const PILLARS = [
 ] as const;
 
 function Index() {
-  const featured = REPORTS.slice(0, 3);
+  const featuredPosts = POSTS.slice(0, 3);
 
   return (
     <>
@@ -176,18 +176,39 @@ function Index() {
       <Section>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <Eyebrow>Latest research</Eyebrow>
-            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Recent reports</h2>
+            <Eyebrow>From the field</Eyebrow>
+            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Recent articles</h2>
           </div>
-          <Link to="/reports" className="text-sm font-medium text-primary hover:underline">
-            All reports →
+          <Link to="/updates" className="text-sm font-medium text-primary hover:underline">
+            All articles →
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featured.map((r) => (
-            <ReportCard key={r.slug} report={r} />
+        <ul className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {featuredPosts.map((p) => (
+            <li key={p.slug} className="rule-top pt-6">
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <span className="text-primary">{p.tag}</span>
+                <span aria-hidden>·</span>
+                <time dateTime={p.isoDate}>{p.date}</time>
+                <span aria-hidden>·</span>
+                <span>{p.readingTime}</span>
+              </div>
+              <h3 className="mt-3 text-xl leading-snug font-semibold">
+                <Link to="/updates/$slug" params={{ slug: p.slug }} className="hover:text-primary">
+                  {p.title}
+                </Link>
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
+              <Link
+                to="/updates/$slug"
+                params={{ slug: p.slug }}
+                className="mt-4 inline-block text-sm font-medium text-primary hover:underline"
+              >
+                Read the article →
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </Section>
 
       <Section className="border-t border-border bg-card">

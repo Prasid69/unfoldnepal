@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader, Section, Eyebrow } from "@/components/site/Primitives";
+import { HeroPageHeader, Section, Eyebrow } from "@/components/site/Primitives";
 import { ORG } from "@/data/site";
 import { Heart, FileText, MapPinned, Users } from "lucide-react";
+import heroSupport from "@/assets/hero-support-candle.jpg";
 
 const TITLE = "Support the research | UnfoldNepal";
 const DESCRIPTION =
@@ -46,10 +47,12 @@ const WHERE_IT_GOES = [
 function Support() {
   return (
     <>
-      <PageHeader
+      <HeroPageHeader
         eyebrow="Support the research"
         title="Help us unfold Nepal's entrepreneurial future"
         intro="UnfoldNepal is a not-for-profit organization. Every contribution funds fieldwork, research and publishing that stays free to read in Nepal."
+        heroImg={heroSupport}
+        heroAlt="Research books and handwritten notes on a wooden desk lit by candlelight with Himalayan peaks visible through the window at dusk"
       />
 
       <Section className="border-b border-border bg-sand">
