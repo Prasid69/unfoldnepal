@@ -82,22 +82,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "UnfoldNepal. Research on Nepal's small businesses" },
+      { title: "Unfold Nepal- Home" },
       {
         name: "description",
-        content:
-          "Independent research and publishing on Nepal's cottage, small and medium enterprises.",
+        content: "Unfold Nepal- Home",
       },
       { name: "author", content: "UnfoldNepal" },
       { property: "og:site_name", content: "UnfoldNepal" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "UnfoldNepal. Research on Nepal's small businesses" },
-      { name: "twitter:title", content: "UnfoldNepal. Research on Nepal's small businesses" },
-      { property: "og:description", content: "Independent research and publishing on Nepal's cottage, small and medium enterprises." },
-      { name: "twitter:description", content: "Independent research and publishing on Nepal's cottage, small and medium enterprises." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7a80e367-66f7-48ad-9b0a-25496e0e893d/id-preview-63d852db--3538b4bb-2861-4042-ad06-6a59c9c3d61d.lovable.app-1785913450433.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7a80e367-66f7-48ad-9b0a-25496e0e893d/id-preview-63d852db--3538b4bb-2861-4042-ad06-6a59c9c3d61d.lovable.app-1785913450433.png" },
+      { property: "og:title", content: "Unfold Nepal- Home" },
+      { name: "twitter:title", content: "Unfold Nepal- Home" },
+      { property: "og:description", content: "Unfold Nepal- Home" },
+      { name: "twitter:description", content: "Unfold Nepal- Home" },
+      { property: "og:image", content: `${ORG.domain}/og-image.png` },
+      { name: "twitter:image", content: `${ORG.domain}/og-image.png` },
+      { name: "color-scheme", content: "light" },
+      { name: "theme-color", content: "#f8f3ec" },
+      { name: "robots", content: "index, follow" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -113,9 +115,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
     scripts: [
-      {
-        children: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}document.documentElement.style.colorScheme=t;}catch(e){}})();`,
-      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

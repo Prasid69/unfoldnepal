@@ -4,9 +4,9 @@ import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { POSTS } from "@/data/site";
 import heroUpdates from "@/assets/hero-updates-journal.jpg";
 
-const TITLE = "Updates | Returnee and business stories from UnfoldNepal";
+const TITLE = "Articles & Updates | Returnee stories and insights from UnfoldNepal";
 const DESCRIPTION =
-  "Short articles from the field: Nepal district business spotlights, diaspora entrepreneurship stories, and notes on how our SME research is done.";
+  "In-depth articles from the field: Nepal returnee entrepreneurship stories, enterprise spotlights, policy dialogues, and practical lessons for founders.";
 
 export const Route = createFileRoute("/updates/")({
   head: () => ({
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/updates/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",
-          name: "UnfoldNepal Updates",
+          name: "UnfoldNepal Articles & Updates",
           description: DESCRIPTION,
           inLanguage: "en",
           blogPost: POSTS.map((p) => ({
@@ -50,9 +50,9 @@ function Updates() {
   return (
     <>
       <HeroPageHeader
-        eyebrow="Updates"
-        title="Notes from the districts"
-        intro="Shorter than a report, longer than a post. District spotlights, returnee stories and working notes on method."
+        eyebrow="Articles & Updates"
+        title="Stories, dispatches and enterprise insights"
+        intro="In-depth articles documenting the returnee journey: how founders transform skills gained abroad into thriving enterprises, dialogues with leaders shaping national entrepreneurship policy, and practical lessons from the ground."
         heroImg={heroUpdates}
         heroAlt="Field journal open on a wooden desk with a topographic map of Nepal, pressed wildflowers and a cup of chai"
       />
@@ -90,7 +90,7 @@ function Updates() {
 
       <Section className="border-t border-border bg-sand">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <h2 className="text-3xl font-semibold">Get updates by email</h2>
+          <h2 className="text-3xl font-semibold">Get new articles by email</h2>
           <NewsletterForm />
         </div>
       </Section>

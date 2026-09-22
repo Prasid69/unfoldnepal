@@ -20,7 +20,7 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
     setError(null);
     setEmail("");
     toast.success("You're on the list", {
-      description: "We'll email you when the next report is published.",
+      description: "We'll email you when the next article is published.",
     });
   }
 
@@ -28,7 +28,7 @@ export function NewsletterForm({ compact = false }: { compact?: boolean }) {
     <form onSubmit={onSubmit} noValidate className="w-full">
       {!compact && (
         <label htmlFor="newsletter-email" className="block text-sm font-medium">
-          Get new reports by email
+          Get new articles by email
         </label>
       )}
       <div className={compact ? "flex gap-2" : "mt-3 flex flex-col gap-2 sm:flex-row"}>

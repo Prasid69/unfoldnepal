@@ -64,7 +64,7 @@ function UpdateDetail() {
       <header className="border-b border-border bg-sand">
         <div className="mx-auto w-full max-w-[1600px] px-5 py-14 sm:px-8 md:py-20 lg:px-12">
           <Link to="/updates" className="text-sm text-primary hover:underline">
-            ← All updates
+            ← All articles
           </Link>
           <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
             <span className="text-primary font-medium">{post.tag}</span>

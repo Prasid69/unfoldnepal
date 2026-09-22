@@ -61,7 +61,7 @@ export const BOARD: BoardMember[] = [
 export const STATS = [
   { value: "4", label: "Districts covered" },
   { value: "20", label: "Businesses surveyed" },
-  { value: "4", label: "Reports published" },
+  { value: "3", label: "Articles published" },
   { value: "10", label: "Profiles in the book" },
 ];
 
@@ -246,6 +246,82 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: "nabaraj-adhikari-handloom-bags",
+    title: "From Malaysia to Kathmandu: How one returnee built a handloom business that now employs 30 people",
+    date: "16 August 2026",
+    isoDate: "2026-08-16",
+    excerpt:
+      "Nabaraj Adhikari spent years working in Malaysia's garment industry. When he came home, he didn't just bring savings — he brought a plan. Today, his handloom bag enterprise has two outlets in Kathmandu and more than 30 people on its payroll.",
+    tag: "Diaspora stories",
+    author: "Unfold Nepal",
+    location: "Kathmandu",
+    readingTime: "2 min read",
+    related: ["building-it-step-by-step"],
+    body: [
+      {
+        paragraphs: [
+          "Nabaraj Adhikari is not the kind of person who stays quiet about why he came back. Ask him and he will tell you plainly: he always wanted to do something for the country. After nearly a decade working on factory floors in Kuala Lumpur and Selangor, he had the skills, the savings and, by his own account, enough of watching Nepal's potential sit untapped.",
+          "\"I learned everything I could over there,\" he told us when we visited his production workshop in Kathmandu. \"Cutting, stitching, quality control, how to manage a production line so that nothing is wasted. I thought: why am I building this for someone else's company? Why not bring it home?\"",
+        ],
+      },
+      {
+        heading: "The idea, and why handloom bags",
+        paragraphs: [
+          "Nabaraj spent his last year in Malaysia doing two things simultaneously: saving aggressively and researching the Nepali market for textile products. He identified a gap. Handloom fabric — the kind produced on traditional looms in households across Bagmati and Gandaki — was being sold cheaply to middlemen, turned into finished goods elsewhere, and resold at a premium back into Nepal and abroad. The artisans making the fabric were seeing almost none of the margin.",
+          "His idea was to close that loop. Source handloom fabric directly from weavers at a fair price, employ skilled stitchers in Kathmandu to turn it into structured bags, and sell the finished product through a proper retail outlet rather than through export agents who would absorb the value.",
+          "It sounds straightforward. The execution was not.",
+        ],
+      },
+      {
+        heading: "Building the workshop from the ground up",
+        paragraphs: [
+          "Nabaraj returned to Nepal in early 2024 with NPR 22 lakh — his savings from eight years abroad. He spent the first three months not spending a rupee on equipment. Instead, he visited weaving cooperatives, sat with tailors in Patan and Kirtipur, and walked through every fabric market he could find. He wanted to understand the supply chain before he committed to anything.",
+          "By June he had leased a workshop space on the outskirts of Kathmandu and bought his first four sewing machines. He hired two experienced stitchers to start, trained two more, and produced a first batch of two dozen bags. He sold them at a pop-up stall in a Kathmandu weekend market within a single day.",
+          "\"That first day told me the demand was real,\" he said. \"I didn't celebrate. I went back and bought four more machines.\"",
+        ],
+      },
+      {
+        image: {
+          src: "/nabaraj-adhikari-workshop.jpg",
+          alt: "Nabaraj Adhikari speaking with an Unfold Nepal researcher inside his handloom bag production workshop in Kathmandu",
+          caption: "Nabaraj Adhikari (left) inside his Kathmandu workshop, where more than 30 people now work across production, quality control and retail.",
+        },
+      },
+      {
+        heading: "Thirty people, two outlets",
+        paragraphs: [
+          "Two years on from that first sale, Nabaraj's workshop employs thirty-four people full-time. Most of them are women from surrounding neighbourhoods, many of whom had no formal employment before joining the team. He runs a short in-house training programme for new hires, drawing directly on the production management techniques he observed in Malaysia.",
+          "The business now has two retail outlets in Kathmandu — one in Thamel and one in Patan — and a small but growing wholesale line supplying boutique hotels in Pokhara. Monthly turnover has crossed NPR 8 lakh, and Nabaraj says the business has been profitable every month for the past twelve.",
+          "He is methodical about how he talks about the numbers — not boastful, but precise in a way that reflects his years on a factory floor where every figure had a consequence. \"If you don't know your costs, you don't know your business,\" he said. \"That's the first thing I tell anyone who asks me for advice.\"",
+        ],
+      },
+      {
+        heading: "What he brought back that money can't buy",
+        paragraphs: [
+          "When we asked Nabaraj what made the difference — the thing that separated his business from other returnee ventures we have seen struggle — his answer was not savings or timing or luck. It was systems.",
+          "\"In Malaysia, I saw how a proper production line works. Nothing is left to chance. Every step has a process, every process has a person responsible, and every person knows exactly what good work looks like. I brought that here. Not the machines — the mindset.\"",
+          "That discipline shows in the workshop. Bags move through the space in a clear sequence: cutting, stitching, quality check, packaging. Defective pieces are flagged at the quality stage, not discovered by customers. Fabric sourced from weavers is logged by batch with the price paid and the cooperative it came from.",
+        ],
+        quote: {
+          text: "I always wanted to do something for the country. I just needed the skills first — and I had to go abroad to get them.",
+          caption: "Nabaraj Adhikari, founder",
+        },
+      },
+      {
+        heading: "The bigger picture",
+        paragraphs: [
+          "Nabaraj's story is precisely the kind Unfold Nepal exists to document and amplify — not because it is exceptional, but because it is replicable. The conditions that made it work are not out of reach for other returnees: a marketable skill set, a willingness to research before spending, and a founding vision that connects to something larger than personal gain.",
+          "\"I didn't come back just to make money,\" he said as we were leaving. \"I came back because Nepal has everything it needs. Someone just has to stay and build it.\"",
+        ],
+        cta: {
+          text: "Are you a returnee with a business idea, or part of the diaspora looking to invest in Nepal's economy?",
+          linkText: "Get in touch with Unfold Nepal to learn how we can support you",
+          linkTo: "/contact",
+        },
+      },
+    ],
+  },
+  {
     slug: "building-it-step-by-step",
     title: "Building it step by step",
     date: "15 September 2026",
@@ -256,7 +332,7 @@ export const POSTS: Post[] = [
     author: "Unfold Nepal",
     location: "Kathmandu",
     readingTime: "5 min read",
-    related: ["returning-from-doha", "district-spotlight-gulmi"],
+    related: ["nabaraj-adhikari-handloom-bags", "flash-flood-august-2026"],
     body: [
       {
         paragraphs: [
@@ -337,72 +413,64 @@ export const POSTS: Post[] = [
     ],
   },
   {
-    slug: "returning-from-doha",
-    title: "Returning from Doha: three founders, three very different first years",
-    date: "28 June 2026",
-    isoDate: "2026-06-28",
+    slug: "flash-flood-august-2026",
+    title: "When the River Took Everything: On the Ground After Nepal's August Flash Flood",
+    date: "1 September 2026",
+    isoDate: "2026-09-01",
     excerpt:
-      "Remittance savings, a plan and a district are not the same thing as a business. Three returnees walk through their first twelve months back.",
-    tag: "Diaspora stories",
-    author: "Pratyusha Aryal",
-    readingTime: "8 min read",
-    related: ["building-it-step-by-step", "district-spotlight-gulmi"],
+      "On August 26, a devastating flash flood tore through river communities across Nepal. Days later, we joined a delegation accompanying the Speaker of the House of Representatives to see the damage for ourselves.",
+    tag: "Field Report",
+    author: "Unfold Nepal",
+    location: "Affected flood zones, Nepal",
+    readingTime: "3 min read",
+    related: ["building-it-step-by-step"],
     body: [
       {
-        heading: "Same savings, different outcomes",
         paragraphs: [
-          "The three founders in this piece left Qatar within eight months of each other, returned to three different districts, and started with broadly comparable savings. between NPR 18 and 26 lakh. A year later one business was profitable, one was surviving on a second income, and one had closed.",
-          "The difference was not effort, and it was not luck in any useful sense. It was how much of the first year was spent learning things that could have been learned before the money was committed.",
+          "The drive in was quiet. Not the kind of quiet that signals peace — it was the kind that follows catastrophe, when a landscape has been stripped of the ordinary sounds of life.",
+          "On August 26, 2026, a devastating flash flood tore through communities along Nepal's river corridors, swallowing homes, displacing families, and erasing livelihoods overnight. Days later, we traveled to the affected zones as part of a delegation accompanying the Speaker of the House of Representatives, joining military officials and local authorities for an on-ground assessment of the destruction.",
         ],
       },
       {
-        heading: "The cost of learning late",
+        image: {
+          src: "/flood-survey-team.jpg",
+          alt: "The Speaker of the House of Representatives and military officials surveying flash flood damage alongside heavy machinery and collapsed structures",
+          caption: "The delegation, including military officials and relief coordinators, assessing the scale of destruction at one of the worst-hit sites.",
+        },
+      },
+      {
+        heading: "Homes lost overnight",
         paragraphs: [
-          "The founder whose business closed spent four months registering, leasing and equipping a poultry unit before discovering that the nearest reliable feed supplier was a two-hour drive away. Feed logistics turned a thin margin negative. That fact was knowable in a week of asking around.",
-          "The profitable founder did the opposite: six weeks back in the district before spending anything, talking to existing operators, sitting in the local market, and revising the plan twice. The venture that eventually launched was not the one she flew home intending to start.",
+          "Nothing prepares you for what you see when you arrive. Entire lower floors of buildings had been buried under thick layers of silt and boulders. One house — once somebody's home — stood isolated at the river's edge, its foundation exposed, its interior open to the elements where walls once stood. The water had receded, but the river still churned brown and restless just meters away, as if it hadn't finished yet.",
+          "Families in the area had lost more than shelter. Photographs, documents, furniture — all of it gone. Many had fled in the middle of the night with nothing but the clothes on their backs. Some had nowhere to return to. The few who stayed were picking through mud and rubble, trying to salvage what remained.",
         ],
       },
       {
-        heading: "What we would tell someone still abroad",
-        paragraphs: [
-          "Choose the district before the sector, not the other way around. Assume registration, utilities and a workable premises take three to six months. Keep six months of household expenses entirely separate from business capital. the businesses that failed rarely failed on the idea; they failed when the household needed the working capital.",
-          "Our guide for the diaspora sets out the same sequence in more detail, with the paperwork and rough timelines attached.",
-        ],
+        image: {
+          src: "/flood-damaged-house.jpg",
+          alt: "A flood-damaged house standing isolated at the river's edge, its foundation exposed and surrounded by debris and silt",
+          caption: "A house left standing at the river's edge after the August 26 flood stripped the ground from beneath it.",
+        },
       },
-    ],
-  },
-  {
-    slug: "district-spotlight-gulmi",
-    title: "District spotlight: what Gulmi's coffee boom actually pays",
-    date: "12 July 2026",
-    isoDate: "2026-07-12",
-    excerpt:
-      "Farm-gate prices in Gulmi rose for the fourth straight season. We break down who captured the increase, and what it means for anyone planning a roastery.",
-    tag: "District spotlight",
-    author: "Prasiddha Aryal",
-    readingTime: "6 min read",
-    related: ["building-it-step-by-step", "returning-from-doha"],
-    body: [
       {
-        heading: "The headline number, and the number underneath it",
+        heading: "Businesses wiped out at the worst possible time",
         paragraphs: [
-          "Farm-gate cherry prices in Gulmi have risen every season since 2079. Read alone, that number suggests a district getting steadily richer from coffee. Our value chain work across five municipalities suggests something narrower: the increase is real, but it is captured unevenly, and the households doing the hardest work capture the least of it.",
-          "Growers selling into an aggregation point with a roastery contract received roughly 22 percent more per kilogram of cherry than growers selling to itinerant traders on market day. The gap is not explained by quality. It is explained by who has a buyer lined up before harvest begins.",
+          "Along what used to be a stretch of local market stalls and small shops, heavy excavators worked to clear debris. Storefronts were reduced to frames. Shopkeepers who had spent years building their businesses were left standing in the wreckage with no inventory, no cash flow, and no timeline for recovery.",
+          "For a region where commerce depends on the monsoon season, losing the market at peak time is a blow that will be felt well into next year. The flood did not just destroy property — it interrupted income cycles that families had no buffer to absorb.",
         ],
       },
       {
-        heading: "Where the margin actually sits",
+        heading: "A visit that carried weight",
         paragraphs: [
-          "Once cherry is pulped, dried, hulled, roasted and bagged, the retail price in Kathmandu is several times the farm-gate price. Most of that spread is not profiteering. drying loss, hulling, transport and failed batches are expensive. But the profit that remains sits overwhelmingly with whoever sells the final bag, and in Gulmi that is almost never the grower.",
-          "The roasteries we costed made their money on direct-to-consumer sales: cafés, subscription bags, gift boxes bought in Kathmandu and shipped abroad. Wholesale volume kept the machines busy; retail paid the wages.",
+          "The Speaker, flanked by army personnel and relief coordinators, moved through the site with urgency — pointing toward collapsed structures, asking questions, taking stock. It was not a ceremonial visit. You could see the weight of it on everyone's face.",
+          "What the August 26 flood exposed, once again, is the brutal intersection of geography and vulnerability that Nepal's communities continue to face. The rivers that give life to these valleys are also capable of reclaiming everything in a matter of hours. While relief efforts are underway, the scale of what was lost — in homes, in businesses, in human stability — demands a response that outlasts the immediate crisis.",
+          "The water may have gone down. The damage has not.",
         ],
-      },
-      {
-        heading: "What this means if you are planning a roastery",
-        paragraphs: [
-          "Three practical conclusions came out of the fieldwork. First, secure your sales channel before you buy equipment. a roaster without a retail route is an expensive way to store green beans. Second, certification only pays above roughly twelve hectares of aggregated supply; below that the audit cost eats the premium. Third, budget for a second drying season before you expect to break even.",
-          "None of this argues against investing in Gulmi coffee. It argues against investing in it on the assumption that a rising farm-gate price will carry a business on its own.",
-        ],
+        cta: {
+          text: "Want to support communities rebuilding after disasters like this?",
+          linkText: "Learn how you can contribute to Unfold Nepal's work",
+          linkTo: "/support",
+        },
       },
     ],
   },

@@ -69,7 +69,7 @@ function ReportsIndex() {
             </p>
             <p>
               Findings are checked back with a subset of respondents before publication, and every
-              report states its sample size, sampling frame and known limitations. We do not publish
+              published study states its sample size, sampling frame and known limitations. We do not publish
               firm-level financials without written consent.
             </p>
           </div>

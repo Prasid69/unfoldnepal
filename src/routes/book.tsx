@@ -104,7 +104,7 @@ function BookPage() {
             <p>
               Every profile in this book is built on the same research protocol we use for our{" "}
               <Link to="/reports" className="text-primary hover:underline">
-                sector reports
+                field research and articles
               </Link>
               : verified years of operation, verified employment, reconstructed costs, and an
               honest account of what went wrong.

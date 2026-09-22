@@ -32,7 +32,7 @@ export const Route = createFileRoute("/diaspora")({
               name: "How much capital do I need to start a small business in Nepal?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "It depends entirely on sector and district. Our reports document median start-up capital by sector, from roughly NPR 9 lakh for a small handicraft workshop to NPR 40 lakh and above for a dairy processing unit with cold chain.",
+                text: "It depends entirely on sector and district. Our articles and research document median start-up capital by sector, from roughly NPR 9 lakh for a small handicraft workshop to NPR 40 lakh and above for a dairy processing unit with cold chain.",
               },
             },
             {
@@ -93,7 +93,7 @@ const FAQS = [
   },
   {
     q: "Is there support for hiring and training staff locally?",
-    a: "Municipal and provincial skills programmes exist and vary in quality. Our district reports note which programmes respondents actually found useful, and where employers ended up training in-house.",
+    a: "Municipal and provincial skills programmes exist and vary in quality. Our articles and district research note which programmes respondents actually found useful, and where employers ended up training in-house.",
   },
   {
     q: "Can I talk to someone who has already returned?",

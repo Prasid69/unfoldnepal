@@ -7,7 +7,7 @@ const COLUMNS = [
   {
     heading: "Research",
     links: [
-      { to: "/reports", label: "All reports" },
+      { to: "/updates", label: "All articles" },
       { to: "/book", label: "The Book Project" },
     ],
   },
@@ -38,7 +38,7 @@ export function Footer() {
               <img
                 src={logo}
                 alt="UnfoldNepal logo"
-                className="h-8 w-auto md:h-9 dark:invert dark:hue-rotate-180 transition-opacity hover:opacity-90"
+                className="h-8 w-auto md:h-9 transition-opacity hover:opacity-90"
                 width={280}
                 height={90}
                 loading="lazy"

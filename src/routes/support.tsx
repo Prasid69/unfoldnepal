@@ -35,7 +35,7 @@ const WHERE_IT_GOES = [
   {
     icon: FileText,
     title: "Research and publishing",
-    body: "Data analysis, editing, design and printing. Our reports stay free to read for anyone in Nepal.",
+    body: "Data analysis, editing, design and publishing. Our articles and research stay free to read for anyone in Nepal.",
   },
   {
     icon: Users,
