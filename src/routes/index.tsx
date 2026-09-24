@@ -7,8 +7,9 @@ import heroImg from "@/assets/hero-himalaya.jpg";
 
 import { CountUpStat } from "@/components/site/CountUpStat";
 
-const TITLE = "Unfold Nepal- Home";
-const DESCRIPTION = "Unfold Nepal- Home";
+const TITLE = "UnfoldNepal | Returnee Entrepreneurship & Small Business Research in Nepal";
+const DESCRIPTION =
+  "UnfoldNepal helps foreign returnees turn skills, experience and ideas gained abroad into sustainable businesses that create meaningful work in Nepal. Free research, articles and mentorship.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,14 +19,14 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${ORG.domain}/` },
       { property: "og:image", content: `${ORG.domain}/og-image.png` },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: `${ORG.domain}/og-image.png` },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${ORG.domain}/` }],
   }),
   component: Index,
 });

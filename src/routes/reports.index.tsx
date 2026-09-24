@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Section, Eyebrow } from "@/components/site/Primitives";
+import { ORG } from "@/data/site";
 import researchHero from "@/assets/hero-research-looms.jpg";
 
 const TITLE = "Business research for returnees in Nepal | UnfoldNepal";
@@ -14,11 +15,14 @@ export const Route = createFileRoute("/reports/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/reports" },
+      { property: "og:url", content: `${ORG.domain}/reports` },
+      { property: "og:image", content: `${ORG.domain}/og-image.png` },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: `${ORG.domain}/og-image.png` },
     ],
-    links: [{ rel: "canonical", href: "/reports" }],
+    links: [{ rel: "canonical", href: `${ORG.domain}/reports` }],
   }),
   component: ReportsIndex,
 });

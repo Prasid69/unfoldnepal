@@ -27,12 +27,14 @@ export const Route = createFileRoute("/updates/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/updates/${params.slug}` },
+        { property: "og:url", content: `${ORG.domain}/updates/${params.slug}` },
+        { property: "og:image", content: `${ORG.domain}/og-image.png` },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
+        { name: "twitter:image", content: `${ORG.domain}/og-image.png` },
       ],
-      links: [{ rel: "canonical", href: `/updates/${params.slug}` }],
+      links: [{ rel: "canonical", href: `${ORG.domain}/updates/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",

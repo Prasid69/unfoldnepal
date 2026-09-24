@@ -3,6 +3,7 @@ import { Section, Eyebrow, Figure } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
 import { StoryForm } from "@/components/site/StoryForm";
 import { CountUpStat } from "@/components/site/CountUpStat";
+import { ORG } from "@/data/site";
 import bookImg from "@/assets/book-cover-nepal.jpg";
 
 const TITLE = "The Book Project: 100 Businesses of Nepal | UnfoldNepal";
@@ -17,11 +18,14 @@ export const Route = createFileRoute("/book")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "book" },
-      { property: "og:url", content: "/book" },
+      { property: "og:url", content: `${ORG.domain}/book` },
+      { property: "og:image", content: `${ORG.domain}/og-image.png` },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: `${ORG.domain}/og-image.png` },
     ],
-    links: [{ rel: "canonical", href: "/book" }],
+    links: [{ rel: "canonical", href: `${ORG.domain}/book` }],
   }),
   component: BookPage,
 });

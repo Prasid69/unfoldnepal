@@ -1,7 +1,7 @@
 export const ORG = {
   name: "UnfoldNepal",
   legalName: "UnfoldNepal",
-  domain: "https://unfoldnepal.org.np",
+  domain: "https://www.unfoldnepal.org.np",
   email: "unfoldnepal.org@gmail.com",
   phone: "+977 9849288608",
   address: "Kathmandu, Bagmati Province, Nepal",

@@ -24,11 +24,14 @@ export const Route = createFileRoute("/reports/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: report.summary.slice(0, 155) },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/reports/${params.slug}` },
+        { property: "og:url", content: `${ORG.domain}/reports/${params.slug}` },
+        { property: "og:image", content: `${ORG.domain}/og-image.png` },
+        { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: report.summary.slice(0, 155) },
+        { name: "twitter:image", content: `${ORG.domain}/og-image.png` },
       ],
-      links: [{ rel: "canonical", href: `/reports/${params.slug}` }],
+      links: [{ rel: "canonical", href: `${ORG.domain}/reports/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",

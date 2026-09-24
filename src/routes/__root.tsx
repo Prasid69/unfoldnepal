@@ -82,20 +82,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Unfold Nepal- Home" },
+      { title: "UnfoldNepal | Returnee Entrepreneurship in Nepal" },
       {
         name: "description",
-        content: "Unfold Nepal- Home",
+        content:
+          "UnfoldNepal helps foreign returnees turn skills, experience and ideas gained abroad into sustainable businesses and meaningful employment in Nepal.",
       },
       { name: "author", content: "UnfoldNepal" },
       { property: "og:site_name", content: "UnfoldNepal" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "Unfold Nepal- Home" },
-      { name: "twitter:title", content: "Unfold Nepal- Home" },
-      { property: "og:description", content: "Unfold Nepal- Home" },
-      { name: "twitter:description", content: "Unfold Nepal- Home" },
+      { property: "og:title", content: "UnfoldNepal | Returnee Entrepreneurship in Nepal" },
+      {
+        property: "og:description",
+        content:
+          "UnfoldNepal helps foreign returnees turn skills, experience and ideas gained abroad into sustainable businesses and meaningful employment in Nepal.",
+      },
       { property: "og:image", content: `${ORG.domain}/og-image.png` },
+      { property: "og:url", content: ORG.domain },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "UnfoldNepal | Returnee Entrepreneurship in Nepal" },
+      {
+        name: "twitter:description",
+        content:
+          "UnfoldNepal helps foreign returnees turn skills, experience and ideas gained abroad into sustainable businesses and meaningful employment in Nepal.",
+      },
       { name: "twitter:image", content: `${ORG.domain}/og-image.png` },
       { name: "color-scheme", content: "light" },
       { name: "theme-color", content: "#f8f3ec" },
@@ -119,16 +129,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Organization",
-          name: ORG.name,
-          url: ORG.domain,
-          email: ORG.email,
-          description: ORG.tagline,
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Kathmandu",
-            addressCountry: "NP",
-          },
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${ORG.domain}/#organization`,
+              name: ORG.name,
+              url: ORG.domain,
+              email: ORG.email,
+              description: ORG.tagline,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Kathmandu",
+                addressCountry: "NP",
+              },
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${ORG.domain}/#website`,
+              url: ORG.domain,
+              name: ORG.name,
+              description: ORG.tagline,
+              publisher: { "@id": `${ORG.domain}/#organization` },
+              inLanguage: "en",
+            },
+          ],
         }),
       },
     ],

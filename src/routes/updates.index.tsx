@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroPageHeader, Section } from "@/components/site/Primitives";
 import { NewsletterForm } from "@/components/site/NewsletterForm";
-import { POSTS } from "@/data/site";
+import { POSTS, ORG } from "@/data/site";
 import heroUpdates from "@/assets/hero-updates-journal.jpg";
 
 const TITLE = "Articles & Updates | Returnee stories and insights from UnfoldNepal";
@@ -16,12 +16,14 @@ export const Route = createFileRoute("/updates/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/updates" },
+      { property: "og:url", content: `${ORG.domain}/updates` },
+      { property: "og:image", content: `${ORG.domain}/og-image.png` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: `${ORG.domain}/og-image.png` },
     ],
-    links: [{ rel: "canonical", href: "/updates" }],
+    links: [{ rel: "canonical", href: `${ORG.domain}/updates` }],
     scripts: [
       {
         type: "application/ld+json",
