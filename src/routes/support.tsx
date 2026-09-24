@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HeroPageHeader, Section, Eyebrow } from "@/components/site/Primitives";
-import { ORG } from "@/data/site";
-import { Heart, FileText, MapPinned, Users } from "lucide-react";
+import { FileText, MapPinned, Users, MessageCircle } from "lucide-react";
 import heroSupport from "@/assets/hero-support-candle.jpg";
 
 const TITLE = "Support the research | UnfoldNepal";
@@ -56,39 +55,25 @@ function Support() {
       />
 
       <Section className="border-b border-border bg-sand">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-          <div className="max-w-xl">
-            <Eyebrow>Scan to support</Eyebrow>
-            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-              Scan the QR code with your mobile wallet
-            </h2>
-            <p className="mt-5 leading-relaxed text-muted-foreground">
-              Use any Nepali mobile wallet or banking app to give. One-time or
-              recurring, in NPR or USD. Every rupee goes to research that stays
-              open and free.
-            </p>
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Prefer to talk first? Write to{" "}
-              <a
-                className="text-primary hover:underline"
-                href={`mailto:${ORG.email}`}
-              >
-                {ORG.email}
-              </a>{" "}
-              and we will help you set up a bank transfer or standing
-              instruction.
-            </p>
-          </div>
-          {/* Paste your QR code image here when ready. */}
-          <div className="mx-auto flex aspect-square w-full max-w-sm flex-col items-center justify-center gap-3 rounded-sm border-2 border-dashed border-primary/50 bg-card p-6 text-center">
-            <Heart className="size-8 text-primary" aria-hidden="true" />
-            <span className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-              QR code
-            </span>
-            <span className="text-sm text-muted-foreground">
-              QR code appears here
-            </span>
-          </div>
+        <div className="mx-auto max-w-xl text-center">
+          <Eyebrow>Get in touch</Eyebrow>
+          <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+            Want to support? Reach out on WhatsApp
+          </h2>
+          <p className="mt-5 leading-relaxed text-muted-foreground">
+            If you would like to contribute to our fieldwork and research, send
+            us a message on WhatsApp. Every contribution keeps our work free to
+            read in Nepal.
+          </p>
+          <a
+            href="https://wa.me/9779849288608"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-3 rounded-sm bg-primary px-7 py-4 text-base font-semibold text-primary-foreground transition hover:opacity-90"
+          >
+            <MessageCircle className="size-5" aria-hidden="true" />
+            +977 9849288608
+          </a>
         </div>
       </Section>
 
